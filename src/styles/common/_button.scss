@@ -1,0 +1,87 @@
+:root {
+  --btn-font-size: calc(1em * 0.875);
+  --btn-sm: calc(1em * 0.75);
+  --btn-radius: 0px;
+  --font-size: 14px;
+  --line-height: 16px;
+}
+
+.btn-component {
+  display: inline-block;
+  position: relative;
+  white-space: nowrap;
+  text-decoration: none;
+  line-height: var(--line-height);
+  border: none;
+  padding: var(--space-xxs) var(--space-xs);
+  border-radius: var(--btn-radius);
+  font-size: var(--font-size);
+  outline: none;
+  transition: 0.2s;
+
+  &:active {
+    transition: none;
+  }
+
+  .icon {
+    /* icon inherits color of button label */
+    color: inherit;
+    flex-shrink: 0;
+  }
+
+  &.btn--sm {
+    height: 32px;
+    padding: 8px 12px 8px 16px;
+  }
+
+  &.btn--md {
+    height: 36px;
+    padding: 10px 12px 10px 16px;
+  }
+
+  &.btn--lg {
+    height: 40px;
+    padding: 12px 12px 12px 16px;
+  }
+
+  &.btn--xl {
+    height: 48px;
+    padding: 16px 12px 16px 16px;
+  }
+
+  &.btn--2xl {
+    height: 56px;
+    padding: 20px 12px 20px 16px;
+  }
+
+  .loading__button {
+    opacity: 0.6;
+  }
+
+  .box-icon {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    .ant-spin {
+      font-size: 14px !important;
+      line-height: 1px;
+    }
+  }
+}
+
+/* feedback */
+.btn[disabled] {
+  cursor: not-allowed;
+  box-shadow: none;
+
+  &:visited {
+    color: var(--btn-disabled-label);
+  }
+}
+
+.btn--full-width {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}

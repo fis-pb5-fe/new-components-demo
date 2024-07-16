@@ -1,0 +1,58 @@
+@import "./common/box-shadow";
+@import "./common/custom-antd";
+@import "./common/button";
+@import "./../../node_modules/react-image-crop/dist/ReactCrop";
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: var(--text-base-size);
+  font-family: var(--font-primary);
+  color: var(--color-text);
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-in-table-cell {
+  white-space: nowrap;
+  line-height: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.link-text {
+  color: var(--color-primary);
+  text-decoration: underline;
+  &:hover {
+    color: #0f62fe;
+    text-decoration: underline;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgba(63, 86, 175, 0.15);
+}
