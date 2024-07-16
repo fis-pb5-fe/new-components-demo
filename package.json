@@ -1,16 +1,13 @@
 {
-  "name": "@MidoAhmed/rollup-react-library-starter",
+  "name": "react-ui-component",
   "version": "0.1.0",
-  "description": "Template and quick-starter to create modern React libraries using Rollup.",
+  "description": "React UI component for Eprocurement",
   "main": "dist/cjs/bundle.js",
   "module": "dist/esm/bundle.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/MidoAhmed"
-  },
   "scripts": {
     "build": "rimraf dist && rollup -c",
     "dev": "rollup -c -w",
@@ -22,10 +19,9 @@
     "deploy-storybook": "gh-pages -d storybook-static"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/MidoAhmed/rollup-react-library-starter.git"
+    "type": "git"
   },
-  "author": "MidoAhmed",
+  "author": "FE",
   "license": "MIT",
   "keywords": [
     "react-template",
@@ -34,10 +30,6 @@
     "react",
     "template"
   ],
-  "bugs": {
-    "url": "https://github.com/MidoAhmed/rollup-react-library-starter/issues"
-  },
-  "homepage": "https://MidoAhmed.github.io/rollup-react-library-starter",
   "peerDependencies": {
     "antd": "^5.4.0",
     "react": ">=16.8.0",
@@ -81,8 +73,15 @@
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "sass": "^1.61.0",
+    "sass-loader": "10.1.1",
     "storybook": "^7.0.2",
     "tslib": "^2.5.0",
     "typescript": "^5.0.4"
+  },
+  "resolutions": {
+    "jackspeak": "2.1.1"
+  },
+  "dependencies": {
+    "antd": "^5.19.2"
   }
 }
