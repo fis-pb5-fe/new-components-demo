@@ -1,0 +1,104 @@
+/* Style for FormValidation.tsx */
+.form-item__container {
+  position: relative;
+  width: 100%;
+
+  .form-item__content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    .form-item__item {
+      width: 100%;
+    }
+  }
+
+  .form-item__message {
+    font-size: 0.75em;
+    color: var(--palette-gray-60);
+  }
+
+  .form-item__icon {
+    height: auto;
+    width: 1.5rem;
+    font-size: 1.2rem;
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    margin-left: 2px;
+  }
+
+  &.form-item__container--error {
+    .component__title {
+      color: var(--palette-gray-70) !important;
+    }
+    .form-item__content {
+      .form-item__icon,
+      i.input-icon {
+        color: var(--palette-gray-60);
+      }
+
+      .component__input,
+      textarea,
+      .input-tag__container,
+      .ant-picker {
+        background-color: var(--color-critical-blur);
+        outline-color: var(--color-critical) !important;
+        border-color: var(--color-critical) !important;
+      }
+    }
+
+    .form-item__message {
+      color: var(--color-critical) !important;
+    }
+  }
+
+  &.form-item__container--warning {
+    .component__title {
+      color: var(--color-warning-high) !important;
+    }
+    .form-item__content {
+      .form-item__icon,
+      i.input-icon {
+        color: var(--color-warning-high) !important;
+      }
+
+      .component__input,
+      textarea,
+      .input-tag__container,
+      .ant-picker {
+        outline-color: var(--color-warning-high) !important;
+        border-color: var(--color-warning-high) !important;
+      }
+    }
+
+    .form-item__message {
+      color: var(--color-warning-high) !important;
+    }
+  }
+
+  &.form-item__container--success {
+    .component__title {
+      color: var(--color-success-high) !important;
+    }
+    .form-item__content {
+      .form-item__icon,
+      i.input-icon {
+        color: var(--color-success-high) !important;
+      }
+
+      .component__input,
+      textarea,
+      .input-tag__container,
+      .ant-picker {
+        outline-color: var(--color-success-high) !important;
+        border-color: var(--color-success-high) !important;
+      }
+    }
+
+    .form-item__message {
+      color: var(--color-success-high) !important;
+    }
+  }
+}
