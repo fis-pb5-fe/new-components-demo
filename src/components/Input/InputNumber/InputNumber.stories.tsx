@@ -33,14 +33,19 @@ export default {
       ),
     },
   },
+  args: {
+    label: "First Name",
+    placeHolder: "Enter number",
+    type: 1,
+    prefix: "Mr.",
+    suffix: "Kg",
+  },
   argTypes: {
     label: {
       control: "text",
-      defaultValue: "First Name",
     },
     placeHolder: {
       control: "text",
-      defaultValue: "Enter number",
     },
     type: {
       control: {
@@ -51,7 +56,6 @@ export default {
           BORDER_TYPE.FLOAT_LABEL,
         ],
       },
-      defaultValue: 1,
     },
     numberType: {
       control: {
@@ -62,12 +66,8 @@ export default {
     },
     isRequired: {},
     value: {},
-    prefix: {
-      defaultValue: "Mr.",
-    },
-    suffix: {
-      defaultValue: "Kg",
-    },
+    prefix: {},
+    suffix: {},
     allowPositive: {},
     isReverseSymb: {},
     decimalDigit: {},
