@@ -11,12 +11,12 @@ import {
   Subtitle,
   Title,
 } from "@storybook/addon-docs";
-import { ComponentMeta, Story } from "@storybook/react";
+import type { Meta } from "@storybook/react";
 
 export default {
   title: "Input/InputText",
   component: InputText,
-  subcomponents: { FormItem },
+  subcomponent: FormItem,
   parameters: {
     controls: { expanded: true },
     docs: {
@@ -33,14 +33,19 @@ export default {
       ),
     },
   },
+  args: {
+    label: "First Name",
+    placeHolder: "Enter text",
+    type: 1,
+    prefix: "Mr.",
+    suffix: "Kg",
+  },
   argTypes: {
     label: {
       control: "text",
-      defaultValue: "First Name",
     },
     placeHolder: {
       control: "text",
-      defaultValue: "Enter text",
     },
     type: {
       control: {
@@ -51,16 +56,11 @@ export default {
           BORDER_TYPE.FLOAT_LABEL,
         ],
       },
-      defaultValue: 1,
     },
     isRequired: {},
     value: {},
-    prefix: {
-      defaultValue: "Mr.",
-    },
-    suffix: {
-      defaultValue: "Kg",
-    },
+    prefix: {},
+    suffix: {},
     allowPositive: {},
     isReverseSymb: {},
     decimalDigit: {},
@@ -75,14 +75,17 @@ export default {
     onKeyDown: {},
     className: {},
   },
-} as ComponentMeta<typeof InputText>;
+} as Meta<typeof InputText>;
 
-const Template: Story = (args) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Template = (args: any) => {
   const [value, setValue] = React.useState();
 
-  const handleChangeValue = React.useCallback((value) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleChangeValue = React.useCallback((value: any) => {
     setValue(value);
   }, []);
+  console.log("args", args);
 
   return (
     <div style={{ width: "300px", margin: "10px" }}>

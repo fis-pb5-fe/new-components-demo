@@ -163,7 +163,7 @@ const InputText = React.forwardRef(
       if (internalValue) {
         const inputElm = inputRef.current;
         const divElm = divRef.current;
-        if (divElm.clientWidth >= inputElm.clientWidth) {
+        if (divElm && inputElm && divElm.clientWidth >= inputElm.clientWidth) {
           setIsShowToolTip(true);
         } else {
           setIsShowToolTip(false);
@@ -283,7 +283,7 @@ const InputText = React.forwardRef(
     );
   }
 );
-
+InputText.displayName = "InputText";
 InputText.defaultProps = {
   label: "",
   isSmall: false,
