@@ -12,6 +12,11 @@
       color: var(--palette-gray-40);
     }
 
+    label {
+      font-size: 0.75em;
+      white-space: nowrap;
+      color: var(--palette-gray-70);
+    }
   }
 
   .input-number__container {
@@ -25,8 +30,22 @@
     height: 40px;
     background-color: var(--palette-gray-10);
 
- 
-  
+    &.input-number__container--sm {
+      height: 32px !important;
+    }
+
+    &.input-number__container--white {
+      background-color: var(--color-white);
+    }
+
+    &:hover {
+      outline-color: var(--color-primary);
+    }
+
+    &:focus-within {
+      outline: 2px solid var(--color-primary);
+    }
+
     &.input-number--disabled {
       outline-color: var(--palette-coolGray-30);
       background-color: var(--palette-gray-10);
@@ -45,7 +64,10 @@
     }
 
     &.input-number--float {
-     
+      &:hover:not(.input-number--disabled):not(:focus-within) {
+        outline-color: var(--palette-gray-100);
+      }
+
       &:focus-within {
         box-shadow: none;
         outline: 2px solid var(--color-primary);
@@ -72,6 +94,10 @@
         }
       }
 
+      &:focus-within {
+        outline: 2px solid var(--color-primary);
+        box-shadow: none;
+      }
 
       &.input-number--disabled {
         box-shadow: none;

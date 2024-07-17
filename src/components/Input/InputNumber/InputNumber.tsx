@@ -133,6 +133,17 @@ function InputNumber(props: InputNumberProps) {
               return s2 || s1 + ".";
             });
           default:
+            if (allowNegative) {
+              inputValue = inputValue
+                .replace(/^(-00)/gm, "-0")
+                .replace(/^(00)/gm, "0")
+                .replace(/[^0-9-]/g, "")
+                .replace(/(?!^)-/g, "");
+            } else {
+              inputValue = inputValue
+                .replace(/^(00)/gm, "0")
+                .replace(/[^0-9]/g, "");
+            }
             return inputValue.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
         }
       } else {
@@ -229,6 +240,13 @@ function InputNumber(props: InputNumberProps) {
         }
         setInternalValue(stringValue);
       }
+      if (event.target.value.length < stringValue.length) {
+        cursorPosition.current.selectionStart = selectionStart + 1;
+        cursorPosition.current.selectionEnd = selectionEnd + 1;
+      } else {
+        cursorPosition.current.selectionStart = selectionStart;
+        cursorPosition.current.selectionEnd = selectionEnd;
+      }
     },
     [formatString, parseNumber, onChange]
   );
@@ -302,7 +320,7 @@ function InputNumber(props: InputNumberProps) {
         )}
         {action && (
           <span
-            className="m-l--3xs body-text--md color-link "
+            className="m-l--3xs body-text--md color-link"
             style={{ cursor: "pointer" }}
             onClick={action.action}
           >
@@ -319,6 +337,9 @@ function InputNumber(props: InputNumberProps) {
             "py--2xs": isSmall,
             "px--xs": isSmall,
             "p--xs": !isSmall,
+            "input-number--material": type === BORDER_TYPE.MATERIAL,
+            "input-number--disabled ": disabled,
+            "input-number--float": type === BORDER_TYPE.FLOAT_LABEL,
           }
         )}
         onClick={() => {
@@ -359,6 +380,7 @@ function InputNumber(props: InputNumberProps) {
             })}
           >
             {label}
+            {isRequired && <span className="text-danger">&nbsp;*</span>}
           </label>
         )}
         {internalValue && !disabled && !readOnly && (
