@@ -3042,6 +3042,26 @@
   resolved "https://registry.yarnpkg.com/@trysound/sax/-/sax-0.2.0.tgz#cccaab758af56761eb7bf37af6f03f326dd798ad"
   integrity sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==
 
+"@ts-nameof/common@^4.2.0":
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/@ts-nameof/common/-/common-4.2.1.tgz#76e6ab5b4a11c92b2a2a79bf133ae49b57d7efc3"
+  integrity sha512-bWwYOFTTd6Nq7RUqJalIii1su3OyR+N1W0smp5PzHGUVycHuJ7MRiyCQrWgMt1lbbp3GY6cvCttm7Zo5E7A1xQ==
+
+"@ts-nameof/transforms-babel@^4.2.1":
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/@ts-nameof/transforms-babel/-/transforms-babel-4.2.1.tgz#3f804ad534fa945c6c48a9cfcd30f47961538595"
+  integrity sha512-4BG5+55JXI3bLzoEqHKPQm5t4JgK2Ae1chAD7w5jDdMI8j1mWqVeonMjNMNIm28dMYs41Qvep25/5hpg24JyOw==
+  dependencies:
+    "@ts-nameof/common" "^4.2.0"
+    "@ts-nameof/transforms-common" "^4.2.1"
+
+"@ts-nameof/transforms-common@^4.2.1":
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/@ts-nameof/transforms-common/-/transforms-common-4.2.1.tgz#a38c18ef62f921ffcea7b4a9a693cb63301e23d3"
+  integrity sha512-mg6nkkHqNlKU1B15pEtiikSKadJSOxFFWpi7tEVB7Yhjx0PhoTcSe7oxK0fXHZGeoTGF2SMZjmCsGnbtfcgk6w==
+  dependencies:
+    "@ts-nameof/common" "^4.2.0"
+
 "@types/aria-query@^5.0.1":
   version "5.0.4"
   resolved "https://registry.yarnpkg.com/@types/aria-query/-/aria-query-5.0.4.tgz#1a31c3d378850d2778dabb6374d036dcba4ba708"
@@ -9510,6 +9530,13 @@ react-style-singleton@^2.2.1:
     invariant "^2.2.4"
     tslib "^2.0.0"
 
+react3l-advanced-filters@^6.1.0-rc.1:
+  version "6.1.0-rc.1"
+  resolved "https://registry.yarnpkg.com/react3l-advanced-filters/-/react3l-advanced-filters-6.1.0-rc.1.tgz#ba511af0ee8e340767316eacb81e9513a30f14f3"
+  integrity sha512-C8gKFYCYFkuoC41HjBiXpA6tx+BsRygzgJ9IMspQvv/yQpQoygguWSlQvT/AMvRH1T4nuFXLX5SCGfYXDQeL4A==
+  dependencies:
+    react3l-decorators "6.0.0"
+
 react3l-axios-observable@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/react3l-axios-observable/-/react3l-axios-observable-6.0.0.tgz#e4db13b781db3a6f420406fac645021479e59f26"
@@ -9519,6 +9546,11 @@ react3l-common@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/react3l-common/-/react3l-common-6.0.0.tgz#f9b23b1541e934111683cf525fcda801d92f71d7"
   integrity sha512-RKo03TJhJcc3g/I/J1Gtve5bwHJIIkXdgtF2vKdnwJzJy+tYpPggBCfyOcPZfd7Zby0ju52zWWh0TOybhjkJqQ==
+
+react3l-decorators@6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/react3l-decorators/-/react3l-decorators-6.0.0.tgz#a45fbe369c66e08e69dc424cc85d43d8f397c4e3"
+  integrity sha512-awxOwT9eRvIcL20/cICWyPMHnM5wyS7d0fqvsIZMkrbA+BBRYoTw6IruQbukLiH8gggcsg9AlrEZtPXFWxnC3g==
 
 react3l-decorators@^7.0.0-rc.1:
   version "7.0.0-rc.1"
@@ -10610,6 +10642,13 @@ ts-dedent@^2.0.0, ts-dedent@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/ts-dedent/-/ts-dedent-2.2.0.tgz#39e4bd297cd036292ae2394eb3412be63f563bb5"
   integrity sha512-q5W7tVM71e2xjHZTlgfTDoPF/SmqKG5hddq9SzR49CH2hayqRKJtQ4mtRlSxKaJlR/+9rEM+mnBHf7I2/BQcpQ==
+
+ts-nameof.macro@^4.2.2:
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/ts-nameof.macro/-/ts-nameof.macro-4.2.2.tgz#d73f1d20843448f6c12b2ad93863b2fed6f7b213"
+  integrity sha512-Rh3vDVQ3nVhEMoM3fRMTMBHi/mjc+Hlmt9uuUPVpK32ZE+Dj6+FBaRi267sosleKcONB6TcoC5ObbHnmjsedRg==
+  dependencies:
+    "@ts-nameof/transforms-babel" "^4.2.1"
 
 tsconfig-paths-webpack-plugin@^4.1.0:
   version "4.1.0"
