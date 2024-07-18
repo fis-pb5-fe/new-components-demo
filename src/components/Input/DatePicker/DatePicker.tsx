@@ -61,6 +61,7 @@ function DatePicker(props: DatePickerProps & AntdDatePickerProps) {
   const wrapperRef: RefObject<HTMLDivElement> = React.useRef<HTMLDivElement>(
     null
   );
+  
   const internalValue = React.useMemo(() => {
     return typeof value === "string"
       ? CommonService.toMomentDate(value)
