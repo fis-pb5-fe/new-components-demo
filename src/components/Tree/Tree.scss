@@ -1,0 +1,128 @@
+@import "./../../styles/common/mixins";
+
+.tree-container {
+  width: 100%;
+  height: auto;
+  background-color: var(--palette-gray-10);
+  @include box-shadow--popover();
+  .tree__icon {
+    display: flex;
+  }
+  .tree__loading {
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .select__list-prefer {
+    .ant-tree-list {
+      box-shadow: inset 0px 1px 0px #e1e3e5;
+    }
+  }
+  .select__bottom-button {
+    height: 40px;
+    width: 100%;
+    background-color: var(--palette-gray-10);
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0px 1px 0px #e1e3e5;
+    &:hover {
+      cursor: pointer;
+    }
+    span {
+      font-size: 14px;
+    }
+  }
+  .select__add-button {
+    span {
+      color: var(--color-primary);
+      font-size: 12px;
+      margin-left: 8px;
+    }
+    svg {
+      color: var(--color-primary);
+    }
+  }
+  .ant-tree-list {
+    background-color: var(--palette-gray-10);
+
+    .ant-tree-treenode {
+      height: 40px;
+      align-items: center;
+      width: 100%;
+      padding-left: 14px;
+      padding-bottom: 0px;
+      transition: all 0.3s, border 0s, line-height 0s, box-shadow 0s;
+
+      &:focus-within {
+        background-color: var(--palette-grayHover-10);
+      }
+
+      &:hover {
+        background-color: var(--palette-grayHover-10);
+      }
+      .ant-tree-switcher {
+        display: flex;
+        align-items: center;
+      }
+      .ant-tree-checkbox {
+        margin: 0px;
+        margin-right: 4px;
+      }
+    }
+
+    .ant-tree-treenode-selected,
+    .ant-tree-treenode-checkbox-checked {
+      background-color: var(--palette-grayHover-10);
+    }
+
+    .ant-tree-node-content-wrapper:hover {
+      background-color: transparent;
+    }
+
+    .ant-tree-node-content-wrapper {
+      width: 100%;
+      padding-right: 15px;
+      padding-left: 0px;
+      &.ant-tree-node-selected {
+        background-color: var(--palette-grayHover-10);
+      }
+    }
+  }
+  .ant-tree .ant-tree-switcher_close .tree__icon {
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+  .ant-tree-rtl.ant-tree .ant-tree-switcher_close .tree__icon {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+
+  .ant-tree-checkbox:hover .ant-tree-checkbox-inner {
+    border-color: var(--color-text) !important;
+  }
+  .ant-tree-checkbox-checked .ant-tree-checkbox-inner {
+    background-color: var(--color-text);
+    border-color: var(--color-text);
+  }
+  .ant-tree-checkbox-input:focus + .ant-tree-checkbox-inner {
+    border-color: var(--color-text);
+  }
+  .ant-tree-checkbox-indeterminate .ant-tree-checkbox-inner::after {
+    background-color: var(--color-text);
+  }
+  .ant-tree-checkbox-checked::after {
+    border: 1px solid var(--color-text);
+  }
+  .ant-tree-checkbox-wrapper:hover .ant-tree-checkbox-inner,
+  .ant-tree-checkbox:hover .ant-tree-checkbox-inner,
+  .ant-tree-checkbox-input:focus + .ant-tree-checkbox-inner {
+    border-color: var(--color-text);
+  }
+
+  .ant-tree-checkbox-inner {
+    border: 1px solid var(--palette-coolGray-30);
+  }
+}
