@@ -95,6 +95,7 @@
     "react3l-decorators": "^7.0.0-rc.1",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1",
-    "ts-nameof.macro": "^4.2.2"
+    "ts-nameof.macro": "^4.2.2",
+    "react-infinite-scroll-component": "^6.1.0"
   }
 }
