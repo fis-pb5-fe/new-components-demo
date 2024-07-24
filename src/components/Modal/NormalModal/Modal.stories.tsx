@@ -63,7 +63,7 @@ export default {
 };
 
 const Template: Story = (args) => {
-  const [visible, setVisible] = React.useState<boolean>(true);
+  const [visible, setVisible] = React.useState<boolean>(false);
   const [loadingType, setLoadingType] = React.useState<LoadingType>("default");
   let i = 0;
   const handleOnClick = React.useCallback(() => {
@@ -100,7 +100,7 @@ const Template: Story = (args) => {
         show modal
       </Button>
       <Modal
-        visible={visible}
+        open={visible}
         handleSave={handleOnClick}
         handleApplyNext={handleOnClick}
         handleCancel={handleCancel}
