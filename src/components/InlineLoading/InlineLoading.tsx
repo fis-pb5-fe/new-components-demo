@@ -18,45 +18,37 @@ export interface InlineLoadingProps {
   titleError?: string;
 }
 
-const InlineLoading = React.forwardRef(
-  (props: PropsWithChildren<InlineLoadingProps>, ref: React.Ref<any>) => {
-    const {
-      className,
-      status,
-      titleLoading,
-      titleSubmitted,
-      titleError,
-    } = props;
+const InlineLoading = (props: PropsWithChildren<InlineLoadingProps>) => {
+  const { className, status, titleLoading, titleSubmitted, titleError } = props;
 
-    return (
-      <div className={classNames("inline-loading", className)}>
-        {status === "submitting" && (
-          <div className="submitting-box">
-            <IconLoading color="#0F62FE" />
-            <div className="p-l--2xs">{titleLoading}</div>
-          </div>
-        )}
-        {status === "submitted" && (
-          <div className="submitted-box">
-            <CheckmarkFilled
-              size={16}
-              className="icon-submitted-inline-loading"
-            />
-            {titleSubmitted}
-          </div>
-        )}
-        {status === "error" && (
-          <div className="error-box">
-            <ErrorFilled size={16} className="icon-error-inline-loading" />
-            {titleError}
-          </div>
-        )}
-      </div>
-    );
-  }
-);
+  return (
+    <div className={classNames("inline-loading", className)}>
+      {status === "submitting" && (
+        <div className="submitting-box">
+          <IconLoading color="#0F62FE" />
+          <div className="p-l--2xs">{titleLoading}</div>
+        </div>
+      )}
+      {status === "submitted" && (
+        <div className="submitted-box">
+          <CheckmarkFilled
+            size={16}
+            className="icon-submitted-inline-loading"
+          />
+          {titleSubmitted}
+        </div>
+      )}
+      {status === "error" && (
+        <div className="error-box">
+          <ErrorFilled size={16} className="icon-error-inline-loading" />
+          {titleError}
+        </div>
+      )}
+    </div>
+  );
+};
 
-InlineLoading.arguments = {
+InlineLoading.defaultProps = {
   status: "submitting",
   titleLoading: "Loading...",
   titleSubmitted: "Submitted",
