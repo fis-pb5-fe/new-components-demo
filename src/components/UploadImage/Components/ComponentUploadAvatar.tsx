@@ -41,9 +41,8 @@ export function ComponentUploadAvatar(props: ComponentUploadAvatarProps) {
     maximumSize,
   } = props;
 
-  const fileRef: RefObject<HTMLInputElement> = React.useRef<HTMLInputElement>(
-    null
-  );
+  const fileRef: RefObject<HTMLInputElement> =
+    React.useRef<HTMLInputElement>(null);
 
   const [image, dispatch] = React.useReducer<Reducer<ImageFile, ImageAction>>(
     imageReducer,
@@ -171,7 +170,7 @@ export function ComponentUploadAvatar(props: ComponentUploadAvatarProps) {
       </div>
       {image && isPreview && (
         <CroppedModal
-          visible={isPreview}
+          open={isPreview}
           handleCancel={handleClosePreview}
           handleSave={handleSaveCropped}
           listImage={[image]}
