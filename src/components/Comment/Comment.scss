@@ -149,7 +149,7 @@
     display: flex;
     background-color: white;
     padding: 24px 0px 24px 0px;
-
+    box-shadow: inset 0px 1px 0px #E1E3E5;
     .img-cont-msg {
       margin-right: 8px;
       .user_img_msg {
@@ -169,7 +169,7 @@
         background-color: var(--palette-gray-70);
       }
     }
-    box-shadow: inset 0px 1px 0px #E1E3E5;
+    
     .content-editable-button{
       display: flex;
       margin-left: 40px;
