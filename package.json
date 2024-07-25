@@ -1,5 +1,6 @@
 {
-  "name": "react-ui-component",
+  "homepage": "http://khangmeo123.github.io/React-Ui-Components",
+  "name": "react-ui-components",
   "version": "0.1.0",
   "description": "React UI component for Eprocurement",
   "main": "dist/cjs/bundle.js",
