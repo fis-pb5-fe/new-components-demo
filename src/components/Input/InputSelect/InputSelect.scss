@@ -146,7 +146,12 @@
       &.component__title--normal {
         left: 8px;
       }
-     
+      &.component__title--sm {
+        top: 5px;
+      }
+      &.component__title--prefix {
+        left: 41px;
+      }
       &.component__title--expanded {
         top: 0;
         left: 8px;
@@ -178,6 +183,12 @@
         }
       }
 
+      &:not(:placeholder-shown) + .component__title {
+        top: 0;
+        left: 8px;
+        background-color: var(--color-white);
+        transform: translateY(-50%) scale(0.9);
+      }
 
       &:focus + .component__title {
         top: 0;

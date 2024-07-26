@@ -19,8 +19,13 @@ export interface InputSelectProps<T extends Model> {
   placeHolder?: string;
   /**Provide a function to render a specific property as name*/
   render?: (t: T) => string;
+  /**Handle the action when click clear value*/
+  onClear?: (T: T) => void;
   /**Handle action on search*/
   onSearch?: (T: string) => void;
+  /**Handle onKeyDown action*/
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  onKeyDown?: (event: any) => void;
   /**Handle onEnter action*/
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onKeyEnter?: (event: any) => void;
@@ -54,7 +59,9 @@ function InputSelect(props: InputSelectProps<Model>) {
     placeHolder,
     handleClearInput: onClearInput,
     render,
+    onClear,
     onSearch,
+    onKeyDown,
     onKeyEnter,
     className,
     type,
@@ -96,12 +103,29 @@ function InputSelect(props: InputSelectProps<Model>) {
     [onClearInput]
   );
 
+  const handleClearItem = React.useCallback(
+    (event: React.MouseEvent<ReactSVGElement, MouseEvent>) => {
+      if (typeof onClear === "function") {
+        onClear(null);
+      }
+      event.stopPropagation();
+    },
+    [onClear]
+  );
 
-
+  const handleKeyDown = React.useCallback(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (event: any) => {
+      if (typeof onKeyDown === "function") {
+        onKeyDown(event);
+      }
+    },
+    [onKeyDown]
+  );
 
   const handleEnter = React.useCallback(
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (event:any) => {
+    (event: any) => {
       if (typeof onKeyEnter === "function") {
         onKeyEnter(event);
       }
@@ -184,6 +208,7 @@ function InputSelect(props: InputSelectProps<Model>) {
                 }
                 ref={inputRef}
                 disabled={disabled}
+                onKeyDown={handleKeyDown}
                 className={classNames("component__input", {
                   "disabled-field": disabled,
                 })}
@@ -250,6 +275,7 @@ function InputSelect(props: InputSelectProps<Model>) {
                 <CloseFilled
                   size={16}
                   className="input-icon input-icon__clear"
+                  onClick={handleClearItem}
                 />
               )}
               <ChevronDown
