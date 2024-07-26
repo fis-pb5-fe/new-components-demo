@@ -109,7 +109,8 @@ function InputSearch(props: InputSearchProps<Model, ModelFilter>) {
   }, [animationInput]);
 
   const searchObservable = React.useCallback(
-    (searchTerm) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (searchTerm: any) => {
       const cloneValueFilter = valueFilter
         ? { ...valueFilter }
         : new ClassFilter();
@@ -125,7 +126,8 @@ function InputSearch(props: InputSearchProps<Model, ModelFilter>) {
   CommonService.useClickOutside(wrapperRef, handleCloseSelect);
 
   const handleClickItem = React.useCallback(
-    (item: Model) => (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    (item: Model) => (_event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
       onChangeSearchField(item.id, item);
       setShowListItem(false);
       setActiveBackground(false);
@@ -138,6 +140,7 @@ function InputSearch(props: InputSearchProps<Model, ModelFilter>) {
   }, []);
 
   const handleKeyPress = React.useCallback(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (event: any) => {
       switch (event.keyCode) {
         case 40:
@@ -158,7 +161,8 @@ function InputSearch(props: InputSearchProps<Model, ModelFilter>) {
   );
 
   const handleMove = React.useCallback(
-    (item) => (event: any) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (item: any) => (event: any) => {
       switch (event.keyCode) {
         case 13:
           handleClickItem(item)(null);
@@ -224,7 +228,8 @@ function InputSearch(props: InputSearchProps<Model, ModelFilter>) {
   }, [animationInput, fullWidth]);
 
   const handleToggle = React.useCallback(
-    async (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    async (_event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
       setExpand(true);
       handleClickSearchIcon();
     },
@@ -232,6 +237,7 @@ function InputSearch(props: InputSearchProps<Model, ModelFilter>) {
   );
 
   const handleTabEnter = React.useCallback(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (event: any) => {
       if (event.key === "Enter") {
         handleClickSearchIcon();
@@ -255,6 +261,7 @@ function InputSearch(props: InputSearchProps<Model, ModelFilter>) {
           setLoading(false);
           setShowListItem(true);
         },
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         error: (err: ErrorObserver<Error>) => {
           setList([]);
           setLoading(false);
