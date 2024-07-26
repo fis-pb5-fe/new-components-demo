@@ -1,0 +1,24 @@
+.component__input-search-select{
+   
+    .input-search-select__wrapper {
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        line-height: 16px;
+        .component__input-search-box {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            .component__input-search {
+                border: none !important ;
+                width: 100% ;
+                outline: none;
+                background-color: transparent;
+               
+            }
+            .input-icon__clear{
+                color: var(--palette-coolGray-50);
+            }
+        }
+    }
+}
