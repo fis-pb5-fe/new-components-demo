@@ -118,7 +118,7 @@ const Template: Story = (args) => {
       </div>
 
       <Button
-        className="btn"
+        className="btn--sm"
         type="primary"
         onClick={() => setListItem(demoItemList)}
       >
