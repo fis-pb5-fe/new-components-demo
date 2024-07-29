@@ -102,6 +102,7 @@ function InputTag(props: InputTagProps<Model>) {
   }, [disabled, onClearMulti]);
 
   const handleClearInput = React.useCallback(
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     (event: React.MouseEvent<ReactSVGElement, MouseEvent>) => {
       setSearchTerm("");
       inputRef.current.focus();

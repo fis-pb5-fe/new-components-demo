@@ -44,14 +44,17 @@ export default {
       ),
     },
   },
+  args: {
+    label: "First Name",
+    placeHolder: "Enter text",
+    type: 1,
+  },
   argTypes: {
     label: {
       control: "text",
-      defaultValue: "First Name",
     },
     placeHolder: {
       control: "text",
-      defaultValue: "Enter text",
     },
     type: {
       control: {
@@ -62,7 +65,6 @@ export default {
           BORDER_TYPE.FLOAT_LABEL,
         ],
       },
-      defaultValue: 1,
     },
   },
 };
@@ -71,6 +73,7 @@ const Template: Story = (args) => {
   const [listItem, setListItem] = React.useState<Model[]>(demoItemList);
 
   const { run } = useDebounceFn(
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     (searchTerm: string) => {
       // write call api here
     },
