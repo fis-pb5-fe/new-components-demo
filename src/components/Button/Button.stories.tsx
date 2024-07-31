@@ -31,6 +31,9 @@ export default {
       ),
     },
   },
+  args: {
+    className: "btn--sm",
+  },
   argTypes: {
     className: {
       control: {
@@ -44,7 +47,6 @@ export default {
           "btn--2xl",
         ],
       },
-      defaultValue: "btn--sm",
       description: "",
     },
     type: {},
