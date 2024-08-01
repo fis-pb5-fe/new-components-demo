@@ -92,6 +92,7 @@
     "react-dropzone": "^11.5.1",
     "react-image-crop": "^9.0.5",
     "react-infinite-scroll-component": "^6.1.0",
+    "react-router-dom": "^6.25.1",
     "react3l-advanced-filters": "^6.1.0-rc.1",
     "react3l-axios-observable": "^6.0.0",
     "react3l-common": "^6.0.0",
