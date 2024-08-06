@@ -123,6 +123,7 @@ function MultipleSelect(props: MultipleSelectProps<Model, ModelFilter>) {
           setList(res);
           setLoading(false);
         },
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         error: (err: ErrorObserver<Error>) => {
           setList([]);
           setLoading(false);
@@ -152,7 +153,7 @@ function MultipleSelect(props: MultipleSelectProps<Model, ModelFilter>) {
   const internalList = React.useMemo(() => {
     if (list && list.length > 0) {
       list.forEach((current) => {
-        let filteredItem =
+        const filteredItem =
           values &&
           values.length > 0 &&
           values?.filter((item) => item.id === current.id)[0];
@@ -170,6 +171,7 @@ function MultipleSelect(props: MultipleSelectProps<Model, ModelFilter>) {
   const internalPreferOptions = React.useMemo(() => {
     if (preferOptions && preferOptions.length > 0) {
       preferOptions.forEach((current) => {
+        // eslint-disable-next-line prefer-const
         let filteredItem =
           values &&
           values?.length > 0 &&
@@ -189,10 +191,13 @@ function MultipleSelect(props: MultipleSelectProps<Model, ModelFilter>) {
     try {
       const filter = valueFilter ? valueFilter : new ClassFilter();
       handleGetList(filter);
-    } catch (error) {}
+    } catch (error) {
+      //
+    }
   }, [valueFilter, ClassFilter, handleGetList]);
 
   const handleToggle = React.useCallback(
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     async (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
       if (!disabled && !isExpand) {
         setExpand(true);
@@ -208,19 +213,21 @@ function MultipleSelect(props: MultipleSelectProps<Model, ModelFilter>) {
 
   const handleClickItem = React.useCallback(
     (item: Model) => (event: any) => {
-      let filteredItem = values?.filter((current) => current.id === item.id)[0];
+      const filteredItem = values?.filter((current) => current.id === item.id)[0];
       if (filteredItem) {
         const tmp = [...(values ? values : [])];
         const ids = values?.map((item) => item?.id);
         const index = tmp.indexOf(filteredItem);
         tmp.splice(index, 1);
         ids.splice(index, 1);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         onChange([...tmp], ids as any);
       } else {
         const ids = values?.map((item) => item?.id);
         onChange([...(values ? values : []), item], [
           ...(ids ? ids : []),
           item?.id,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         ] as any);
       }
     },
@@ -251,6 +258,7 @@ function MultipleSelect(props: MultipleSelectProps<Model, ModelFilter>) {
   }, [onChange]);
 
   const handleKeyPress = React.useCallback(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (event: any) => {
       switch (event.keyCode) {
         case 40:
@@ -271,7 +279,8 @@ function MultipleSelect(props: MultipleSelectProps<Model, ModelFilter>) {
   );
 
   const handleMove = React.useCallback(
-    (item) => (event: any) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (item: any) => (event: any) => {
       switch (event.keyCode) {
         case 13:
           handleClickItem(item)(null);
@@ -295,6 +304,7 @@ function MultipleSelect(props: MultipleSelectProps<Model, ModelFilter>) {
   );
 
   const handleKeyEnter = React.useCallback(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (event: any) => {
       if (event.key === "Enter") {
         handleToggle(null);
