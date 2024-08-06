@@ -102,13 +102,11 @@ function MultipleSelect(props: MultipleSelectProps<Model, ModelFilter>) {
 
   const [isExpand, setExpand] = React.useState<boolean>(false);
 
-  const wrapperRef: RefObject<HTMLDivElement> = React.useRef<HTMLDivElement>(
-    null
-  );
+  const wrapperRef: RefObject<HTMLDivElement> =
+    React.useRef<HTMLDivElement>(null);
 
-  const selectListRef: RefObject<HTMLDivElement> = React.useRef<HTMLDivElement>(
-    null
-  );
+  const selectListRef: RefObject<HTMLDivElement> =
+    React.useRef<HTMLDivElement>(null);
 
   const [appendToBodyStyle, setAppendToBodyStyle] = React.useState({});
 
@@ -213,7 +211,9 @@ function MultipleSelect(props: MultipleSelectProps<Model, ModelFilter>) {
 
   const handleClickItem = React.useCallback(
     (item: Model) => (event: any) => {
-      const filteredItem = values?.filter((current) => current.id === item.id)[0];
+      const filteredItem = values?.filter(
+        (current) => current.id === item.id
+      )[0];
       if (filteredItem) {
         const tmp = [...(values ? values : [])];
         const ids = values?.map((item) => item?.id);
@@ -227,7 +227,7 @@ function MultipleSelect(props: MultipleSelectProps<Model, ModelFilter>) {
         onChange([...(values ? values : []), item], [
           ...(ids ? ids : []),
           item?.id,
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
         ] as any);
       }
     },
