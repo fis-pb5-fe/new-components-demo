@@ -9,3 +9,4 @@ export { default as InputView } from "./Input/InputView";
 export { default as Radio } from "./Radio";
 export { Checkbox, CheckboxGroup } from "./Checkbox";
 export { default as EnumSelect  } from "./Select/EnumSelect";
+export { default as Select } from "./Select/SingleSelect/";
