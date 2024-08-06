@@ -127,6 +127,7 @@ function Select(props: SelectProps<Model, ModelFilter>) {
           setList(res);
           setLoading(false);
         },
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         error: (err: ErrorObserver<Error>) => {
           setList([]);
           setLoading(false);
@@ -142,7 +143,9 @@ function Select(props: SelectProps<Model, ModelFilter>) {
       subscription.add(getList);
       const filter = valueFilter ? valueFilter : new ClassFilter();
       handleGetList(filter);
-    } catch (error) {}
+    } catch (error) {
+      //
+    }
   }, [subscription, getList, valueFilter, ClassFilter, handleGetList]);
 
   const { run } = useDebounceFn(
@@ -167,6 +170,7 @@ function Select(props: SelectProps<Model, ModelFilter>) {
   }, [handleLoadList]);
 
   const handleToggle = React.useCallback(
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     async (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
       if (!disabled) {
         setExpand(true);
@@ -187,6 +191,7 @@ function Select(props: SelectProps<Model, ModelFilter>) {
   }, []);
 
   const handleClickItem = React.useCallback(
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     (item: Model) => (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
       onChange(item.id, item);
       handleCloseSelect();
@@ -209,6 +214,7 @@ function Select(props: SelectProps<Model, ModelFilter>) {
     (event: any) => {
       switch (event.keyCode) {
         case 40:
+          // eslint-disable-next-line no-case-declarations
           const firstItem = selectListRef.current
             .firstElementChild as HTMLElement;
           firstItem.focus();
