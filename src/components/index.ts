@@ -11,3 +11,4 @@ export { Checkbox, CheckboxGroup } from "./Checkbox";
 export { default as EnumSelect  } from "./Select/EnumSelect";
 export { default as Select } from "./Select/SingleSelect/";
 export { default as MultipleSelect } from "./Select/MultipleSelect";
+export { default as TreeSelect } from "./Select/TreeSelect";
