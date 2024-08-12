@@ -31,22 +31,17 @@ export default {
       ),
     },
   },
+  agrs: {
+    label: "First name",
+    placeHolder: "Search...",
+    prefix: "Mr.",
+    suffix: "Kg",
+    maxLength: 100,
+    type: 1,
+  },
   argTypes: {
     label: {
       control: "text",
-      defaultValue: "First name",
-    },
-    placeHolder: {
-      defaultValue: "Search...",
-    },
-    prefix: {
-      defaultValue: "Mr.",
-    },
-    suffix: {
-      defaultValue: "Kg",
-    },
-    maxLength: {
-      defaultValue: 100,
     },
     type: {
       control: {
@@ -57,7 +52,6 @@ export default {
           BORDER_TYPE.FLOAT_LABEL,
         ],
       },
-      defaultValue: 1,
     },
     onKeyDown: {},
   },
