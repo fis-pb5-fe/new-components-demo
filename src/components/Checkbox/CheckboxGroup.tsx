@@ -73,7 +73,7 @@ function CheckboxGroup(props: CheckboxGroupComponentProps<Model>) {
   }, [values]);
 
   const handleChange = React.useCallback(
-    (check, currentId) => {
+    (check: boolean, currentId: any) => {
       if (onChange && typeof onChange === "function") {
         if (check) {
           listCheckedKey.push(currentId);

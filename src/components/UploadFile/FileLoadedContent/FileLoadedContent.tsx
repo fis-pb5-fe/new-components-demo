@@ -18,7 +18,7 @@ export interface FileLoadedContentProps {
 export default function FileLoadedContent(props: FileLoadedContentProps) {
   const { file, removeFile, isViewMode, className } = props;
   const renderLoadedFile = React.useCallback(
-    (file) => {
+    (file: any) => {
       return file?.errors ? (
         <div className="file-loaded-error" key={file?.id}>
           <div className="file-loaded-container">

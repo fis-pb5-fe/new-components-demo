@@ -39,7 +39,7 @@ function InputSearchSelect(props: InputSelectProps) {
   );
 
   const handleKeyDown = React.useCallback(
-    (event) => {
+    (event: any) => {
       if (typeof onKeyDown === "function") {
         onKeyDown(event);
       }

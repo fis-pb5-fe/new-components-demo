@@ -1,4 +1,4 @@
-import { Radio as RadioAntd, RadioGroupProps } from "antd";
+import { Radio as RadioAntd, RadioChangeEvent, RadioGroupProps } from "antd";
 import React from "react";
 import "./Radio.scss";
 
@@ -14,7 +14,7 @@ export interface RadioGroupComponentProps {
 function RadioGroup(props: RadioGroupComponentProps & RadioGroupProps) {
   const { onChecked, value, disabled, children } = props;
   const handleChange = React.useCallback(
-    (value) => {
+    (value: RadioChangeEvent) => {
       if (onChecked && typeof onChecked === "function") {
         return onChecked(value.target.value);
       }

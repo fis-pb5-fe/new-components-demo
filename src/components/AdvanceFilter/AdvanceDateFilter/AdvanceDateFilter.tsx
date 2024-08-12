@@ -6,20 +6,20 @@ import {
 import classNames from "classnames";
 import { DEFAULT_DATETIME_VALUE } from "@Configs/consts";
 import { BORDER_TYPE } from "@Configs/enum";
-import { Moment } from "moment";
 import { CommonService } from "@Services/common-service";
 import { CloseFilled } from "@carbon/icons-react";
 import "./AdvanceDateFilter.scss";
+import * as dayjs from 'dayjs'
 
 interface AdvanceDateFilterProps {
   /** Value users select */
-  value?: Moment;
+  value?: dayjs.Dayjs;
   /** Label for current field */
   label?: string;
   /** Use to format the date selected */
   dateFormat?: string[];
   /** Handle the change value of the component */
-  onChange?: (value: Moment | null, dateString?: string) => void;
+  onChange?: (value: dayjs.Dayjs | null, dateString?: string) => void;
   /** Control the style type of component: MATERIAL, BORDERED, FLOAT_LABEL */
   type?: BORDER_TYPE;
   /** Control the size of the component */
@@ -59,7 +59,7 @@ function AdvanceDateFilter(
   );
   const internalValue = React.useMemo(() => {
     return typeof value === "string"
-      ? CommonService.toMomentDate(value)
+      ? CommonService.toDayJS(value)
       : value;
   }, [value]);
 

@@ -25,7 +25,7 @@ function InputRange(props: InputRangeProps) {
     isSmall,
   } = props;
 
-  const validateRange = React.useCallback((fromValue, toValue) => {
+  const validateRange = React.useCallback((fromValue: number, toValue: number) => {
     if (typeof fromValue === "undefined" || typeof toValue === "undefined")
       return true;
     if (fromValue > toValue) return false;

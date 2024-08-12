@@ -61,7 +61,7 @@ function multipleSelectReducer(
       return [...currentState, action.data];
     case "REMOVE":
       const filteredArray = currentState.filter(
-        (item) => item.id !== action.data.id
+        (item: Model) => item.id !== action.data.id
       );
       return [...filteredArray];
     case "REMOVE_ALL":
@@ -278,7 +278,7 @@ function AdvanceEnumFilter(props: AdvanceEnumProps<Model>) {
   );
 
   const handleMove = React.useCallback(
-    (item) => (event: any) => {
+    (item: Model) => (event: any) => {
       switch (event.keyCode) {
         case 13:
           if (!isMultiple) {

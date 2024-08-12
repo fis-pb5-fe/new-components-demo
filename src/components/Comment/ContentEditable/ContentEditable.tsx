@@ -216,7 +216,7 @@ const ContentEditable = forwardRef<
     );
 
     const selectUser = React.useCallback(
-      (currentUser) => {
+      (currentUser: any) => {
         setShowSuggestList(false);
         const contentValue = (contentEditableRef as MutableRefObject<HTMLDivElement>).current.innerHTML.split(
           '<span class="mention-tag">'
@@ -271,7 +271,7 @@ const ContentEditable = forwardRef<
               onKeyUp={handleKeyUp}
               onPaste={handlePaste}
               contentEditable={true}
-              placeholder={placeholder}
+              // data-text={placeholder} https://stackoverflow.com/questions/20300138/is-it-possible-to-add-placeholder-in-div-tag (sửa sau)
             ></div>
             <div className="action__attach">
               <input
@@ -321,5 +321,5 @@ const ContentEditable = forwardRef<
     );
   }
 );
-
+ContentEditable.displayName = "ContentEditable";
 export default ContentEditable;

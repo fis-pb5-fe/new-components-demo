@@ -429,7 +429,7 @@ function Tree(props: TreeProps<Model, ModelFilter> & AntdTreeProps) {
   // ]);
 
   const handleMove = React.useCallback(
-    (item) => (event: any) => {
+    (item: any) => (event: any) => {
       const wrapperElement =
         event.target.parentElement.parentElement.parentElement;
       switch (event.keyCode) {

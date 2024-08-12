@@ -144,7 +144,7 @@ export function ComponentUploadImage(props: ComponentUploadImageProps) {
   );
 
   const onDrop = React.useCallback(
-    (acceptedFiles) => {
+    (acceptedFiles: any) => {
       let listFiles = acceptedFiles as File[];
       if (!isMultiple) listFiles.length = 1;
       listFiles.forEach((file) => {

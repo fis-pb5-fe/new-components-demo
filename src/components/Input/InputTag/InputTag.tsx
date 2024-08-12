@@ -115,7 +115,7 @@ function InputTag(props: InputTagProps<Model>) {
   );
 
   const handleKeyDown = React.useCallback(
-    (event) => {
+    (event: any) => {
       if (typeof onKeyDown === "function") {
         onKeyDown(event);
       }
@@ -124,7 +124,7 @@ function InputTag(props: InputTagProps<Model>) {
   );
 
   const handleEnter = React.useCallback(
-    (event) => {
+    (event: any) => {
       if (typeof onKeyEnter === "function") {
         onKeyEnter(event);
       }

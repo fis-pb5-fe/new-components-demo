@@ -94,7 +94,7 @@ export function ComponentUploadAvatar(props: ComponentUploadAvatarProps) {
     [maximumSize, updateAvatar, uploadAvatar]
   );
 
-  const onDrop = React.useCallback((acceptedFiles, fileRejections) => {
+  const onDrop = React.useCallback((acceptedFiles: any, fileRejections: any) => {
     let listFiles = acceptedFiles as File[];
     let rejectFiles = fileRejections as File[];
     if (!rejectFiles.length || rejectFiles.length === 0) {

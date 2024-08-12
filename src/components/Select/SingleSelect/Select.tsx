@@ -230,7 +230,7 @@ function Select(props: SelectProps<Model, ModelFilter>) {
   );
 
   const handleMove = React.useCallback(
-    (item) => (event: any) => {
+    (item: Model) => (event: any) => {
       switch (event.keyCode) {
         case 13:
           handleClickItem(item)(null);

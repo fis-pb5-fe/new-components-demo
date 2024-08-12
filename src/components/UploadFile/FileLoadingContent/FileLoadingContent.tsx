@@ -12,7 +12,7 @@ export interface FileLoadingContentProps {
 
 export default function FileLoadingContent(props: FileLoadingContentProps) {
   const { file, className } = props;
-  const renderLoadingFile = React.useCallback((file) => {
+  const renderLoadingFile = React.useCallback((file: FileModel) => {
     return (
       <div className="file-loading-container" key={file?.id}>
         <a href={file?.path} download>

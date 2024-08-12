@@ -3,10 +3,10 @@ import { DatePicker } from "antd";
 import { RangePickerProps } from "antd/lib/date-picker";
 import classNames from "classnames";
 import { BORDER_TYPE } from "@Configs/enum";
-import { Moment } from "moment";
 import { CommonService } from "@Services/common-service";
 import { CloseFilled, Calendar } from "@carbon/icons-react";
 import "./AdvanceDateRangeFilter.scss";
+import { Dayjs } from "dayjs";
 
 const { RangePicker } = DatePicker;
 
@@ -22,11 +22,11 @@ interface AdvanceDateRangeFilterProps {
   /**Label for current field */
   label?: string;
   /**Value filter [fromDate, toDate] users select */
-  values: [Moment, Moment];
+  values: [Dayjs, Dayjs];
   /**Use to format the date selected */
   dateFormat?: string[];
   /** Handle the change value of the component */
-  onChange?: (value: [Moment, Moment], dateString?: [string, string]) => void;
+  onChange?: (value: [Dayjs, Dayjs], dateString?: [string, string]) => void;
   /**Control the style type of component: MATERIAL, BORDERED, FLOAT_LABEL  */
   type?: BORDER_TYPE;
   /**Control the size of the component */
@@ -65,13 +65,13 @@ function AdvanceDateRangeFilter(
   );
   const dateRef = React.useRef<any>();
 
-  const internalValue: [Moment, Moment] = React.useMemo(() => {
+  const internalValue: [Dayjs, Dayjs] = React.useMemo(() => {
     return [
       typeof values[0] === "string"
-        ? CommonService.toMomentDate(values[0])
+        ? CommonService.toDayJS(values[0])
         : values[0],
       typeof values[1] === "string"
-        ? CommonService.toMomentDate(values[1])
+        ? CommonService.toDayJS(values[1])
         : values[1],
     ];
   }, [values]);

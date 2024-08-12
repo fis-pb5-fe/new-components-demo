@@ -314,7 +314,7 @@ function EnumSelect(props: SelectProps<Model>) {
   );
 
   const handleMove = React.useCallback(
-    (item) => (event: any) => {
+    (item: Model) => (event: any) => {
       switch (event.keyCode) {
         case 13:
           if (!isMultiple) {

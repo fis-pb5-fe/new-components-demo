@@ -4,6 +4,7 @@ import CheckboxGroup from "./CheckboxGroup";
 import classNames from "classnames";
 import "./Checkbox.scss";
 import { CommonService } from "@Services/common-service";
+import { CheckboxChangeEvent } from "antd/es/checkbox";
 
 export interface CheckboxProps {
   /**Handle change value checkbox */
@@ -23,7 +24,7 @@ export interface CheckboxProps {
 function Checkbox(props: CheckboxProps) {
   const { onChange, checked, disabled, label, readOnly, maxLengthItem } = props;
   const handleChange = React.useCallback(
-    (value) => {
+    (value: CheckboxChangeEvent) => {
       if (onChange && typeof onChange === "function") {
         return onChange(value.target.checked);
       }

@@ -69,6 +69,13 @@ $backgound-color: #f4f4f4;
       align-items: center;
     }
     .advance-enum-filter__item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+      line-height: 16px;
+      cursor: pointer;
       &:hover,
       &:focus {
         background-color: #e5e5e5;
@@ -81,13 +88,7 @@ $backgound-color: #f4f4f4;
         display: flex;
         justify-content: space-between;
       }
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 14px;
-      line-height: 16px;
-      cursor: pointer;
+     
     }
     .advance-enum-master__text {
       white-space: nowrap;

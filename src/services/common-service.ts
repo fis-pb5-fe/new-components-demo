@@ -3,6 +3,7 @@ import { Subscription } from "rxjs";
 import moment, { Moment } from "moment";
 import { Model } from "react3l-common";
 import { TreeNode } from "@Components/Tree/TreeNode";
+import dayjs, { Dayjs } from "dayjs";
 export const CommonService = {
   useSubscription() {
     const subscription = React.useRef(new Subscription()).current;
@@ -19,7 +20,7 @@ export const CommonService = {
 
   useClickOutside(ref: RefObject<any>, callback: () => void) {
     const handleClickOutside = React.useCallback(
-      (event) => {
+      (event : any) => {
         if (ref?.current && !ref?.current?.contains(event.target)) {
           callback();
         }
@@ -41,7 +42,7 @@ export const CommonService = {
     callback: () => void
   ) {
     const handleClickOutside = React.useCallback(
-      (event) => {
+      (event: any) => {
         if (refFirst?.current && !refFirst?.current?.contains(event.target)) {
           if (ref.current) {
             if (!ref.current.contains(event.target)) {
@@ -66,6 +67,11 @@ export const CommonService = {
     return moment(date);
   },
 
+  toDayJS(date: string): Dayjs {
+    return dayjs(date);
+  },
+
+
   isEmpty(obj: any) {
     for (var key in obj) {
       if (obj.hasOwnProperty(key)) return false;
@@ -87,7 +93,7 @@ export const CommonService = {
 
     const cbRef = React.useRef(null);
 
-    const setStateCallback = React.useCallback((state, cb) => {
+    const setStateCallback = React.useCallback((state:any, cb:any) => {
       cbRef.current = cb;
       setState(state);
     }, []);

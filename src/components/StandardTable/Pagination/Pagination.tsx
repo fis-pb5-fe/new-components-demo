@@ -86,7 +86,7 @@ function Pagination(props: PaginationProps) {
   }, [handleMenuPageClick, currentPage, pageArray]);
 
   const handleChangeCurrentPage = React.useCallback(
-    (nextPage) => {
+    (nextPage: number) => {
       const takeValue = take;
       const skipValue = (nextPage - 1) * take;
       onChange(skipValue, takeValue);

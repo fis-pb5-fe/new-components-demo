@@ -99,7 +99,7 @@ function useStateCallback(initialState: any) {
   const [state, setState] = React.useState(initialState);
   const cbRef = React.useRef(null);
 
-  const setStateCallback = React.useCallback((state, cb) => {
+  const setStateCallback = React.useCallback((state: any, cb: any) => {
     cbRef.current = cb;
     setState(state);
   }, []);
@@ -170,7 +170,7 @@ export default function CroppedModal(props: CroppedModalProps) {
   }, [listImage]);
 
   const getCroppedImg = React.useCallback(
-    async (image, crop, fileName): Promise<any> => {
+    async (image: any, crop: any, fileName: string): Promise<any> => {
       const canvas = document.createElement("canvas");
       const scaleX = image.naturalWidth / image.width;
       const scaleY = image.naturalHeight / image.height;
@@ -210,7 +210,7 @@ export default function CroppedModal(props: CroppedModalProps) {
   // Crop Action
   // Crop selected image then update to results
   const makeCropImage = React.useCallback(
-    async (_, cropParam?: any) => {
+    async (_: any, cropParam?: any) => {
       if (imgRef && crop.width && crop.height) {
         const cropValue = cropParam ? cropParam : crop;
         const croppedImage = await getCroppedImg(
@@ -276,7 +276,7 @@ export default function CroppedModal(props: CroppedModalProps) {
     [images]
   );
 
-  const handleAdd = React.useCallback((files) => {
+  const handleAdd = React.useCallback((files: any) => {
     Array.from(files).forEach((file: any) => {
       const fileReader = new FileReader();
       fileReader.onloadend = () => {

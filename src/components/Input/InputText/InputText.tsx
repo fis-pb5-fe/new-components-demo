@@ -134,7 +134,7 @@ const InputText = React.forwardRef(
     );
 
     const handleKeyDown = React.useCallback(
-      (event) => {
+      (event: any) => {
         if (typeof onKeyDown === "function") {
           onKeyDown(event);
         }
