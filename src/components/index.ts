@@ -17,3 +17,4 @@ export { default as AdvanceStringFilter } from "./AdvanceFilter/AdvanceStringFil
 export { default as AdvanceEnumFilter } from "./AdvanceFilter/AdvanceEnumFilter";
 export { default as AdvanceIdFilter } from "./AdvanceFilter/AdvanceEnumFilter";
 export { default as Drawer } from "./Drawer";
+export { Tabs, TabPaneItem } from "./Tabs";
