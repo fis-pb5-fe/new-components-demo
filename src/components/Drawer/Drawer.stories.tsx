@@ -63,6 +63,14 @@ export default {
       ),
     },
   },
+  args:{
+    loading: false,
+    visibleFooter: true,
+    disableButton: false,
+    numberButton: NUMBER_BUTTON.TWO,
+    isHaveCloseIcon: true,
+    size: "sm",
+  },
   argTypes: {
     loading: {
       defaultValue: false,

@@ -69,6 +69,11 @@ export default {
       ),
     },
   },
+  args:{
+    label: "Đơn vị tổ chức",
+    placeHolder: "Chọn đơn vị",
+    type: 1,
+  },
   argTypes: {
     label: {
       control: "text",

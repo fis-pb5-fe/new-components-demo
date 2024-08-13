@@ -1,9 +1,9 @@
 import React from "react";
 import { IdFilter, StringFilter } from "react3l-advanced-filters";
 import { Model, ModelFilter } from "react3l-common";
-import { of } from "rxjs";
+import { Observable } from "rxjs";
 import { BORDER_TYPE } from "./../../../config/enum";
-import AdvanceIdFilter from "./AdvanceIdFilter";
+import AdvanceIdMultipleFilter from "./AdvanceIdMultipleFilter";
 import {
   ArgsTable,
   Description,
@@ -14,34 +14,41 @@ import {
   Title,
 } from "@storybook/addon-docs";
 import { Story } from "@storybook/react";
-class DemoFilter extends ModelFilter {
-  id: IdFilter = new IdFilter();
-  name: StringFilter = new StringFilter();
-  code: StringFilter = new StringFilter();
-}
 
-const demoListEnum = (TModelFilter?: ModelFilter) => {
-  return of([
-    {
-      id: 1,
-      name:
-        "Option 2 very long one very long one Option 2 very long one very long one",
-      code: "E1",
-    },
-    { id: 2, name: "Enum 2", code: "E2" },
-    { id: 3, name: "Enum 3", code: "E3" },
-    { id: 4, name: "Enum 4", code: "E4" },
-    { id: 5, name: "Enum 5", code: "E5" },
-  ]);
-};
+const demoList = [
+  { id: 1, name: "Ban hành chính", code: "FAD" },
+  { id: 2, name: "Ban công nghệ thông tin", code: "FIM" },
+  { id: 3, name: "Ban nhân sự", code: "FHR" },
+  { id: 4, name: "Ban truyền thông", code: "FCC" },
+  { id: 5, name: "Ban công nghệ", code: "FTI" },
+  { id: 6, name: "Ban giám đốc", code: "BOD" },
+  { id: 7, name: "Ban quản trị", code: "BOM" },
+];
 
 const list = [
   { id: 9, name: "Phòng Muti Media", code: "MEDIA" },
   { id: 10, name: "Phòng truyền thông", code: "PTT" },
 ];
+
+const demoObservable = new Observable<Model[]>((observer) => {
+  setTimeout(() => {
+    observer.next(demoList);
+  }, 1000);
+});
+
+const demoSearchFunc = (TModelFilter?: ModelFilter) => {
+  return demoObservable;
+};
+
+class DemoFilter extends ModelFilter {
+  public id: IdFilter = new IdFilter();
+  public name: StringFilter = new StringFilter();
+  public provinceId: IdFilter = new IdFilter();
+}
+
 export default {
-  title: "AdvanceFilter/AdvanceIdFilter",
-  component: AdvanceIdFilter,
+  title: "AdvanceFilter/AdvanceIdMultipleFilter",
+  component: AdvanceIdMultipleFilter,
   parameters: {
     controls: { expanded: true },
     docs: {
@@ -79,44 +86,35 @@ export default {
     },
   },
 };
-const Template: Story = (args) => {
-  const [selectModel, setSelectModel] = React.useState<Model>({
-    id: 0,
-    name: "Option 2",
-    code: "FAD",
-  });
 
+const Template: Story = (args) => {
   const [selectModelFilter] = React.useState<DemoFilter>(new DemoFilter());
 
-  const handleSetModel = React.useCallback((...[, item]) => {
-    setSelectModel(item);
-  }, []);
+  const [filter, setFilter] = React.useState(new DemoFilter());
+  const [models, setModels] = React.useState<any[]>([]);
 
-  const handleRenderModel = React.useCallback((item: Model) => {
-    if (item) {
-      return item.name;
-    } else {
-      return "";
-    }
-  }, []);
+  const handleChangeModels = React.useCallback(
+    (listItemm, ids) => {
+      setModels([...listItemm]);
+      setFilter({ ...filter, id: { in: ids } });
+    },
+    [filter]
+  );
 
   return (
-    <div style={{ margin: "10px", width: "300px" }}>
+    <>
       <div style={{ margin: "10px", width: "300px" }}>
-        <AdvanceIdFilter
+        <AdvanceIdMultipleFilter
           {...args}
-          value={selectModel}
+          values={models}
+          onChange={handleChangeModels}
+          getList={demoSearchFunc}
           valueFilter={selectModelFilter}
-          searchProperty={"name"}
-          render={handleRenderModel}
-          onChange={handleSetModel}
-          getList={demoListEnum}
           classFilter={DemoFilter}
           preferOptions={list}
-          appendToBody={true}
-        />
+        ></AdvanceIdMultipleFilter>
       </div>
-    </div>
+    </>
   );
 };
 
