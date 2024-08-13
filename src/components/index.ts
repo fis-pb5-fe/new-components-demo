@@ -7,6 +7,7 @@ export { default as InputTag } from "./Input/InputTag";
 export { default as InputRange } from "./Input/InputRange";
 export { default as InputView } from "./Input/InputView";
 export { default as Radio } from "./Radio";
+export { default as FormItem } from "./FormItem";
 export { Checkbox, CheckboxGroup } from "./Checkbox";
 export { default as EnumSelect  } from "./Select/EnumSelect";
 export { default as Select } from "./Select/SingleSelect/";
