@@ -1,10 +1,9 @@
 import React from "react";
 import { Checkbox as CheckboxAntd, Tooltip } from "antd";
-import CheckboxGroup from "./CheckboxGroup";
+// import CheckboxGroup from "./CheckboxGroup";
 import classNames from "classnames";
 import "./Checkbox.scss";
 import { CommonService } from "@Services/common-service";
-import { CheckboxChangeEvent } from "antd/es/checkbox";
 
 export interface CheckboxProps {
   /**Handle change value checkbox */
@@ -24,7 +23,7 @@ export interface CheckboxProps {
 function Checkbox(props: CheckboxProps) {
   const { onChange, checked, disabled, label, readOnly, maxLengthItem } = props;
   const handleChange = React.useCallback(
-    (value: CheckboxChangeEvent) => {
+    (value: any) => {
       if (onChange && typeof onChange === "function") {
         return onChange(value.target.checked);
       }
@@ -56,6 +55,5 @@ function Checkbox(props: CheckboxProps) {
   );
 }
 
-Checkbox.Group = CheckboxGroup;
 
 export default Checkbox;
