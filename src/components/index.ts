@@ -15,6 +15,5 @@ export { default as MultipleSelect } from "./Select/MultipleSelect";
 export { default as TreeSelect } from "./Select/TreeSelect";
 export { default as AdvanceStringFilter } from "./AdvanceFilter/AdvanceStringFilter";
 export { default as AdvanceEnumFilter } from "./AdvanceFilter/AdvanceEnumFilter";
-export { default as AdvanceEnumFilterMaster } from "./AdvanceFilterMaster/AdvanceEnumFilterMaster";
 export { default as AdvanceIdFilter } from "./AdvanceFilter/AdvanceEnumFilter";
 export { default as Drawer } from "./Drawer";
