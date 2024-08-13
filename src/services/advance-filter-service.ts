@@ -6,7 +6,6 @@ import { ModelFilter, OrderType } from "react3l-common";
 import moment from "moment";
 import { Moment } from "moment";
 import React, { Dispatch, SetStateAction, useState } from "react";
-import nameof from "ts-nameof.macro";
 import { ActionFilterEnum } from "@Configs/enum";
 
 
@@ -109,8 +108,8 @@ export const advanceFilterService = {
             data: {
               ...modelFilter,
               [fieldName]: new ClassSubFilter({
-                [nameof("greater")]: value[0],
-                [nameof("less")]: value[1],
+                ["greater"]: value[0],
+                ["less"]: value[1],
               }),
             },
           });
@@ -231,8 +230,8 @@ export const advanceFilterService = {
               ...modelFilter,
               skip: 0,
               [fieldName]: new ClassSubFilter({
-                [nameof("greaterEqual")]: value[0],
-                [nameof("lessEqual")]: value[1],
+                ["greaterEqual"]: value[0],
+                ["lessEqual"]: value[1],
               }),
             },
           });
@@ -245,8 +244,8 @@ export const advanceFilterService = {
                   ...modelFilter,
                   skip: 0,
                   [fieldName]: new ClassSubFilter({
-                    [nameof("greater")]: value[0],
-                    [nameof("less")]: value[1],
+                    ["greater"]: value[0],
+                    ["less"]: value[1],
                   }),
                 },
               });
@@ -259,7 +258,7 @@ export const advanceFilterService = {
                     ...modelFilter,
                     skip: 0,
                     [fieldName]: new ClassSubFilter({
-                      [nameof("in")]: ids,
+                      ["in"]: ids,
                     }),
                   },
                 });
@@ -270,8 +269,8 @@ export const advanceFilterService = {
                     ...modelFilter,
                     skip: 0,
                     [fieldName]: {
-                      [nameof(NumberFilter.prototype.greaterEqual)]: value[0],
-                      [nameof(NumberFilter.prototype.lessEqual)]: value[1],
+                      ["greaterEqual"]: value[0],
+                      ["lessEqual"]: value[1],
                     },
                   },
                 });
@@ -352,8 +351,8 @@ export const advanceFilterService = {
     fieldName: keyof T1Filter,
     ClassFilter: new (partial?: any) => T2Filter
   ): [[any, any], (valueRange: [any, any]) => void] {
-    const valueFrom = modelFilter[fieldName][nameof("greater")];
-    const valueTo = modelFilter[fieldName][nameof("less")];
+    const valueFrom = modelFilter[fieldName]["greater"];
+    const valueTo = modelFilter[fieldName]["less"];
     const value: [any, any] = [valueFrom, valueTo];
     const handleChangeRange = React.useCallback(
       (valueRange: [any, any]) => {
@@ -362,8 +361,8 @@ export const advanceFilterService = {
           data: {
             ...modelFilter,
             [fieldName]: new ClassFilter({
-              [nameof("greater")]: valueRange[0],
-              [nameof("less")]: valueRange[1],
+              ["greater"]: valueRange[0],
+              ["less"]: valueRange[1],
             }),
           },
         });
@@ -445,9 +444,9 @@ export const advanceFilterService = {
     fieldName: keyof T1Filter
   ): [[number, number], (numberRange: [number, number]) => void] {
     const valueFrom =
-      modelFilter[fieldName][nameof(NumberFilter.prototype.greaterEqual)];
+      modelFilter[fieldName]["greaterEqual"];
     const valueTo =
-      modelFilter[fieldName][nameof(NumberFilter.prototype.lessEqual)];
+      modelFilter[fieldName]["lessEqual"];
     const value: [number, number] = [valueFrom, valueTo];
     const handleChangeNumberRange = React.useCallback(
       (numberRange: [number, number]) => {
@@ -456,8 +455,8 @@ export const advanceFilterService = {
           data: {
             ...modelFilter,
             [fieldName]: {
-              [nameof(NumberFilter.prototype.greaterEqual)]: numberRange[0],
-              [nameof(NumberFilter.prototype.lessEqual)]: numberRange[1],
+              ["greaterEqual"]: numberRange[0],
+              ["lessEqual"]: numberRange[1],
             },
           },
         });
@@ -473,9 +472,9 @@ export const advanceFilterService = {
     fieldName: keyof T1Filter
   ): [[Moment, Moment], (dateRange: [Moment, Moment]) => void] {
     const valueFrom =
-      modelFilter[fieldName][nameof(DateFilter.prototype.greater)] || null;
+      modelFilter[fieldName]["greater"] || null;
     const valueTo =
-      modelFilter[fieldName][nameof(DateFilter.prototype.less)] || null;
+      modelFilter[fieldName]["less"] || null;
     const value: [Moment, Moment] = [valueFrom, valueTo];
     const handleDateRangeFilter = React.useCallback(
       (dateRange: [Moment, Moment]) => {
@@ -484,8 +483,8 @@ export const advanceFilterService = {
           data: {
             ...modelFilter,
             [fieldName]: {
-              [nameof(DateFilter.prototype.greater)]: dateRange[0] || null,
-              [nameof(DateFilter.prototype.less)]: dateRange[1] || null,
+              ["greater"]: dateRange[0] || null,
+              ["less"]: dateRange[1] || null,
             },
           },
         });
