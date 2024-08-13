@@ -16,6 +16,8 @@ export { default as TreeSelect } from "./Select/TreeSelect";
 export { default as AdvanceStringFilter } from "./AdvanceFilter/AdvanceStringFilter";
 export { default as AdvanceEnumFilter } from "./AdvanceFilter/AdvanceEnumFilter";
 export { default as AdvanceIdFilter } from "./AdvanceFilter/AdvanceEnumFilter";
+export { default as AdvanceNumberFilter } from "./AdvanceFilter/AdvanceNumberFilter";
+export { default as AdvanceInputRangeFilter } from "./AdvanceFilter/AdvanceInputRangeFilter";
 export { default as Drawer } from "./Drawer";
 export { TabPaneItem } from "./Tabs";
 export { default as Tabs } from "./Tabs";
