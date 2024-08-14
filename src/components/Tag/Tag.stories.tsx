@@ -30,10 +30,10 @@ export default {
       ),
     },
   },
+  args:{
+    value: "Nguyễn Văn A",
+  },
   argTypes: {
-    value: {
-      defaultValue: "Nguyễn Văn A",
-    },
   },
 };
 

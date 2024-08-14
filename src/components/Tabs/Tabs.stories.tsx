@@ -33,6 +33,9 @@ export default {
       ),
     },
   },
+  args:{
+    tabErrorKeys: ["tabso1"],
+  },
   argTypes: {
     tabErrorKeys: {
       defaultValue: ["tabso1"],

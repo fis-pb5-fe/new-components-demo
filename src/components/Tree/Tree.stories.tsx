@@ -49,13 +49,12 @@ export default {
       ),
     },
   },
+  args:{
+    checkable:true,
+    maxLengthItem:30,
+  },
   argTypes: {
-    checkable: {
-      defaultValue: true,
-    },
-    maxLengthItem: {
-      defaultValue: 30,
-    },
+    
   },
 };
 
