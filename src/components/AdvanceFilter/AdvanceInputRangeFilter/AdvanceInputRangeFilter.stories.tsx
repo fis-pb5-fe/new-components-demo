@@ -43,14 +43,8 @@ export default {
     type: 1,
   },
   argTypes: {
-    valueRange: {},
-    placeHolderRange: {
-      defaultValue: ["Từ", "Đến"],
-    },
-    onChangeRange: {},
     label: {
       control: "text",
-      defaultValue: "Tổng doanh thu",
       description: "Label for current field",
     },
     type: {
@@ -62,7 +56,6 @@ export default {
           BORDER_TYPE.FLOAT_LABEL,
         ],
       },
-      defaultValue: 1,
     },
     isSmall: {},
     isRequired: {

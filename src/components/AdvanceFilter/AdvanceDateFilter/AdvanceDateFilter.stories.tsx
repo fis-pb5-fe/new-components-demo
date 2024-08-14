@@ -1,7 +1,6 @@
 import AdvanceDateFilter from "./AdvanceDateFilter";
 import { Story } from "@storybook/react";
 import React from "react";
-import { Moment } from "moment";
 import { BORDER_TYPE } from "../../../config/enum";
 import {
   ArgsTable,
@@ -12,6 +11,7 @@ import {
   Subtitle,
   Title,
 } from "@storybook/addon-docs";
+import { Dayjs } from "dayjs";
 
 export default {
   title: "AdvanceFilter/AdvanceDateFilter",
@@ -33,6 +33,10 @@ export default {
       ),
     },
   },
+  args:{
+    label: "Ngày nhập kho",
+    type:  1,
+  },
   argTypes: {
     label: {
       control: "text",
@@ -52,8 +56,9 @@ export default {
   },
 };
 const Template: Story = (args) => {
-  const [value, setValue] = React.useState<Moment>();
+  const [value, setValue] = React.useState<Dayjs>();
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleChange = React.useCallback((dateMoment, dateString) => {
     setValue(dateMoment);
   }, []);

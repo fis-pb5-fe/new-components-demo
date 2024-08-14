@@ -33,13 +33,9 @@ export default {
   },
   args:{
     label: "Cân nặng",
-    
     placeHolder:"Search...",
-    
     prefix:  "Mr.",
-    
     suffix: "Kg",
-    
     numberType: NUMBER_TYPE.LONG,
     type: 1,
     
@@ -47,16 +43,6 @@ export default {
   argTypes: {
     label: {
       control: "text",
-      defaultValue: "Cân nặng",
-    },
-    placeHolder: {
-      defaultValue: "Search...",
-    },
-    prefix: {
-      defaultValue: "Mr.",
-    },
-    suffix: {
-      defaultValue: "Kg",
     },
     numberType: {
       control: {
@@ -73,7 +59,6 @@ export default {
           BORDER_TYPE.FLOAT_LABEL,
         ],
       },
-      defaultValue: 1,
     },
   },
 };

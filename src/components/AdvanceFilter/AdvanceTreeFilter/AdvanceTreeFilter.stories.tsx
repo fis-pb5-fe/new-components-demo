@@ -94,13 +94,14 @@ export default {
       ),
     },
   },
+  args:{
+    label: "Đơn vị tổ chức",
+    placeHolder: "Chọn đơn vị",
+    type:  1,
+  },
   argTypes: {
     label: {
       control: "text",
-      defaultValue: "Đơn vị tổ chức",
-    },
-    placeHolder: {
-      defaultValue: "Chọn đơn vị",
     },
     type: {
       control: {
@@ -111,7 +112,6 @@ export default {
           BORDER_TYPE.FLOAT_LABEL,
         ],
       },
-      defaultValue: 1,
     },
   },
 };

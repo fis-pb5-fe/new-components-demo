@@ -32,10 +32,13 @@ export default {
       ),
     },
   },
+  args:{
+    label: "Ngày tạo",
+    type:  1,
+  },
   argTypes: {
     label: {
       control: "text",
-      defaultValue: "Ngày tạo",
     },
     type: {
       control: {
@@ -46,7 +49,6 @@ export default {
           BORDER_TYPE.FLOAT_LABEL,
         ],
       },
-      defaultValue: 1,
     },
   },
 };
