@@ -21,3 +21,4 @@ export { default as AdvanceInputRangeFilter } from "./AdvanceFilter/AdvanceInput
 export { default as Drawer } from "./Drawer";
 export { TabPaneItem } from "./Tabs";
 export { default as Tabs } from "./Tabs";
+export { default as AdvanceTreeFilter } from "./AdvanceFilter/AdvanceTreeFilter";
