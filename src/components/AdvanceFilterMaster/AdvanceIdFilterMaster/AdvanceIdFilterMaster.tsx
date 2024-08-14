@@ -197,7 +197,7 @@ function AdvanceIdFilterMaster(
   );
 
   const handleKeyDown = React.useCallback(
-    (event) => {
+    (event: any) => {
       switch (event.keyCode) {
         case 40:
           const firstItem = selectListRef.current

@@ -246,7 +246,7 @@ function AdvanceDateRangeFilterMaster(
   }, [handleGetRef]);
 
   const handleKeyDown = React.useCallback(
-    (event) => {
+    (event: any) => {
       switch (event.keyCode) {
         case 40:
           const firstItem = selectListRef.current
@@ -264,7 +264,7 @@ function AdvanceDateRangeFilterMaster(
   );
 
   const handleMove = React.useCallback(
-    (item) => (event: any) => {
+    (item: Model) => (event: any) => {
       switch (event.keyCode) {
         case 13:
           handleClickItem(item)(null);
