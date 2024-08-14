@@ -4,14 +4,16 @@ import classNames from "classnames";
 import DateRange from "@Components/Input/DateRange";
 import InputSelect from "@Components/Input/InputSelect";
 import { ADVANCE_DATE_RANGE_TYPE, BORDER_TYPE } from "@Configs/enum";
-import moment, { Moment } from "moment";
 import React, { RefObject } from "react";
 import { TFunction } from "i18next";
 import { Model } from "react3l-common";
 import { CommonService } from "@Services/common-service";
-
 import "./AdvanceDateRangFilterMaster.scss";
-
+import quarterOfYear from 'dayjs/plugin/quarterOfYear';
+import isoWeek from 'dayjs/plugin/isoWeek';
+import dayjs from "dayjs";
+dayjs.extend(quarterOfYear);
+dayjs.extend(isoWeek);
 class ListDate extends Model {
   id?: number;
   name?: string;
@@ -32,11 +34,11 @@ class ListDate extends Model {
 
 interface AdvanceDateRangeFilterMasterProps {
   /**Value [fromDate, toDate] users select*/
-  value?: [Moment, Moment];
+  value?: [dayjs.Dayjs, dayjs.Dayjs];
   /**Use to format the date selected*/
   dateFormat?: string[];
   /**Handle the change value of the component*/
-  onChange?: (item?: any, value?: [Moment, Moment]) => void;
+  onChange?: (item?: any, value?: [dayjs.Dayjs, dayjs.Dayjs]) => void;
   /**Use to custom style the component*/
   className?: string;
   /**Not allow to handle change the component*/
@@ -113,62 +115,66 @@ function AdvanceDateRangeFilterMaster(
   const [appendToBodyStyle, setAppendToBodyStyle] = React.useState({});
  
 
-  const formatDateFilter = React.useCallback((item: any): [Moment, Moment] => {
+  const formatDateFilter = React.useCallback((item: any): [dayjs.Dayjs, dayjs.Dayjs] => {
     if (item) {
       switch (item.id) {
         case 1:
-          return [moment().startOf("day"), moment().endOf("day")]; //today
+          return [dayjs().startOf("day"), dayjs().endOf("day")]; //today
 
         case 2:
           return [
-            moment().subtract(1, "days").startOf("day"),
-            moment().subtract(1, "days").endOf("day"),
+            dayjs().subtract(1, "day").startOf("day"),
+            dayjs().subtract(1, "day").endOf("day"),
           ];
 
         case 3:
-          return [moment().startOf("isoWeek"), moment().endOf("isoWeek")]; //thisweek
+          return [dayjs().startOf("isoWeek"), dayjs().endOf("isoWeek")]; //thisweek
 
         case 4:
           return [
-            moment().subtract(1, "weeks").startOf("isoWeek"),
-            moment().subtract(1, "weeks").endOf("isoWeek"),
+            dayjs().subtract(1, "weeks").startOf("isoWeek"),
+            dayjs().subtract(1, "weeks").endOf("isoWeek"),
           ]; //lastweek
 
         case 5:
-          return [moment().startOf("month"), moment().endOf("month")]; //thismonth
+          return [dayjs().startOf("month"), dayjs().endOf("month")]; //thismonth
 
         case 6:
           return [
-            moment().subtract(1, "months").startOf("month"),
-            moment().subtract(1, "months").endOf("month"),
+            dayjs().subtract(1, "months").startOf("month"),
+            dayjs().subtract(1, "months").endOf("month"),
           ]; //lastmonth
 
-        case 7:
-          const quarterNumber = moment().quarter();
-          const quarterEndDate = moment()
-            .quarter(quarterNumber)
-            .endOf("quarter");
-          const quarterStartDate = moment()
-            .quarter(quarterNumber)
-            .startOf("quarter");
-          return [quarterStartDate, quarterEndDate]; //thisquarter
+        case 7: 
+          return [dayjs().startOf("quarter"), dayjs().endOf("quarter")]; //thisquarter
+
+        // case 7:
+        //   const quarterNumber = moment().quarter();
+        //   const quarterEndDate = moment()
+        //     .quarter(quarterNumber)
+        //     .endOf("quarter");
+        //   const quarterStartDate = moment()
+        //     .quarter(quarterNumber)
+        //     .startOf("quarter");
+        //   return [quarterStartDate, quarterEndDate]; //thisquarter
 
         case 8:
-          const thisQuarter = moment().quarter();
+          // eslint-disable-next-line no-case-declarations
+          const thisQuarter = dayjs().quarter();
+          // eslint-disable-next-line no-case-declarations
           const lastQuarter = thisQuarter - 1;
+          // eslint-disable-next-line no-var
           var lastQuarterStartDate, lastQuarterEndDate;
-          if (lastQuarter) {
-            lastQuarterStartDate = moment()
-              .quarter(lastQuarter)
-              .startOf("quarter");
-            lastQuarterEndDate = moment().quarter(lastQuarter).endOf("quarter");
-          } else {
-            lastQuarterStartDate = moment()
-              .subtract(1, "years")
+          if(lastQuarter){
+            lastQuarterStartDate = dayjs().quarter(lastQuarter).startOf("quarter");
+            lastQuarterEndDate = dayjs().quarter(lastQuarter).endOf("quarter");
+          }else{
+            lastQuarterStartDate = dayjs()
+              .subtract(1, "year")
               .quarter(4)
               .startOf("quarter");
-            lastQuarterEndDate = moment()
-              .subtract(1, "years")
+              lastQuarterEndDate = dayjs()
+              .subtract(1, "year")
               .quarter(4)
               .endOf("quarter");
           }
@@ -179,21 +185,21 @@ function AdvanceDateRangeFilterMaster(
     }
   }, []);
 
-  const internalValue: [Moment, Moment] = React.useMemo(() => {
+  const internalValue: [dayjs.Dayjs, dayjs.Dayjs] = React.useMemo(() => {
     return value && value.length > 0
       ? [
           typeof value[0] === "string"
-            ? CommonService.toMomentDate(value[0])
+            ? CommonService.toDayJS(value[0])
             : value[0],
           typeof value[1] === "string"
-            ? CommonService.toMomentDate(value[1])
+            ? CommonService.toDayJS(value[1])
             : value[1],
         ]
       : [null, null];
   }, [value]);
 
   const handleChange = React.useCallback(
-    (values: [Moment, Moment], formatString: [string, string]) => {
+    (values: [dayjs.Dayjs, dayjs.Dayjs], formatString: [string, string]) => {
       onChange(
         { id: 9, name: "general.filter.customDate", code: "customdate" },
         [values[0]?.startOf("day"), values[1]?.endOf("day")]
