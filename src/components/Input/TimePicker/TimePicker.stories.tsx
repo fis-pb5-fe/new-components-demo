@@ -33,10 +33,13 @@ export default {
       ),
     },
   },
+  args:{
+    label: "Ngày nhập kho",
+    type: 1,
+  },
   argTypes: {
     label: {
       control: "text",
-      defaultValue: "Ngày nhập kho",
     },
     type: {
       control: {

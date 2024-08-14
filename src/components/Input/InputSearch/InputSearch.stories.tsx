@@ -38,10 +38,12 @@ export default {
       ),
     },
   },
+  args: {
+    placeHolder: "Search...",
+  },
   argTypes: {
     placeHolder: {
       control: "text",
-      defaultValue: "Search...",
     },
     argTypes: {
       placeHolder: {

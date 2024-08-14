@@ -39,12 +39,16 @@ export default {
       ),
     },
   },
+  args: {
+    label: "Cân nặng",
+    placeHolderRange: ["From", "To"],
+    type: 1,
+  },
   argTypes: {
     label: {
       control: "text",
     },
     placeHolderRange: {
-      defaultValue: ["From", "To"],
     },
     type: {
       control: {

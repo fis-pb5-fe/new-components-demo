@@ -31,10 +31,13 @@ export default {
       ),
     },
   },
+  args:{
+    label: "Ngày nhập hàng",
+    type: 1,
+  },
   argTypes: {
     label: {
       control: "text",
-      defaultValue: "Ngày nhập hàng",
     },
     type: {
       control: {
@@ -45,7 +48,6 @@ export default {
           BORDER_TYPE.FLOAT_LABEL,
         ],
       },
-      defaultValue: 1,
     },
   },
 };

@@ -31,17 +31,20 @@ export default {
       ),
     },
   },
+  args:{
+    label: "First Name",
+    placeHolder: "Enter text",
+    type: 1,
+  },
   argTypes: {
     label: {
       control: "text",
-      defaultValue: "First Name",
     },
     maxLength: {
       control: "number",
     },
     placeHolder: {
       control: "text",
-      defaultValue: "Enter text",
     },
     type: {
       control: {
@@ -53,7 +56,6 @@ export default {
           BORDER_TYPE.NOT_BORDERED,
         ],
       },
-      defaultValue: 1,
     },
   },
 };

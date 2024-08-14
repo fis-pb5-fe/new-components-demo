@@ -33,14 +33,17 @@ export default {
       ),
     },
   },
+  args:{
+    label: "First Name",
+    placeHolder: "Enter text",
+    type: 1,
+  },
   argTypes: {
     label: {
       control: "text",
-      defaultValue: "First Name",
     },
     placeHolder: {
       control: "text",
-      defaultValue: "Enter text",
     },
     type: {
       control: {
@@ -51,7 +54,6 @@ export default {
           BORDER_TYPE.FLOAT_LABEL,
         ],
       },
-      defaultValue: 1,
     },
   },
 };
