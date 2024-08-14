@@ -61,7 +61,7 @@ function AdvanceInputRangeFilter(props: AdvanceInputRangeFilterProps) {
 
   return (
     <>
-      <div className="input-range__container">
+      <div className="advance-input-range__container">
         <div className="input-range__input-number m-r--2xs">
           <InputNumber
             {...props}
