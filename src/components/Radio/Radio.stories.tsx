@@ -31,6 +31,9 @@ export default {
       ),
     },
   },
+  args:{
+    checked: false,
+  },
   argTypes: {
     checked: {
       defaultValue: false,

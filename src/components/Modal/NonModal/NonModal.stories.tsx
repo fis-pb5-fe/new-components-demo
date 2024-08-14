@@ -35,9 +35,12 @@ export default {
       ),
     },
   },
+  args:{
+    title: "Thông tin chi tiết",
+    size: MODAL_SIZE.SIZE_520,
+  },
   argTypes: {
     title: {
-      defaultValue: "Thông tin chi tiết",
       description: "/**Title of the modal*/",
       control: "text",
     },
@@ -53,7 +56,6 @@ export default {
           MODAL_SIZE.SIZE_1024,
         ],
       },
-      defaultValue: MODAL_SIZE.SIZE_520,
     },
   },
 };

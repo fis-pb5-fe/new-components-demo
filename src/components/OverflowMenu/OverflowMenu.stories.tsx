@@ -36,6 +36,9 @@ export default {
       ),
     },
   },
+  args:{
+    size: SIZE_TYPE.LARGE,
+  },
   argTypes: {
     size: {
       control: {

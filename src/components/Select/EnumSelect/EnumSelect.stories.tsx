@@ -59,6 +59,8 @@ export default {
   args:{
     label: "Đơn vị tổ chức",
     placeHolder: "Chọn đơn vị",
+    type: 1,
+    maxLengthItem: 30,
   },
   argTypes: {
     label: {
@@ -73,11 +75,9 @@ export default {
           BORDER_TYPE.FLOAT_LABEL,
         ],
       },
-      defaultValue: 1,
     },
 
     maxLengthItem: {
-      defaultValue: 30,
     },
   },
 };
