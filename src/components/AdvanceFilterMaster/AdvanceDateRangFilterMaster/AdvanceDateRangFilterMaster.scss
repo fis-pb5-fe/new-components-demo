@@ -1,0 +1,144 @@
+$backgound-color: #f4f4f4;
+/* Style for DatePicker.tsx */
+.advance-date-range-filter-master__wrapper {
+    position: relative;
+    width: 100%;
+    .advance-date-range-filter-master__container {
+        width: fit-content;
+        cursor: pointer;
+        &.filter-bg {
+            background-color: var(--palette-gray-30);
+            &:hover {
+                background-color: var(--palette-gray-30);
+            }
+        }
+
+        &.p-b---active {
+            padding-bottom: 11px !important;
+        }
+        .filter-active {
+            color: var(--color-primary);
+            span {
+                border-bottom: 1px solid var(--color-primary);
+            }
+        }
+        &:hover {
+            background: #e5e5e5;
+        }
+        .filter__icon {
+            font-size: 16px;
+        }
+        .advance-date-range-filter-master__title {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 16px;
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.16px;
+            .filter-title {
+                margin-right: 7px;
+            }
+        }
+    }
+    .date-range__icon-wrapper {
+        top: 29% !important;
+    }
+
+    .date-range-filter-master__list-container {
+        min-width: 288px;
+        width: 100%;
+        height: auto;
+        position: absolute;
+        z-index: 999;
+        margin-top: 2px;
+        &.date-range-filter-master__list-border {
+            border: 2px solid var(--color-primary);
+        }
+
+        .advance-date-range-master__list {
+            background-color: $backgound-color;
+            width: 100%;
+            overflow-y: auto;
+            max-height: 160px;
+        }
+
+        .advance-date-range-filter__item {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 14px;
+            line-height: 16px;
+            cursor: pointer;
+            &:hover,
+            &:focus {
+                background-color: #e5e5e5;
+            }
+            &:focus-visible {
+                outline: none;
+            }
+            &.filter__item--selected {
+                background-color: var(--palette-grayHover-10);
+                display: flex;
+                justify-content: space-between;
+            }
+           
+        }
+        .date-range-master__prefer-option {
+            box-shadow: inset 0px 1px 0px #e1e3e5;
+            background: $backgound-color;
+            font-style: normal;
+            font-weight: normal;
+            display: flex;
+            align-items: center;
+            line-height: 16px;
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.32px;
+            color: var(--color-primary);
+            cursor: pointer;
+            span {
+                font-size: 14px;
+                line-height: 16px;
+                margin-left: 6px;
+            }
+            i {
+                font-size: 14px;
+            }
+
+           
+            &:hover,
+            &:focus {
+                background-color: var(--color-primary);
+                color: var(--color-white);
+            }
+            &.date-range-master__bg-primary {
+                background-color: var(--color-primary);
+                color: var(--color-white);
+            }
+        }
+        .advance-date-range-filter__text {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .ant-picker--material {
+            padding: 1rem !important;
+            border-radius: 0 !important;
+            border-bottom: 1px solid var(--color-border);
+            background: none !important;
+            box-shadow: none !important;
+            &:hover,
+            &:focus {
+                border-bottom: 2px solid !important;
+            }
+        }
+    }
+    .date-range__wrapper {
+        &.ant-picker {
+            width: 288px;
+        }
+    }
+}
