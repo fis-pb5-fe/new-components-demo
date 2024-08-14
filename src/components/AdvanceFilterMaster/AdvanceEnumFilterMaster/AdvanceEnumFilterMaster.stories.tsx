@@ -69,13 +69,15 @@ export default {
       ),
     },
   },
+  args:{
+    label: "Đơn vị tổ chức",
+    placeHolder: "Chọn đơn vị",
+  },
   argTypes: {
     label: {
       control: "text",
-      defaultValue: "Đơn vị tổ chức",
     },
     placeHolder: {
-      defaultValue: "Chọn đơn vị",
     },
   },
 };

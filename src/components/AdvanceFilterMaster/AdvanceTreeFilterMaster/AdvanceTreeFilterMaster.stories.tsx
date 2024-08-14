@@ -91,20 +91,17 @@ export default {
       ),
     },
   },
+  args:{
+    label: "Đơn vị tổ chức",
+    placeHolder: "Chọn đơn vị",
+    maxLength: 200,
+    maxLengthItem:30,
+  },
   argTypes: {
     label: {
       control: "text",
-      defaultValue: "Đơn vị tổ chức",
     },
     placeHolder: {
-      defaultValue: "Chọn đơn vị",
-    },
-
-    maxLength: {
-      defaultValue: 200,
-    },
-    maxLengthItem: {
-      defaultValue: 30,
     },
   },
 };

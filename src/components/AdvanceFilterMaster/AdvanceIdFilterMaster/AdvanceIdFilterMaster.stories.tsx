@@ -85,17 +85,8 @@ export default {
   argTypes: {
     label: {
       control: "text",
-      defaultValue: "Đơn vị tổ chức",
     },
     placeHolder: {
-      defaultValue: "Chọn đơn vị",
-    },
-
-    maxLength: {
-      defaultValue: 200,
-    },
-    maxLengthItem: {
-      defaultValue: 30,
     },
   },
 };

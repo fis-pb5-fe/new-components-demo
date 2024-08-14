@@ -32,13 +32,15 @@ export default {
       ),
     },
   },
+  args:{
+    label: "Ngày giao hàng",
+    placeHolder: ["Từ ngày", "Đến ngày"],
+    type:  0,
+    typeCustomDate:  1,
+  },
   argTypes: {
     label: {
       control: "text",
-      defaultValue: "Ngày giao hàng",
-    },
-    placeholder: {
-      defaultValue: ["Từ ngày", "Đến ngày"],
     },
     typeCustomDate: {
       control: {
@@ -49,14 +51,12 @@ export default {
           BORDER_TYPE.FLOAT_LABEL,
         ],
       },
-      defaultValue: 1,
     },
     type: {
       control: {
         type: "radio",
         options: [ADVANCE_DATE_RANGE_TYPE.SHORT, ADVANCE_DATE_RANGE_TYPE.INPUT],
       },
-      defaultValue: 0,
     },
   },
 };
