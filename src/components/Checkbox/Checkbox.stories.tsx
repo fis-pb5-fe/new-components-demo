@@ -8,10 +8,10 @@ export default {
   parameters: {
     controls: { expanded: true },
   },
+  args:{
+    checked: false,
+  },
   argTypes: {
-    checked: {
-      defaultValue: false,
-    },
   },
 };
 const listValueObject = [

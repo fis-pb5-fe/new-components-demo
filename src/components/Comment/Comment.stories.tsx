@@ -199,21 +199,23 @@ export default {
       ),
     },
   },
+  args:{
+    placeholder: "Nhập bình luận...",
+    titleSave: "Lưu",
+    titleCancel: "Hủy",
+    isShowHeader: false,
+    canSend: true,
+  },
   argTypes: {
     placeholder: {
-      defaultValue: "Nhập bình luận...",
     },
     titleSave: {
-      defaultValue: "Lưu",
     },
     titleCancel: {
-      defaultValue: "Hủy",
     },
     isShowHeader: {
-      defaultValue: false,
     },
     canSend: {
-      defaultValue: true,
     },
   },
 };

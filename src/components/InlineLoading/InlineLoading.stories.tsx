@@ -34,9 +34,11 @@ export default {
       ),
     },
   },
+  args:{
+    status: "default",
+  },
   argTypes: {
     status: {
-      defaultValue: "default",
     },
   },
 };
