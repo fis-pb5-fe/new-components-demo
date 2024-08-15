@@ -33,7 +33,7 @@ interface DateRangeProps {
   /** Handle the change value of the component */
   onChange?: (value: [dayjs.Dayjs, dayjs.Dayjs], dateString?: [string, string]) => void;
   /** Control the style type of component: MATERIAL, BORDERED, FLOAT_LABEL */
-  type?: BORDER_TYPE;
+  typeCustomDate?: BORDER_TYPE;
   /** Control the size of the component */
   isSmall?: boolean;
   /** Not allow to handle change the component */
@@ -59,7 +59,7 @@ function DateRange(props: DateRangeProps & RangePickerProps) {
     value,
     dateFormat,
     onChange,
-    type,
+    typeCustomDate,
     label,
     isRequired,
     action,
@@ -102,7 +102,7 @@ function DateRange(props: DateRangeProps & RangePickerProps) {
       ref={wrapperRef}
     >
       <div className="date-range__label m-b--3xs">
-        {type !== BORDER_TYPE.FLOAT_LABEL && label && (
+        {typeCustomDate !== BORDER_TYPE.FLOAT_LABEL && label && (
           <label
             className={classNames("component__title", {
               "component__title--disabled": disabled,
@@ -138,15 +138,15 @@ function DateRange(props: DateRangeProps & RangePickerProps) {
             "p--xs": !isSmall,
             "date-range--sm": isSmall,
             "date-range--white": bgColor === "white",
-            "date-range--material": type === BORDER_TYPE.MATERIAL,
+            "date-range--material": typeCustomDate === BORDER_TYPE.MATERIAL,
             "date-range--disabled ": disabled,
-            "date-range--float": type === BORDER_TYPE.FLOAT_LABEL,
+            "date-range--float": typeCustomDate === BORDER_TYPE.FLOAT_LABEL,
           })}
           getPopupContainer={getPopupContainer}
           ref={dateRef}
           dropdownClassName={dropdownClassName}
         />
-        {type === BORDER_TYPE.FLOAT_LABEL && label && (
+        {typeCustomDate === BORDER_TYPE.FLOAT_LABEL && label && (
           <label
             id="component__title-id"
             className={classNames("component__title component__title--normal", {
@@ -166,7 +166,7 @@ function DateRange(props: DateRangeProps & RangePickerProps) {
                 "date-range__icon-wrapper",
                 {
                   "date-range__icon-wrapper--material":
-                    type === BORDER_TYPE.MATERIAL,
+                  typeCustomDate === BORDER_TYPE.MATERIAL,
                 },
                 { "date-range__icon-wrapper--disabled": disabled },
                 {
@@ -190,7 +190,7 @@ DateRange.defaultProps = {
   dateFormat: ["DD/MM/YYYY", "YYYY/MM/DD"],
   label: "",
   isSmall: false,
-  type: BORDER_TYPE.BORDERED,
+  typeCustomDate: BORDER_TYPE.BORDERED,
   isRequired: false,
   disabled: false,
   className: "",

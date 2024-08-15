@@ -434,7 +434,7 @@ function AdvanceDateRangeFilterMaster(
               <DateRange
                 {...props}
                 label={""}
-                type={typeCustomDate}
+                typeCustomDate={typeCustomDate}
                 isSmall={isSmall}
                 onChange={handleChange}
                 value={internalValue}
