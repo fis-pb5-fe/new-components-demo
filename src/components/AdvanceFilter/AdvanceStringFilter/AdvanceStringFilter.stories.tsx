@@ -31,7 +31,7 @@ export default {
       ),
     },
   },
-  agrs: {
+  args: {
     label: "First name",
     placeHolder: "Search...",
     prefix: "Mr.",
