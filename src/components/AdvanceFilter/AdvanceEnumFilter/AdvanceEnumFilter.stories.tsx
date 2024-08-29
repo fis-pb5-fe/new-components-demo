@@ -14,7 +14,7 @@ import { Observable } from "rxjs";
 import FormItem from "../../FormItem/FormItem";
 import { BORDER_TYPE } from "./../../../config/enum";
 import AdvanceEnumFilter from "./AdvanceEnumFilter";
-import { Model, ModelFilter } from "react-3layer-commonn";
+import { Model, ModelFilter } from "react-3layer-common";
 
 class DemoFilter extends ModelFilter {
   id: IdFilter = new IdFilter();

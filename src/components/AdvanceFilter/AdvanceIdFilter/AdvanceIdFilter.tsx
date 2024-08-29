@@ -1,7 +1,7 @@
 import React, { RefObject } from "react";
 import { DEBOUNCE_TIME_300 } from "@Configs/consts";
 import { Checkmark } from "@carbon/icons-react";
-import { Model, ModelFilter } from "react-3layer-commonn";
+import { Model, ModelFilter } from "react-3layer-common";
 import { useDebounceFn } from "ahooks";
 import { Empty, Tooltip } from "antd";
 import classNames from "classnames";

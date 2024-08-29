@@ -12,7 +12,7 @@ import {
   NumberFilter,
   StringFilter,
 } from "react-3layer-advance-filters";
-import { Model, ModelFilter } from "react-3layer-commonn";
+import { Model, ModelFilter } from "react-3layer-common";
 import "./TagFilter.scss";
 
 export interface TagFilterProps {

@@ -10,7 +10,7 @@ import {
 import { Story } from "@storybook/react";
 import React, { Reducer } from "react";
 import { IdFilter, StringFilter } from "react-3layer-advance-filters";
-import { Model, ModelFilter } from "react-3layer-commonn";
+import { Model, ModelFilter } from "react-3layer-common";
 import { Observable } from "rxjs";
 import {
   AdvanceFilterAction,

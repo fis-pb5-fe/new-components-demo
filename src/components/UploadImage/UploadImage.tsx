@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { Model } from "react-3layer-commonn";
+import { Model } from "react-3layer-common";
 import type { Observable } from "rxjs";
 import { ComponentUploadAvatar } from "./Components/ComponentUploadAvatar";
 import { ComponentUploadImage } from "./Components/ComponentUploadImage";

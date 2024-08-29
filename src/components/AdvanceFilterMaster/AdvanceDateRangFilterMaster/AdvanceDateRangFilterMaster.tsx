@@ -6,7 +6,7 @@ import InputSelect from "@Components/Input/InputSelect";
 import { ADVANCE_DATE_RANGE_TYPE, BORDER_TYPE } from "@Configs/enum";
 import React, { RefObject } from "react";
 import { TFunction } from "i18next";
-import { Model } from "react-3layer-commonn";
+import { Model } from "react-3layer-common";
 import { CommonService } from "@Services/common-service";
 import "./AdvanceDateRangFilterMaster.scss";
 import quarterOfYear from 'dayjs/plugin/quarterOfYear';

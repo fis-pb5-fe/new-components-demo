@@ -12,7 +12,7 @@ import { Radio } from "antd";
 import { RadioChangeEvent } from "antd/lib/radio";
 import React from "react";
 import { IdFilter, StringFilter } from "react-3layer-advance-filters";
-import { Model, ModelFilter } from "react-3layer-commonn";
+import { Model, ModelFilter } from "react-3layer-common";
 import { Observable } from "rxjs";
 import { BORDER_TYPE } from "./../../../config/enum";
 import FormItem from "./../../FormItem/FormItem";

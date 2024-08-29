@@ -10,7 +10,7 @@ import {
 import { Story } from "@storybook/react";
 import React from "react";
 import { NumberFilter } from "react-3layer-advance-filters";
-import { ModelFilter } from "react-3layer-commonn";
+import { ModelFilter } from "react-3layer-common";
 import { BORDER_TYPE } from "../../../config/enum";
 import FormItem from "../../FormItem/FormItem";
 import InputRange from "./InputRange";

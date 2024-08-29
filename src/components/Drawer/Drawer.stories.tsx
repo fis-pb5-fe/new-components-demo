@@ -22,7 +22,7 @@ import {
   Title,
 } from "@storybook/addon-docs";
 import { Story } from "@storybook/react";
-import { ModelFilter } from "react-3layer-commonn";
+import { ModelFilter } from "react-3layer-common";
 
 
 class DemoFilter extends ModelFilter {

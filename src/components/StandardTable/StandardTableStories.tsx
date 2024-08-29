@@ -1,12 +1,12 @@
 import { Add, ChevronDown, ChevronUp } from "@carbon/icons-react";
 import { Story } from "@storybook/react";
 import { ColumnProps } from "antd/lib/table";
-// import { Model } from "react-3layer-commonn";
+// import { Model } from "react-3layer-common";
 import InputText from "@Components/Input/InputText";
 import { Key, RowSelectionType } from "antd/lib/table/interface";
 import React, { useMemo } from "react";
 import { StringFilter } from "react-3layer-advance-filters";
-import { ModelFilter } from "react-3layer-commonn";
+import { ModelFilter } from "react-3layer-common";
 import Button from "../Button/Button";
 import ActionBarComponent from "./ActionBarComponent/ActionBarComponent";
 import BadgeText from "./DataCellComponent/BadgeText/BadgeText";

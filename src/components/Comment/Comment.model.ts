@@ -1,4 +1,4 @@
-import { Model, ModelFilter } from "react-3layer-commonn";
+import { Model, ModelFilter } from "react-3layer-common";
 import { Moment } from "moment";
 
 export class Message extends Model {

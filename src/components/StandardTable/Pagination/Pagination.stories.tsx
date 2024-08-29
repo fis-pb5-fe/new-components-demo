@@ -10,7 +10,7 @@ import {
 import { StoryFn } from "@storybook/react";
 import React from "react";
 import { StringFilter } from "react-3layer-advance-filters";
-import { ModelFilter } from "react-3layer-commonn";
+import { ModelFilter } from "react-3layer-common";
 import Pagination from "./Pagination";
 export class DemoFilter extends ModelFilter {
   name: StringFilter = new StringFilter();

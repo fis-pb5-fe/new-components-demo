@@ -7,7 +7,7 @@ import { useDebounceFn } from "ahooks";
 import { Empty, Tooltip } from "antd";
 import classNames from "classnames";
 import React, { RefObject } from "react";
-import { Model, ModelFilter } from "react-3layer-commonn";
+import { Model, ModelFilter } from "react-3layer-common";
 import { ErrorObserver, Observable } from "rxjs";
 import "./AdvanceIdFilterMaster.scss";
 

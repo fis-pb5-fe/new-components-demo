@@ -1,4 +1,4 @@
-import { Model, ModelFilter, OrderType } from "react-3layer-commonn";
+import { Model, ModelFilter, OrderType } from "react-3layer-common";
 import { CommonService } from "@Services/common-service";
 import classNames from "classnames";
 import moment, { Moment } from "moment";

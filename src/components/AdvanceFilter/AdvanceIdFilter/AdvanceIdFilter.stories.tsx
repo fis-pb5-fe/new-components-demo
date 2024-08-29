@@ -1,5 +1,5 @@
 import React from "react";
-import { Model, ModelFilter } from "react-3layer-commonn";
+import { Model, ModelFilter } from "react-3layer-common";
 import { of } from "rxjs";
 import { BORDER_TYPE } from "./../../../config/enum";
 import AdvanceIdFilter from "./AdvanceIdFilter";

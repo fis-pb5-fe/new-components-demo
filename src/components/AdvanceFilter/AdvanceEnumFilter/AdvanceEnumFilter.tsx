@@ -1,5 +1,5 @@
 import React, { RefObject } from "react";
-import { Model } from "react-3layer-commonn"
+import { Model } from "react-3layer-common"
 import { Checkmark } from "@carbon/icons-react";
 import { Checkbox, Empty } from "antd";
 import classNames from "classnames";
