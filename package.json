@@ -1,7 +1,7 @@
 {
   "homepage": "http://khangmeo123.github.io/React-Ui-Components",
   "name": "react-library-ui-components",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "React UI component for new design like Carbon Design",
   "main": "dist/cjs/bundle.js",
   "module": "dist/esm/bundle.js",
@@ -10,7 +10,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "rimraf dist && rollup -c",
+    "bundle-style": "sass ./src/styles/index.scss ./dist/react-3layer.min.css --style compressed",
+    "build": "rimraf dist && rollup -c && yarn bundle-style",
     "dev": "rollup -c -w",
     "test": "jest",
     "lint": "eslint src",
