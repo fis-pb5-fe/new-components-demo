@@ -9,12 +9,12 @@ import {
 } from "@storybook/addon-docs";
 import { Story } from "@storybook/react";
 import React from "react";
-import { IdFilter, StringFilter } from "react3l-advanced-filters";
-import { Model, ModelFilter } from "react3l-common";
+import { IdFilter, StringFilter } from "react-3layer-advance-filters";
 import { Observable } from "rxjs";
 import FormItem from "../../FormItem/FormItem";
 import { BORDER_TYPE } from "./../../../config/enum";
 import AdvanceEnumFilter from "./AdvanceEnumFilter";
+import { Model, ModelFilter } from "react-3layer-commonn";
 
 class DemoFilter extends ModelFilter {
   id: IdFilter = new IdFilter();

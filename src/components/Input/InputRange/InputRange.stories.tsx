@@ -9,8 +9,8 @@ import {
 } from "@storybook/addon-docs";
 import { Story } from "@storybook/react";
 import React from "react";
-import { NumberFilter } from "react3l-advanced-filters";
-import { ModelFilter } from "react3l-common";
+import { NumberFilter } from "react-3layer-advance-filters";
+import { ModelFilter } from "react-3layer-commonn";
 import { BORDER_TYPE } from "../../../config/enum";
 import FormItem from "../../FormItem/FormItem";
 import InputRange from "./InputRange";

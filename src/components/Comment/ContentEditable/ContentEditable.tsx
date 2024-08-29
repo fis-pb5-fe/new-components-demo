@@ -1,5 +1,5 @@
-import { StringFilter } from "react3l-advanced-filters";
-import { ModelFilter, Model } from "react3l-common";
+import { StringFilter } from "react-3layer-advance-filters";
+import { ModelFilter, Model } from "react-3layer-commonn";
 import { ASSETS_IMAGE } from "@Configs/consts";
 import React, {
   ForwardedRef,

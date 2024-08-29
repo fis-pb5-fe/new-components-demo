@@ -1,6 +1,6 @@
 import React, { RefObject, Reducer, ReactNode } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { Model, ModelFilter } from "react3l-common";
+import { Model, ModelFilter } from "react-3layer-commonn";
 import Tree from "../../Tree";
 import { useDebounceFn } from "ahooks";
 import { DEBOUNCE_TIME_300 } from "@Configs/consts";
@@ -9,7 +9,7 @@ import { CommonService } from "@Services/common-service";
 import InputText from "@Components/Input/InputText";
 import classNames from "classnames";
 import { ChevronDown, Search } from "@carbon/icons-react";
-import { IdFilter } from "react3l-advanced-filters";
+import { IdFilter } from "react-3layer-advance-filters";
 import { TreeNode } from "@Components/Tree/TreeNode";
 import "./AdvanceTreeFilterMaster.scss";
 

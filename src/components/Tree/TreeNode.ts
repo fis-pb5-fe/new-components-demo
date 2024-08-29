@@ -1,4 +1,4 @@
-import { Model } from "react3l-common";
+import { Model } from "react-3layer-commonn";
 import { DataNode } from "antd/lib/tree";
 
 export class TreeNode<T extends Model> implements DataNode {

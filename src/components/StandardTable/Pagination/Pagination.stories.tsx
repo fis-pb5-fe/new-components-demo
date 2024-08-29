@@ -9,8 +9,8 @@ import {
 } from "@storybook/blocks";
 import { StoryFn } from "@storybook/react";
 import React from "react";
-import { StringFilter } from "react3l-advanced-filters";
-import { ModelFilter } from "react3l-common";
+import { StringFilter } from "react-3layer-advance-filters";
+import { ModelFilter } from "react-3layer-commonn";
 import Pagination from "./Pagination";
 export class DemoFilter extends ModelFilter {
   name: StringFilter = new StringFilter();

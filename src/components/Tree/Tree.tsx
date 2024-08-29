@@ -9,7 +9,7 @@ import type {
 import classNames from "classnames";
 import IconLoading from "@Components/IconLoading/IconLoading";
 import React, { ReactNode, RefObject } from "react";
-import { Model, ModelFilter } from "react3l-common";
+import { Model, ModelFilter } from "react-3layer-commonn";
 import type { Observable } from "rxjs";
 import { CommonService } from "@Services/common-service";
 import { TreeNode as CustomTreeNode } from "./TreeNode";

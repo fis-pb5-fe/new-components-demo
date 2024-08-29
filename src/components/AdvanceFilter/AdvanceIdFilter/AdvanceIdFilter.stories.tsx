@@ -1,6 +1,5 @@
 import React from "react";
-import { IdFilter, StringFilter } from "react3l-advanced-filters";
-import { Model, ModelFilter } from "react3l-common";
+import { Model, ModelFilter } from "react-3layer-commonn";
 import { of } from "rxjs";
 import { BORDER_TYPE } from "./../../../config/enum";
 import AdvanceIdFilter from "./AdvanceIdFilter";
@@ -14,10 +13,9 @@ import {
   Title,
 } from "@storybook/addon-docs";
 import { Story } from "@storybook/react";
+import { IdFilter } from "react-3layer-advance-filters";
 class DemoFilter extends ModelFilter {
   id: IdFilter = new IdFilter();
-  name: StringFilter = new StringFilter();
-  code: StringFilter = new StringFilter();
 }
 
 const demoListEnum = (TModelFilter?: ModelFilter) => {
@@ -58,7 +56,7 @@ export default {
       ),
     },
   },
-  args:{
+  args: {
     label: "Đơn vị tổ chức",
     placeHolder: "Chọn đơn vị",
     type: 1,

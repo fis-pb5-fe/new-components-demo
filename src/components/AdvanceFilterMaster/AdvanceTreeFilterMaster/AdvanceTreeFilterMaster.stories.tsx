@@ -10,8 +10,8 @@ import {
   Title,
 } from "@storybook/addon-docs";
 import { Story } from "@storybook/react";
-import { IdFilter, StringFilter } from "react3l-advanced-filters";
-import { Model, ModelFilter } from "react3l-common";
+import { IdFilter, StringFilter } from "react-3layer-advance-filters";
+import { Model, ModelFilter } from "react-3layer-commonn";
 import { Observable } from "rxjs";
 import AdvanceTreeFilterMaster from "./AdvanceTreeFilterMaster";
 import { Radio, RadioChangeEvent } from "antd";

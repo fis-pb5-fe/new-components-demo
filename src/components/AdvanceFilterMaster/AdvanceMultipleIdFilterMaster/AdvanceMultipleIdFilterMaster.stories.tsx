@@ -1,6 +1,6 @@
 import React from "react";
-import { IdFilter, StringFilter } from "react3l-advanced-filters";
-import { Model, ModelFilter } from "react3l-common";
+import { IdFilter, StringFilter } from "react-3layer-advance-filters";
+import { Model, ModelFilter } from "react-3layer-commonn";
 import { Observable, Subscription } from "rxjs";
 import AdvanceMultipleIdFilterMaster from "./AdvanceMultipleIdFilterMaster";
 import {
