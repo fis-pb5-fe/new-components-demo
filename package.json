@@ -1,8 +1,8 @@
 {
   "homepage": "http://khangmeo123.github.io/React-Ui-Components",
-  "name": "react-library-ui-components",
-  "version": "1.1.0",
-  "description": "React UI component for new design like Carbon Design",
+  "name": "react-3layer-ui-components",
+  "version": "1.0.2",
+  "description": "React UI component for new design",
   "main": "dist/cjs/bundle.js",
   "module": "dist/esm/bundle.js",
   "types": "dist/index.d.ts",
@@ -10,7 +10,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "rimraf dist && rollup -c",
+    "bundle-style": "sass ./src/styles/index.scss ./dist/react-3layer-ui-component.min.css --style compressed",
+    "build": "rimraf dist && rollup -c && yarn bundle-style",
     "dev": "rollup -c -w",
     "test": "jest",
     "lint": "eslint src",
@@ -93,15 +94,15 @@
     "dayjs": "^1.11.12",
     "i18next": "^23.12.3",
     "moment": "^2.30.1",
+    "react-3layer-advance-filters": "^1.0.4",
+    "react-3layer-axios-observable": "^1.0.2",
+    "react-3layer-common": "^1.0.4",
+    "react-3layer-decorators": "^1.0.1",
     "react-dropzone": "^11.5.1",
     "react-i18next": "^15.0.1",
     "react-image-crop": "^9.0.5",
     "react-infinite-scroll-component": "^6.1.0",
     "react-router-dom": "^6.25.1",
-    "react3l-advanced-filters": "^6.1.0-rc.1",
-    "react3l-axios-observable": "^6.0.0",
-    "react3l-common": "^6.0.0",
-    "react3l-decorators": "^7.0.0-rc.1",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1"
   }

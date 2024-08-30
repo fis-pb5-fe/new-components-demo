@@ -1,5 +1,5 @@
 import React from "react";
-import { Model } from "react3l-common";
+import { Model } from "react-3layer-common";
 import { ErrorObserver, Observable, Subscription } from "rxjs";
 import Checkbox from "./Checkbox";
 import "./CheckboxGroup.scss";

@@ -9,8 +9,7 @@ import {
 import React from "react";
 import AdvanceDateFilter from "../AdvanceFilter/AdvanceDateFilter/AdvanceDateFilter";
 import AdvanceIdFilter from "../AdvanceFilter/AdvanceIdFilter/AdvanceIdFilter";
-import { IdFilter, StringFilter } from "react3l-advanced-filters";
-import { ModelFilter } from "react3l-common";
+import { IdFilter, StringFilter } from "react-3layer-advance-filters";
 import { of } from "rxjs";
 import moment from "moment";
 import {
@@ -23,6 +22,8 @@ import {
   Title,
 } from "@storybook/addon-docs";
 import { Story } from "@storybook/react";
+import { ModelFilter } from "react-3layer-common";
+
 
 class DemoFilter extends ModelFilter {
   id: IdFilter = new IdFilter();
@@ -333,7 +334,7 @@ const Template: Story = (args) => {
           <AdvanceIdFilter
             placeHolder={"Select Organization"}
             searchProperty={"name"}
-            onChange={() => {}}
+            // onChange={() => {}}
             getList={demoListEnum}
             classFilter={DemoFilter}
             label={"Label"}

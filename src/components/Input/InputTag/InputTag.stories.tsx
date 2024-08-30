@@ -10,7 +10,7 @@ import {
 import { Story } from "@storybook/react";
 import { useDebounceFn } from "ahooks";
 import React from "react";
-import { Model } from "react3l-common";
+import { Model } from "react-3layer-common";
 import { DEBOUNCE_TIME_300 } from "../../../config/consts";
 import Button from "../../Button/NormalButton";
 import FormItem from "../../FormItem/FormItem";

@@ -1,7 +1,7 @@
 import React, { RefObject } from "react";
 import { Subscription } from "rxjs";
 import moment, { Moment } from "moment";
-import { Model } from "react3l-common";
+import { Model } from "react-3layer-common";
 import { TreeNode } from "@Components/Tree/TreeNode";
 import dayjs, { Dayjs } from "dayjs";
 export const CommonService = {

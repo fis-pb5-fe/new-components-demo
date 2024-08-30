@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import React from "react";
-import { Model } from "react3l-common";
+import { Model } from "react-3layer-common";
 import "./InpageNavigation.scss";
 
 export interface InpageNavigationProps {

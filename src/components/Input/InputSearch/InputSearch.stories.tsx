@@ -9,8 +9,8 @@ import {
 } from "@storybook/addon-docs";
 import { Story } from "@storybook/react";
 import React from "react";
-import { IdFilter, StringFilter } from "react3l-advanced-filters";
-import { ModelFilter } from "react3l-common";
+import { IdFilter, StringFilter } from "react-3layer-advance-filters";
+import { ModelFilter } from "react-3layer-common";
 import InputSearch from "./InputSearch";
 
 class DemoFilter extends ModelFilter {

@@ -12,11 +12,11 @@ import {
 } from "@storybook/addon-docs";
 import { Story } from "@storybook/react";
 import { ColumnProps } from "antd/lib/table";
-// import { Model } from "react3l-common";
+// import { Model } from "react-3layer-common";
 import { Key, RowSelectionType } from "antd/lib/table/interface";
 import React, { useMemo } from "react";
-import { StringFilter } from "react3l-advanced-filters";
-import { ModelFilter } from "react3l-common";
+import { StringFilter } from "react-3layer-advance-filters";
+import { ModelFilter } from "react-3layer-common";
 import dedent from "ts-dedent";
 import Button from "../Button/Button";
 import ActionBarComponent from "./ActionBarComponent/ActionBarComponent";

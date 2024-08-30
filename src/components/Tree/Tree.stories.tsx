@@ -9,7 +9,7 @@ import {
 } from "@storybook/addon-docs";
 import { Story } from "@storybook/react";
 import React from "react";
-import { Model, ModelFilter } from "react3l-common";
+import { Model, ModelFilter } from "react-3layer-common";
 import { Observable } from "rxjs";
 import Tree from "./Tree";
 const demoObservable = new Observable<Model[]>((observer) => {

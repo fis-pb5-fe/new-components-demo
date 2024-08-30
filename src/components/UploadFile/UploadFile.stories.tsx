@@ -9,7 +9,7 @@ import {
 } from "@storybook/addon-docs";
 import { ComponentMeta, Story } from "@storybook/react";
 import React from "react";
-import { Model } from "react3l-common";
+import { Model } from "react-3layer-common";
 import { Observable } from "rxjs";
 import UploadFile, { FileModel } from "./UploadFile";
 const demoList = [

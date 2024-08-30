@@ -1,6 +1,6 @@
 import React, { ReactSVGElement, RefObject } from "react";
 import { CloseFilled, ChevronDown } from "@carbon/icons-react";
-import { Model } from "react3l-common";
+import { Model } from "react-3layer-common";
 import classNames from "classnames";
 import { BORDER_TYPE } from "@Configs/enum";
 import { InputAction } from "../InputText/InputText";
