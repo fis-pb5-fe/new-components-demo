@@ -18,6 +18,7 @@
       &.ant-checkbox-checked {
         .ant-checkbox-inner {
           background-color: var(--palette-gray-100);
+          
         }
 
         &::after {
@@ -54,6 +55,8 @@
         }
       }
     }
+
+    
   }
 
   &.read-only {

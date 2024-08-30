@@ -28,8 +28,7 @@ const demoObservable = new Observable<Model[]>((observer) => {
       { id: 4, name: "Ban hành chính", code: "FAD" },
       {
         id: 1,
-        name:
-          "Ban công nghệ thông tin Ban công nghệ thông tin Ban công nghệ thông tin Ban công nghệ thông tin",
+        name: "Ban công nghệ thông tin Ban công nghệ thông tin Ban công nghệ thông tin Ban công nghệ thông tin",
         code: "FIM",
       },
       { id: 2, name: "Ban nhân sự", code: "FHR" },
@@ -66,7 +65,7 @@ export default {
       ),
     },
   },
-  args:{
+  args: {
     label: "Đơn vị tổ chức",
     placeHolder: "Chọn đơn vị",
     type: 1,
@@ -75,8 +74,7 @@ export default {
     label: {
       control: "text",
     },
-    placeHolder: {
-    },
+    placeHolder: {},
     type: {
       control: {
         type: "radio",
@@ -132,6 +130,7 @@ const Template: Story = (args) => {
           getList={demoSearchFunc}
           onChangeMultiple={handleChangeFilter} // if type is multiple pass this props
           listValue={list} // if type is multiple pass this prop
+          bgColor="gray"
         />
       </div>
     </div>
