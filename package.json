@@ -1,7 +1,7 @@
 {
   "homepage": "http://khangmeo123.github.io/React-Ui-Components",
   "name": "react-3layer-ui-components",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "React UI component for new design",
   "main": "dist/cjs/bundle.js",
   "module": "dist/esm/bundle.js",
