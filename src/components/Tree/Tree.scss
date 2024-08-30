@@ -66,11 +66,14 @@
       .ant-tree-switcher {
         display: flex;
         align-items: center;
+        justify-content: center;
       }
       .ant-tree-checkbox {
         margin: 0px;
         margin-right: 4px;
+        align-self:auto;
       }
+      
     }
 
     .ant-tree-treenode-selected,
