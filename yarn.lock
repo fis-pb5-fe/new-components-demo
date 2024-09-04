@@ -12253,10 +12253,10 @@ react-3layer-axios-observable@^1.0.2:
     rxjs "^7.8.1"
     typescript "^5.5.4"
 
-react-3layer-common@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/react-3layer-common/-/react-3layer-common-1.0.4.tgz#7dec88c36c0598f7dc80070d7f99f4b42ad6ae91"
-  integrity sha512-7mgMD9XEj2zvBJG4n/9oaa5jvATpXbYi/PLy4T1zcWkao93Vh5anJJsyj7EUPyejxexJ1jigBM8JTrz3j5nfew==
+react-3layer-common@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/react-3layer-common/-/react-3layer-common-1.0.5.tgz#c970109588b7ad44a751eaa63fa2ee889aa740c6"
+  integrity sha512-7iR6lA6Enp2o7t1qCT1odi+LoBLefVWsnFXDpntGII98ahc03XWaUsFP/cWThmFnh4968bQ1AqP2yldzwoP0iQ==
   dependencies:
     "@testing-library/jest-dom" "^5.17.0"
     "@testing-library/react" "^13.4.0"
@@ -12273,7 +12273,7 @@ react-3layer-common@^1.0.4:
     rollup "^4.21.1"
     rollup-plugin-typescript2 "^0.36.0"
     rxjs "^7.8.1"
-    typescript "^4.9.5"
+    typescript "^5.5.4"
     web-vitals "^2.1.4"
 
 react-3layer-decorators@^1.0.1, react-3layer-decorators@^1.0.2:
@@ -14282,7 +14282,7 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==
 
-typescript@^4.1.2, typescript@^4.9.5:
+typescript@^4.1.2:
   version "4.9.5"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.9.5.tgz#095979f9bcc0d09da324d58d03ce8f8374cbe65a"
   integrity sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==
