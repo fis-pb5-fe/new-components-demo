@@ -4054,15 +4054,17 @@
   dependencies:
     undici-types "~6.19.2"
 
-"@types/node@^16.18.106":
-  version "16.18.106"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.18.106.tgz#62228200da6d98365d2de5601f7230cdf041f0e2"
-  integrity sha512-YTgQUcpdXRc7iiEMutkkXl9WUx5lGUCVYvnfRg9CV+IA4l9epctEhCTbaw4KgzXaKYv8emvFJkEM65+MkNUhsQ==
-
 "@types/node@^18.0.0":
   version "18.19.47"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-18.19.47.tgz#18076201ad7dd3445046df6ce9ead5fe5abd9387"
   integrity sha512-1f7dB3BL/bpd9tnDJrrHb66Y+cVrhxSOTGorRNdHwYTUlTay3HuTDPKo9a/4vX9pMQkhYBcAbL4jQdNlhCFP9A==
+  dependencies:
+    undici-types "~5.26.4"
+
+"@types/node@^18.11.9":
+  version "18.19.49"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.19.49.tgz#2f55cba5214da8f16d48f02724bee58b104f374e"
+  integrity sha512-ALCeIR6n0nQ7j0FUF1ycOhrp6+XutJWqEu/vtdEqXFUQwkBfgUA5cEg3ZNmjWGF/ZYA/FcF9QMkL55Ar0O6UrA==
   dependencies:
     undici-types "~5.26.4"
 
@@ -12253,16 +12255,16 @@ react-3layer-axios-observable@^1.0.2:
     rxjs "^7.8.1"
     typescript "^5.5.4"
 
-react-3layer-common@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/react-3layer-common/-/react-3layer-common-1.0.5.tgz#c970109588b7ad44a751eaa63fa2ee889aa740c6"
-  integrity sha512-7iR6lA6Enp2o7t1qCT1odi+LoBLefVWsnFXDpntGII98ahc03XWaUsFP/cWThmFnh4968bQ1AqP2yldzwoP0iQ==
+react-3layer-common@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/react-3layer-common/-/react-3layer-common-1.0.6.tgz#855da433904029eb0b43607afb963f8b1762d09d"
+  integrity sha512-y+dXS9yJ2vX2CsVBNDXH6C3BJ07u3siva+ccRF7EuL841tZEiNPZTfVkgZWBAt6+z0BEu4L1R+fd9K1xvZ7z2Q==
   dependencies:
     "@testing-library/jest-dom" "^5.17.0"
     "@testing-library/react" "^13.4.0"
     "@testing-library/user-event" "^13.5.0"
     "@types/jest" "^27.5.2"
-    "@types/node" "^16.18.106"
+    "@types/node" "^18.11.9"
     "@types/react" "^18.3.4"
     "@types/react-dom" "^18.3.0"
     react "^18.3.1"
