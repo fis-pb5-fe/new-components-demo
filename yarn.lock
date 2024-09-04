@@ -4054,17 +4054,15 @@
   dependencies:
     undici-types "~6.19.2"
 
+"@types/node@18.11.9":
+  version "18.11.9"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.11.9.tgz#02d013de7058cea16d36168ef2fc653464cfbad4"
+  integrity sha512-CRpX21/kGdzjOpFsZSkcrXMGIBWMGNIHXXBVFSH+ggkftxg+XYP20TESbh+zFvFj3EQOl5byk0HTRn1IL6hbqg==
+
 "@types/node@^18.0.0":
   version "18.19.47"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-18.19.47.tgz#18076201ad7dd3445046df6ce9ead5fe5abd9387"
   integrity sha512-1f7dB3BL/bpd9tnDJrrHb66Y+cVrhxSOTGorRNdHwYTUlTay3HuTDPKo9a/4vX9pMQkhYBcAbL4jQdNlhCFP9A==
-  dependencies:
-    undici-types "~5.26.4"
-
-"@types/node@^18.11.9":
-  version "18.19.49"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.19.49.tgz#2f55cba5214da8f16d48f02724bee58b104f374e"
-  integrity sha512-ALCeIR6n0nQ7j0FUF1ycOhrp6+XutJWqEu/vtdEqXFUQwkBfgUA5cEg3ZNmjWGF/ZYA/FcF9QMkL55Ar0O6UrA==
   dependencies:
     undici-types "~5.26.4"
 
@@ -12255,16 +12253,16 @@ react-3layer-axios-observable@^1.0.2:
     rxjs "^7.8.1"
     typescript "^5.5.4"
 
-react-3layer-common@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/react-3layer-common/-/react-3layer-common-1.0.6.tgz#855da433904029eb0b43607afb963f8b1762d09d"
-  integrity sha512-y+dXS9yJ2vX2CsVBNDXH6C3BJ07u3siva+ccRF7EuL841tZEiNPZTfVkgZWBAt6+z0BEu4L1R+fd9K1xvZ7z2Q==
+react-3layer-common@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/react-3layer-common/-/react-3layer-common-1.0.7.tgz#7f37c2e21faa7c89833954498f88c037a5cb7bdb"
+  integrity sha512-R+rLWLFEXbokfb90DJyqXDvcERIXBOn/JEiXWK3XOcsYlGI7p3qObsETCNSxMVFMBIhI/xHzqIrue6Btbh1Qqw==
   dependencies:
     "@testing-library/jest-dom" "^5.17.0"
     "@testing-library/react" "^13.4.0"
     "@testing-library/user-event" "^13.5.0"
     "@types/jest" "^27.5.2"
-    "@types/node" "^18.11.9"
+    "@types/node" "18.11.9"
     "@types/react" "^18.3.4"
     "@types/react-dom" "^18.3.0"
     react "^18.3.1"
