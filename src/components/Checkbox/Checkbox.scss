@@ -27,6 +27,9 @@
         }
       }
     }
+    &:not(.ant-checkbox-wrapper-disabled):hover .ant-checkbox-checked:not(.ant-checkbox-disabled) .ant-checkbox-inner {
+      background-color: var(--palette-gray-100);
+    }
 
     .ant-checkbox-disabled {
       .ant-checkbox-inner {

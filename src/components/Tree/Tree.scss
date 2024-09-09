@@ -128,4 +128,8 @@
   .ant-tree-checkbox-inner {
     border: 1px solid var(--palette-coolGray-30);
   }
+  .ant-tree-checkbox-checked:hover .ant-tree-checkbox-inner {
+    background-color: var(--color-text) !important;
+    border-color: var(--color-text) !important;
+  }
 }

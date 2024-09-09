@@ -41,7 +41,7 @@ function Checkbox(props: CheckboxProps) {
       <CheckboxAntd
         checked={checked}
         onChange={handleChange}
-        disabled={disabled}
+        disabled={disabled || readOnly}
       >
         {maxLengthItem && label?.length > maxLengthItem ? (
           <Tooltip title={label}>
