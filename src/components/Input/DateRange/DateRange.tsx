@@ -80,10 +80,10 @@ function DateRange(props: DateRangeProps & RangePickerProps) {
   const internalValue: [dayjs.Dayjs , dayjs.Dayjs] = React.useMemo(() => {
     return [
       typeof value[0] === "string"
-        ? CommonService.toDayJS(value[0])
+        ? CommonService.toDayjsDate(value[0])
         : value[0],
       typeof value[1] === "string"
-        ? CommonService.toDayJS(value[1])
+        ? CommonService.toDayjsDate(value[1])
         : value[1],
     ];
   }, [value]);

@@ -64,7 +64,7 @@ function DatePicker(props: DatePickerProps & AntdDatePickerProps) {
   
   const internalValue = React.useMemo(() => {
     return typeof value === "string"
-      ? CommonService.toDayJS(value)
+      ? CommonService.toDayjsDate(value)
       : value;
   }, [value]);
 

@@ -8,11 +8,11 @@ import {
   Title,
 } from "@storybook/addon-docs";
 import { Story } from "@storybook/react";
-import { Moment } from "moment";
 import React from "react";
 import { BORDER_TYPE } from "../../../config/enum";
 import FormItem from "../../FormItem/FormItem";
 import TimePicker from "./TimePicker";
+import { Dayjs } from "dayjs";
 
 export default {
   title: "Input/TimePicker",
@@ -56,10 +56,10 @@ export default {
 };
 
 const Template: Story = (args) => {
-  const [value, setValue] = React.useState<Moment>();
+  const [value, setValue] = React.useState<Dayjs>();
 
-  const handleChange = React.useCallback((dateMoment, dateString) => {
-    setValue(dateMoment);
+  const handleChange = React.useCallback((dateDayjs, dateString) => {
+    setValue(dateDayjs);
   }, []);
 
   return (

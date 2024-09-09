@@ -130,14 +130,14 @@ const Template: Story = (args) => {
   );
 
   const handleChange = React.useCallback(
-    (item, dateMoment) => {
-      if (dateMoment && dateMoment.length > 0) {
-        filter.createdAt["lessEqual"] = dateMoment[1];
-        filter.createdAt["greaterEqual"] = dateMoment[0];
+    (item, dateDayjs) => {
+      if (dateDayjs && dateDayjs.length > 0) {
+        filter.createdAt["lessEqual"] = dateDayjs[1];
+        filter.createdAt["greaterEqual"] = dateDayjs[0];
       }
       setItem(item);
       setFilter({ ...filter });
-      setValue(dateMoment);
+      setValue(dateDayjs);
     },
     [filter]
   );

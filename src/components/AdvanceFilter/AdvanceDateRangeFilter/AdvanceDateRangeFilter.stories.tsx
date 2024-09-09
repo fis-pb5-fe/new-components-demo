@@ -56,8 +56,8 @@ export default {
 const Template: Story = (args) => {
   const [value, setValue] = React.useState<[any, any]>([null, null]);
 
-  const handleChange = React.useCallback((dateMoment, dateString) => {
-    setValue(dateMoment);
+  const handleChange = React.useCallback((dateDayjs, dateString) => {
+    setValue(dateDayjs);
   }, []);
 
   return (

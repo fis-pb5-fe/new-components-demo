@@ -68,10 +68,10 @@ function AdvanceDateRangeFilter(
   const internalValue: [Dayjs, Dayjs] = React.useMemo(() => {
     return [
       typeof values[0] === "string"
-        ? CommonService.toDayJS(values[0])
+        ? CommonService.toDayjsDate(values[0])
         : values[0],
       typeof values[1] === "string"
-        ? CommonService.toDayJS(values[1])
+        ? CommonService.toDayjsDate(values[1])
         : values[1],
     ];
   }, [values]);

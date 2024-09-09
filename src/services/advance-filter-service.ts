@@ -3,10 +3,10 @@ import { IdFilter } from "react-3layer-advance-filters";
 import { NumberFilter } from "react-3layer-advance-filters";
 import { StringFilter } from "react-3layer-advance-filters";
 import { ModelFilter, OrderType } from "react-3layer-common";
-import moment from "moment";
-import { Moment } from "moment";
 import React, { Dispatch, SetStateAction, useState } from "react";
 import { ActionFilterEnum } from "@Configs/enum";
+import dayjs, { Dayjs } from "dayjs";
+
 
 
 export class Filter { }
@@ -237,7 +237,7 @@ export const advanceFilterService = {
           });
         } else {
           if (value instanceof Array) {
-            if (moment.isMoment(value[0])) {
+            if (dayjs.isDayjs((value[0])) ) {
               dispatch({
                 type: ActionFilterEnum.ChangeAllField,
                 data: {
@@ -421,10 +421,10 @@ export const advanceFilterService = {
     dispatch: (action: AdvanceFilterAction<T1Filter>) => void,
     fieldName: keyof T1Filter,
     fieldType: keyof DateFilter
-  ): [Moment, (date: Moment) => void] {
+  ): [Dayjs, (date: Dayjs) => void] {
     const value = modelFilter[fieldName][fieldType];
     const handleDateFilter = React.useCallback(
-      (date: Moment) => {
+      (date: Dayjs) => {
         dispatch({
           type: ActionFilterEnum.ChangeOneField,
           fieldName: fieldName,
@@ -470,14 +470,14 @@ export const advanceFilterService = {
     modelFilter: T1Filter,
     dispatch: (action: AdvanceFilterAction<T1Filter>) => void,
     fieldName: keyof T1Filter
-  ): [[Moment, Moment], (dateRange: [Moment, Moment]) => void] {
+  ): [[Dayjs, Dayjs], (dateRange: [Dayjs, Dayjs]) => void] {
     const valueFrom =
       modelFilter[fieldName]["greater"] || null;
     const valueTo =
       modelFilter[fieldName]["less"] || null;
-    const value: [Moment, Moment] = [valueFrom, valueTo];
+    const value: [Dayjs, Dayjs] = [valueFrom, valueTo];
     const handleDateRangeFilter = React.useCallback(
-      (dateRange: [Moment, Moment]) => {
+      (dateRange: [Dayjs, Dayjs]) => {
         dispatch({
           type: ActionFilterEnum.ChangeAllField,
           data: {

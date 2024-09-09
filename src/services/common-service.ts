@@ -1,6 +1,5 @@
 import React, { RefObject } from "react";
 import { Subscription } from "rxjs";
-import moment, { Moment } from "moment";
 import { Model } from "react-3layer-common";
 import { TreeNode } from "@Components/Tree/TreeNode";
 import dayjs, { Dayjs } from "dayjs";
@@ -63,11 +62,7 @@ export const CommonService = {
       };
     }, [callback, handleClickOutside, ref]);
   },
-  toMomentDate(date: string): Moment {
-    return moment(date);
-  },
-
-  toDayJS(date: string): Dayjs {
+  toDayjsDate(date: string): Dayjs {
     return dayjs(date);
   },
 

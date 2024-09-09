@@ -11,7 +11,6 @@ import AdvanceDateFilter from "../AdvanceFilter/AdvanceDateFilter/AdvanceDateFil
 import AdvanceIdFilter from "../AdvanceFilter/AdvanceIdFilter/AdvanceIdFilter";
 import { IdFilter, StringFilter } from "react-3layer-advance-filters";
 import { of } from "rxjs";
-import moment from "moment";
 import {
   ArgsTable,
   Description,
@@ -23,6 +22,7 @@ import {
 } from "@storybook/addon-docs";
 import { Story } from "@storybook/react";
 import { ModelFilter } from "react-3layer-common";
+import dayjs from "dayjs";
 
 
 class DemoFilter extends ModelFilter {
@@ -347,10 +347,9 @@ const Template: Story = (args) => {
           }}
         >
           <AdvanceDateFilter
-            onChange={() => {}}
             label="Ngày nhập hàng"
             placeholder={"Chọn ngày"}
-            value={moment()}
+            value={dayjs()}
           />
         </div>
       </Drawer>

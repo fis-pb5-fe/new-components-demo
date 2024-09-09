@@ -1,4 +1,5 @@
-import moment from "moment";
+import dayjs from "dayjs";
+
 
 export const PUBLIC_URL: string = process.env.PUBLIC_URL;
 export const ASSETS_IMAGE: string = PUBLIC_URL
@@ -26,7 +27,7 @@ export const STANDARD_DATE_TIME_FORMAT = `${STANDARD_DATE_FORMAT}${
   "T" + STANDARD_TIME_FORMAT + "Z"
 }`;
 export const STANDARD_DATE_TIME_FORMAT_VIEW = `${STANDARD_DATE_FORMAT_INVERSE} ${STANDARD_TIME_FORMAT}`;
-export const TIMEZONE_OFFSET: string = moment().format("Z");
+export const TIMEZONE_OFFSET: string = dayjs().format("Z");
 
 /**
  * Debounce time constants

@@ -1,10 +1,9 @@
 import { Model, ModelFilter, OrderType } from "react-3layer-common";
 import { CommonService } from "@Services/common-service";
 import classNames from "classnames";
-import moment, { Moment } from "moment";
 import React, { RefObject } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { ErrorObserver, forkJoin, Observable, finalize } from "rxjs";
+import { forkJoin, Observable, finalize } from "rxjs";
 import Modal from "../Modal/NormalModal/Modal";
 import Button from "@Components/Button";
 import { Creator, FileModel, Message } from "./Comment.model";
@@ -12,6 +11,7 @@ import ContentEditable from "./ContentEditable/ContentEditable";
 import IconLoading from "@Components/IconLoading";
 import { Popconfirm } from "antd";
 import "./Comment.scss";
+import dayjs, { Dayjs } from "dayjs";
 
 export interface CommentProps<TFilter extends ModelFilter> {
   /**Creator of comment*/
@@ -68,14 +68,14 @@ export interface listAction {
 const loading = <IconLoading color="#0F62FE" size={24} />;
 
 function formatDateTime(
-  time: Moment,
-  dateTimeFormat: string = "DD-MM-YYYY HH:mm:ss"
+  time: Dayjs,
+  dateTimeFormat = "DD-MM-YYYY HH:mm:ss"
 ) {
   if (!time) return null;
   if (typeof time === "object" && "format" in time) {
     return time.format(dateTimeFormat);
   }
-  return moment(time).format(dateTimeFormat);
+  return dayjs(time).format(dateTimeFormat);
 }
 
 function initFilter(initialValue: any) {
@@ -311,7 +311,9 @@ function Comment(props: CommentProps<ModelFilter>) {
             }, 200);
             getListMessages();
           },
-          (err: ErrorObserver<Error>) => {}
+          () => {
+            //
+          }
         );
     }
   }, [messageCurrentEdit, updateMessage, getListMessages, bindEventClick]);
@@ -455,7 +457,6 @@ function Comment(props: CommentProps<ModelFilter>) {
         subcription.unsubscribe();
       };
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [discussionId]);
 
   return (

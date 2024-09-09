@@ -9,10 +9,10 @@ import {
   STANDARD_TIME_FORMAT,
   STANDARD_TIME_REGEX,
 } from "@Configs/consts";
-import moment, { Moment } from "moment";
+import dayjs, { Dayjs } from "dayjs";
 
 export function formatDate(
-  date: Moment,
+  date: Dayjs,
   dateFormat: string = STANDARD_DATE_FORMAT_INVERSE_DEFAULT
 ) {
   if (date) {
@@ -20,29 +20,29 @@ export function formatDate(
       return date.format(dateFormat);
     }
   }
-  return moment(date).format(dateFormat);
+  return dayjs(date).format(dateFormat);
 }
 
 export function formatTime(
-  time: Moment,
+  time: Dayjs,
   timeFormat: string = STANDARD_TIME_FORMAT
 ) {
   if (!time) return null;
   if (typeof time === "object" && "format" in time) {
     return time.format(timeFormat);
   }
-  return moment(time).format(timeFormat);
+  return dayjs(time).format(timeFormat);
 }
 
 export function formatDateTime(
-  time: Moment,
+  time: Dayjs,
   dateTimeFormat: string = STANDARD_DATE_TIME_FORMAT_VIEW
 ) {
   if (!time) return null;
   if (typeof time === "object" && "format" in time) {
     return time.format(dateTimeFormat);
   }
-  return moment(time).format(dateTimeFormat);
+  return dayjs(time).format(dateTimeFormat);
 }
 
 export function isDateValue(date?: string) {
@@ -61,16 +61,16 @@ export function isDateTimeValue(time?: string) {
     time?.match(STANDARD_TIME_REGEX)
   );
 }
-export function formatInputDate(value: Moment | string | undefined) {
+export function formatInputDate(value: Dayjs | string | undefined) {
   if (typeof value === "object") {
     return value;
   }
   if (typeof value === "string" && value !== DEFAULT_DATETIME_VALUE) {
-    /* check whether value is dateTime value, if true return moment instance */
+    /* check whether value is dateTime value, if true return dayjs instance */
     if (isDateTimeValue(value)) {
-      return moment(value);
+      return dayjs(value);
     }
-    return moment(value, STANDARD_DATE_FORMAT_INVERSE);
+    return dayjs(value, STANDARD_DATE_FORMAT_INVERSE);
   }
   return undefined;
 }

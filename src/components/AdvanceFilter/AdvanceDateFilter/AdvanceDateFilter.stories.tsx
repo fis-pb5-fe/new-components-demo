@@ -59,8 +59,8 @@ const Template: Story = (args) => {
   const [value, setValue] = React.useState<Dayjs>();
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const handleChange = React.useCallback((dateMoment, dateString) => {
-    setValue(dateMoment);
+  const handleChange = React.useCallback((dateDayjs, dateString) => {
+    setValue(dateDayjs);
   }, []);
 
   return (

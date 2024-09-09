@@ -1,5 +1,5 @@
+import { Dayjs } from "dayjs";
 import { Model, ModelFilter } from "react-3layer-common";
-import { Moment } from "moment";
 
 export class Message extends Model {
   id?: number;
@@ -7,9 +7,9 @@ export class Message extends Model {
   content?: string;
   mobileContent?: string;
   creatorId?: number;
-  createdAt?: Moment;
-  updatedAt?: Moment;
-  deletedAt?: Moment;
+  createdAt?: Dayjs;
+  updatedAt?: Dayjs;
+  deletedAt?: Dayjs;
   creator?: Creator;
   isOwner?: boolean;
   isPopup?: boolean;

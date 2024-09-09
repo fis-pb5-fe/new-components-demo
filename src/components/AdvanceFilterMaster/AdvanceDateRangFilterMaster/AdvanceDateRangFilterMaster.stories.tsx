@@ -66,8 +66,8 @@ const Template: Story = (args) => {
   const [value, setValue] = React.useState<[any, any]>([null, null]);
   const [item, setItem] = React.useState<any>(null);
 
-  const handleChange = React.useCallback((item, dateMoment) => {
-    setValue(dateMoment);
+  const handleChange = React.useCallback((item, dateDayjs) => {
+    setValue(dateDayjs);
     setItem(item);
   }, []);
 

@@ -8,19 +8,19 @@ import {
   Title,
 } from "@storybook/addon-docs";
 import { Story } from "@storybook/react";
-import moment from "moment";
 import React from "react";
 import { ModelFilter } from "react-3layer-common";
 import { Observable, of } from "rxjs";
 import Comment from "./Comment";
 import { FileModel, Message } from "./Comment.model";
+import dayjs from "dayjs";
 
 const demoMessageUpdate = {
   id: 1,
   discussionId: "930cd7ca-b3b0-4105-8c82-6e45d2f64ef7",
   content: "<a>Đây là message update.</a>",
   creatorId: 10,
-  createdAt: moment(),
+  createdAt: dayjs(),
   creator: {
     id: 10,
     userName: "Nguyễn Thị Hương",
@@ -35,7 +35,7 @@ const listMessageDemo = [
     content:
       "<a>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</a>",
     creatorId: 10,
-    createdAt: moment(),
+    createdAt: dayjs(),
     creator: {
       id: 10,
       userName: "Nguyễn Thị Hương",
@@ -49,7 +49,7 @@ const listMessageDemo = [
     content:
       '<img src="https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg" alt="IMG"/>',
     creatorId: 11,
-    createdAt: moment(),
+    createdAt: dayjs(),
     creator: {
       id: 11,
       userName: "Nguyễn Thị Hồng Uyên",
@@ -64,7 +64,7 @@ const listMessageDemo = [
   //     content:
   //       "<a>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</a>",
   //     creatorId: 11,
-  //     createdAt: moment(),
+  //     createdAt: dayjs(),
   //     creator: {
   //       id: 11,
   //       userName: "Nguyễn Thị Hồng Uyên",
@@ -78,7 +78,7 @@ const listMessageDemo = [
   //     discussionId: "930cd7ca-b3b0-4105-8c82-6e45d2f64ef7",
   //     content: "Lorem Ipsum is simply",
   //     creatorId: 11,
-  //     createdAt: moment(),
+  //     createdAt: dayjs(),
   //     creator: {
   //       id: 11,
   //       userName: "Nguyễn Thị Hồng Uyên",
@@ -96,7 +96,7 @@ const listMessageDemo = [
       Lorem Ipsum is simply dummy text of the printing and typesetting industry
       `,
     creatorId: 10,
-    createdAt: moment(),
+    createdAt: dayjs(),
     creator: {
       id: 10,
       userName: "Nguyen Thi Hương",
@@ -109,7 +109,7 @@ const listMessageDemo = [
   //     discussionId: "930cd7ca-b3b0-4105-8c82-6e45d2f64ef7",
   //     content: "Lorem Ipsum is simply dummy text",
   //     creatorId: 10,
-  //     createdAt: moment(),
+  //     createdAt: dayjs(),
   //     creator: {
   //       id: 10,
   //       userName: "Nguyễn Thị Hương",

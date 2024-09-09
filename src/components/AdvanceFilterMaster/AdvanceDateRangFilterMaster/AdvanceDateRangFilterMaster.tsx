@@ -189,10 +189,10 @@ function AdvanceDateRangeFilterMaster(
     return value && value.length > 0
       ? [
           typeof value[0] === "string"
-            ? CommonService.toDayJS(value[0])
+            ? CommonService.toDayjsDate(value[0])
             : value[0],
           typeof value[1] === "string"
-            ? CommonService.toDayJS(value[1])
+            ? CommonService.toDayjsDate(value[1])
             : value[1],
         ]
       : [null, null];
