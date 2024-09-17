@@ -16,6 +16,7 @@ import AdvanceDateRangFilterMaster from "./AdvanceDateRangFilterMaster";
 export default {
   title: "AdvanceFilterMaster/AdvanceDateRangFilterMaster",
   component: AdvanceDateRangFilterMaster,
+  tags: ['autodocs'],
   parameters: {
     controls: { expanded: true },
     docs: {

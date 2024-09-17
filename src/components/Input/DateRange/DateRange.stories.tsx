@@ -15,6 +15,7 @@ import DateRange from "./DateRange";
 export default {
   title: "Input/DateRange",
   component: DateRange,
+  tags: ['autodocs'],
   parameters: {
     controls: { expanded: true },
     docs: {

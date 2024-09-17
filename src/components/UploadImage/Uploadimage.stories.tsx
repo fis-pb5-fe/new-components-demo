@@ -49,6 +49,7 @@ const menu = [
 export default {
   title: "UploadImage",
   component: UploadImage,
+  tags: ['autodocs'],
   parameters: {
     controls: { expanded: true },
     docs: {

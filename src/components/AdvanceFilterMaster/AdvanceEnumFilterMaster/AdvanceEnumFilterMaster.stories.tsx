@@ -53,6 +53,7 @@ const filterValue = new DemoFilter();
 export default {
   title: "AdvanceFilterMaster/AdvanceEnumFilterMaster",
   component: AdvanceEnumFilterMaster,
+  tags: ['autodocs'],
   parameters: {
     controls: { expanded: true },
     docs: {

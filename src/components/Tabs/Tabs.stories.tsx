@@ -17,6 +17,7 @@ import Tabs from "./Tabs";
 export default {
   title: "Tabs",
   component: Tabs,
+  tags: ['autodocs'],
   parameters: {
     controls: { expanded: true },
     docs: {

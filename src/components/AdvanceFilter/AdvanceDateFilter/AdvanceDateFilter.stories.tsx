@@ -16,6 +16,7 @@ import { Dayjs } from "dayjs";
 export default {
   title: "AdvanceFilter/AdvanceDateFilter",
   component: AdvanceDateFilter,
+  tags: ['autodocs'],
   subcomponents: { AdvanceDateFilter },
   parameters: {
     controls: { expanded: true },

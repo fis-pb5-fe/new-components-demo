@@ -49,6 +49,7 @@ class DemoFilter extends ModelFilter {
 export default {
   title: "Select/MultipleSelect",
   component: MultipleSelect,
+  tags: ['autodocs'],
   parameters: {
     controls: { expanded: true },
     docs: {

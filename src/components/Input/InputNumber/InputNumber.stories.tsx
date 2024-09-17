@@ -16,6 +16,7 @@ import { ComponentMeta, Story } from "@storybook/react";
 export default {
   title: "Input/InputNumber",
   component: InputNumber,
+  tags: ['autodocs'],
   subcomponents: { FormItem },
   parameters: {
     controls: { expanded: true },

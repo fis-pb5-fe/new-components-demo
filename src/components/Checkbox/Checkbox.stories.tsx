@@ -5,6 +5,7 @@ import CheckboxGroup from "./CheckboxGroup";
 export default {
   title: "Checkbox",
   component: Checkbox,
+  tags: ['autodocs'],
   parameters: {
     controls: { expanded: true },
   },

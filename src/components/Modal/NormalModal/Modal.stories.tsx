@@ -23,6 +23,7 @@ export type LoadingType = "default" | "submitting" | "submitted" | "error";
 export default {
   title: "Modal",
   component: Modal,
+  tags: ['autodocs'],
   parameters: {
     controls: { expanded: true },
     docs: {

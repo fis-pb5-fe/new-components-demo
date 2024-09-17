@@ -16,6 +16,7 @@ import TextArea, { TextAreaProps } from "./TextArea";
 export default {
   title: "Input/TextArea",
   component: TextArea,
+  tags: ['autodocs'],
   subcomponents: { FormItem },
   parameters: {
     controls: { expanded: true },

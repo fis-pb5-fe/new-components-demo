@@ -45,6 +45,7 @@ const list = [
 export default {
   title: "Select/Select",
   component: Select,
+  tags: ['autodocs'],
   parameters: {
     controls: { expanded: true },
     docs: {

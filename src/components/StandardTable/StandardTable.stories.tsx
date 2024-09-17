@@ -55,6 +55,7 @@ enum ORDER_TYPE {
 export default {
   title: "Table/StandardTable",
   component: StandardTable,
+  tags: ['autodocs'],
   subcomponents: { LayoutHeader, LayoutCell, OneLineText, TwoLineText },
   parameters: {
     controls: { expanded: true },

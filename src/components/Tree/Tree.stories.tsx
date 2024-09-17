@@ -33,6 +33,7 @@ const demoSearchFunc = (TModelFilter?: ModelFilter) => {
 export default {
   title: "Tree",
   component: Tree,
+  tags: ['autodocs'],
   parameters: {
     controls: { expanded: true },
     docs: {

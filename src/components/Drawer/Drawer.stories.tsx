@@ -48,6 +48,7 @@ const demoListEnum = (TModelFilter?: ModelFilter) => {
 export default {
   title: "Drawer",
   component: Drawer,
+  tags: ['autodocs'],
   parameters: {
     controls: { expanded: true },
     docs: {

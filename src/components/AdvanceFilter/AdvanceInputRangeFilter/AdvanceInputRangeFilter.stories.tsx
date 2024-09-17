@@ -21,6 +21,7 @@ class DemoFilter extends ModelFilter {
 export default {
   title: "AdvanceFilter/AdvanceInputRangeFilter",
   component: AdvanceInputRangeFilter,
+  tags: ['autodocs'],
   parameters: {
     controls: { expanded: true },
     docs: {

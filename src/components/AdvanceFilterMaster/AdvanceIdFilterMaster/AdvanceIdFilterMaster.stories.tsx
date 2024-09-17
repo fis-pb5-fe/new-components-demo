@@ -60,6 +60,7 @@ const demoSearchFunc = (TModelFilter?: ModelFilter) => {
 export default {
   title: "AdvanceFilterMaster/AdvanceIdFilterMaster",
   component: AdvanceIdFilterMaster,
+  tags: ['autodocs'],
   parameters: {
     controls: { expanded: true },
     docs: {

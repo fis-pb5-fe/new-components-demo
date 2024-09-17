@@ -15,6 +15,7 @@ import RadioGroup from "./RadioGroup";
 export default {
   title: "Radio",
   component: Radio,
+  tags: ['autodocs'],
   parameters: {
     controls: { expanded: true },
     docs: {

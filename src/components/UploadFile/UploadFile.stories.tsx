@@ -47,6 +47,7 @@ class ModelOBJ extends Model {
 export default {
   title: "UploadFile",
   component: UploadFile,
+  tags: ['autodocs'],
   parameters: {
     controls: { expanded: true },
     docs: {

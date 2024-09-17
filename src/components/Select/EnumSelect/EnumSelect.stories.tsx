@@ -39,6 +39,7 @@ const demoSearchFunc = () => {
 export default {
   title: "Select/EnumSelect",
   component: EnumSelect,
+  tags: ['autodocs'],
   subcomponents: { FormItem },
   parameters: {
     controls: { expanded: true },

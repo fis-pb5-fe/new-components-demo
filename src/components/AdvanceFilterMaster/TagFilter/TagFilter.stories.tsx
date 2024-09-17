@@ -71,6 +71,7 @@ const appUserSearchFunc = (TModelFilter?: ModelFilter) => {
 export default {
   title: "AdvanceFilterMaster/TagFilter",
   component: TagFilter,
+  tags: ['autodocs'],
   parameters: {
     controls: { expanded: true },
     docs: {

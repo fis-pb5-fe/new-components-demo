@@ -48,6 +48,7 @@ const demoSearchFunc = () => {
 export default {
   title: "AdvanceFilter/AdvanceEnumFilter",
   component: AdvanceEnumFilter,
+  tags: ['autodocs'],
   subcomponents: { FormItem },
   parameters: {
     controls: { expanded: true },

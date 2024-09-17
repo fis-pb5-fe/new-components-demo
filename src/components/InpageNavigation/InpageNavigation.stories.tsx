@@ -48,6 +48,7 @@ const list = [
 export default {
   title: "InpageNavigation",
   component: InpageNavigation,
+  tags: ['autodocs'],
   parameters: {
     controls: { expanded: true },
     docs: {

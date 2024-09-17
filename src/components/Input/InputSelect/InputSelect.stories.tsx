@@ -16,6 +16,7 @@ import InputSelect from "./InputSelect";
 export default {
   title: "Input/InputSelect",
   component: InputSelect,
+  tags: ['autodocs'],
   subcomponents: { FormItem },
   parameters: {
     controls: { expanded: true },

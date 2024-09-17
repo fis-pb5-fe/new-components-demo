@@ -40,6 +40,7 @@ const list = [
 export default {
   title: "AdvanceFilter/AdvanceIdFilter",
   component: AdvanceIdFilter,
+  tags: ['autodocs'],
   parameters: {
     controls: { expanded: true },
     docs: {

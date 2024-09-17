@@ -22,6 +22,7 @@ class DemoFilter extends ModelFilter {
 export default {
   title: "Input/InputSearch",
   component: InputSearch,
+  tags: ['autodocs'],
   parameters: {
     controls: { expanded: true },
     docs: {

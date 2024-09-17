@@ -19,6 +19,7 @@ enum SIZE_TYPE {
 export default {
   title: "OverflowMenu",
   component: OverflowMenu,
+  tags: ['autodocs'],
   subcomponents: { OverflowMenuList },
   parameters: {
     controls: { expanded: true },

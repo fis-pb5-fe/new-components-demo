@@ -49,6 +49,7 @@ class DemoFilter extends ModelFilter {
 export default {
   title: "AdvanceFilter/AdvanceIdMultipleFilter",
   component: AdvanceIdMultipleFilter,
+  tags: ['autodocs'],
   parameters: {
     controls: { expanded: true },
     docs: {

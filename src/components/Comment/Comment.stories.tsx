@@ -182,6 +182,7 @@ const demoGetList = (value: any) => {
 export default {
   title: "Comment",
   component: Comment,
+  tags: ['autodocs'],
   subcomponents: { Comment },
   parameters: {
     controls: { expanded: true },

@@ -15,6 +15,7 @@ import AdvanceDateRangeFilter from "./AdvanceDateRangeFilter";
 export default {
   title: "AdvanceFilter/AdvanceDateRangeFilter",
   component: AdvanceDateRangeFilter,
+  tags: ['autodocs'],
   subcomponents: { AdvanceDateRangeFilter },
   parameters: {
     controls: { expanded: true },

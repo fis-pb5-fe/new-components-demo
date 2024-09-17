@@ -14,6 +14,7 @@ import FormItem from "./FormItem";
 export default {
   title: "FormItem",
   component: FormItem,
+  tags: ['autodocs'],
   parameters: {
     controls: { expanded: true },
     docs: {

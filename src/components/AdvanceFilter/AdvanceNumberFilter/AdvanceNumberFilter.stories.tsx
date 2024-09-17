@@ -15,6 +15,7 @@ import { Story } from "@storybook/react";
 export default {
   title: "AdvanceFilter/AdvanceNumberFilter",
   component: AdvanceNumberFilter,
+  tags: ['autodocs'],
   parameters: {
     controls: { expanded: true },
     docs: {

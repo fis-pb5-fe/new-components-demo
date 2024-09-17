@@ -16,6 +16,7 @@ import classNames from "classnames";
 export default {
   title: "Button",
   component: Button,
+  tags: ['autodocs'],
   parameters: {
     controls: { expanded: true },
     docs: {
@@ -34,6 +35,7 @@ export default {
   args: {
     className: "btn--sm",
   },
+
   argTypes: {
     className: {
       control: {

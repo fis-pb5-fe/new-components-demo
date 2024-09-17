@@ -42,6 +42,7 @@ function reducerFunc(state: Model, action: changeAction<Model>): Model[] {
 export default {
   title: "Select/TreeSelect",
   component: TreeSelect,
+  tags: ['autodocs'],
   subcomponents: { FormItem },
   parameters: {
     controls: { expanded: true },

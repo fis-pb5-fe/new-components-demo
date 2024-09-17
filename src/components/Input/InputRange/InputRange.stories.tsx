@@ -22,6 +22,7 @@ class DemoFilter extends ModelFilter {
 export default {
   title: "Input/InputRange",
   component: InputRange,
+  tags: ['autodocs'],
   subcomponents: { FormItem },
   parameters: {
     controls: { expanded: true },

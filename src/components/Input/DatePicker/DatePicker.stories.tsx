@@ -15,6 +15,7 @@ import { Dayjs } from "dayjs";
 export default {
   title: "Input/DatePicker",
   component: DatePicker,
+  tags: ['autodocs'],
   parameters: {
     controls: { expanded: true },
     docs: {

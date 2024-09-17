@@ -78,6 +78,7 @@ const demoSearchFunc = (TModelFilter?: ModelFilter) => {
 export default {
   title: "AdvanceFilter/AdvanceTreeFilter",
   component: AdvanceTreeFilter,
+  tags: ['autodocs'],
   parameters: {
     controls: { expanded: true },
     docs: {

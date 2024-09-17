@@ -19,6 +19,7 @@ export type LoadingType = "default" | "submitting" | "submitted" | "error";
 export default {
   title: "TearSheet",
   component: TearSheet,
+  tags: ['autodocs'],
   parameters: {
     controls: { expanded: true },
     docs: {

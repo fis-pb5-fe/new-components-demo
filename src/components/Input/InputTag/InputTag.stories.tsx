@@ -28,6 +28,7 @@ const demoItemList = [
 export default {
   title: "Input/InputTag",
   component: InputTag,
+  tags: ['autodocs'],
   parameters: {
     controls: { expanded: true },
     docs: {

@@ -45,6 +45,7 @@ const listEnum = [
 export default {
   title: "ProgressIndicator",
   component: ProgressIndicator,
+  tags: ['autodocs'],
   parameters: {
     controls: { expanded: true },
     docs: {

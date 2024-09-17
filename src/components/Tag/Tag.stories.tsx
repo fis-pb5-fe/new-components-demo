@@ -14,6 +14,7 @@ import Tag from "./Tag";
 export default {
   title: "Tag",
   component: Tag,
+  tags: ['autodocs'],
   parameters: {
     controls: { expanded: true },
     docs: {

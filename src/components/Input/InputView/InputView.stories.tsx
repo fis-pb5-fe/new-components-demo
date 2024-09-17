@@ -15,6 +15,7 @@ import InputView from "./InputView";
 export default {
   title: "Input/InputView",
   component: InputView,
+  tags: ['autodocs'],
   parameters: {
     controls: { expanded: true },
     docs: {

@@ -18,6 +18,7 @@ const { TabPane } = Tabs;
 export default {
   title: "InlineLoading",
   component: InlineLoading,
+  tags: ['autodocs'],
   parameters: {
     controls: { expanded: true },
     docs: {

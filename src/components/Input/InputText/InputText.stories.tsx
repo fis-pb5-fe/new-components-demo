@@ -17,6 +17,7 @@ export default {
   title: "Input/InputText",
   component: InputText,
   subcomponent: FormItem,
+  tags: ['autodocs'],
   parameters: {
     controls: { expanded: true },
     docs: {
