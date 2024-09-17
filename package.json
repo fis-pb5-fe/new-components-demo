@@ -16,9 +16,11 @@
     "test": "jest",
     "lint": "eslint src",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
     "predeploy-storybook": "yarn run build-storybook",
-    "deploy-storybook": "gh-pages -d storybook-static"
+    "deploy-storybook": "gh-pages -d storybook-static",
+    "build-storybook": "storybook build -s public",
+    "predeploy": "npm run build-storybook",
+    "deploy": "gh-pages -d storybook-static"
   },
   "repository": {
     "type": "git"
