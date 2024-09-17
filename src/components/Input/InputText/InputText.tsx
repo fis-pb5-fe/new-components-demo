@@ -1,13 +1,13 @@
-import classNames from "classnames";
+import { Close } from "@carbon/icons-react";
 import { BORDER_TYPE } from "@Configs/enum";
-import React, { ReactNode, ReactSVGElement, RefObject } from "react";
-import { CloseFilled } from "@carbon/icons-react";
 import { Tooltip } from "antd";
+import classNames from "classnames";
+import React, { ReactNode, RefObject } from "react";
 import "./InputText.scss";
 
 export interface InputAction {
   name?: ReactNode;
-  action?: any;
+  action?: unknown;
 }
 
 export interface InputTextProps {
@@ -48,7 +48,7 @@ export interface InputTextProps {
   /**Handle onBlur action*/
   onBlur?: (T: string | null) => void;
   /**Handle onKeyDown action*/
-  onKeyDown?: (event: any) => void;
+  onKeyDown?: (event: unknown) => void;
   /** Custom background color for component: "white" || "gray" */
   bgColor?: "white" | "gray";
   autoComplete?: boolean;
@@ -56,7 +56,7 @@ export interface InputTextProps {
 }
 
 const InputText = React.forwardRef(
-  (props: InputTextProps, ref: React.Ref<any>) => {
+  (props: InputTextProps, ref: React.Ref<unknown>) => {
     const {
       action,
       label,
@@ -109,7 +109,7 @@ const InputText = React.forwardRef(
     );
 
     const handleClearInput = React.useCallback(
-      (event: React.MouseEvent<ReactSVGElement, MouseEvent>) => {
+      () => {
         setInternalValue("");
         if (inputRef && inputRef.current) {
           inputRef.current.focus();
@@ -134,7 +134,7 @@ const InputText = React.forwardRef(
     );
 
     const handleKeyDown = React.useCallback(
-      (event: any) => {
+      (event: React.KeyboardEventHandler<HTMLInputElement>) => {
         if (typeof onKeyDown === "function") {
           onKeyDown(event);
         }
@@ -173,7 +173,7 @@ const InputText = React.forwardRef(
 
     return (
       <div className={classNames("input-text__wrapper", className)}>
-        <div className="input-text__label m-b--3xs">
+        <div className="input-text__label m-b--2xs p-l--3xs">
           {type !== BORDER_TYPE.FLOAT_LABEL && label && (
             <label
               className={classNames("component__title", {
@@ -194,9 +194,9 @@ const InputText = React.forwardRef(
               <span
                 className="m-l--3xs body-text--md color-link"
                 style={{ cursor: "pointer" }}
-                onClick={action.action}
+                onClick={action?.action}
               >
-                {action.name}
+                {action?.name}
               </span>
             )}
           </div>
@@ -205,10 +205,10 @@ const InputText = React.forwardRef(
           className={classNames("component__input input-text__container", {
             "input-text__container--sm": isSmall,
             "input-text__container--white": bgColor === "white",
-            "p-y--2xs": isSmall,
-            "p-x--xs": isSmall,
+            "p--2xs": isSmall,
             "p--xs": !isSmall,
             "input-text--material": type === BORDER_TYPE.MATERIAL,
+            "input-text--bordered": type === BORDER_TYPE.BORDERED,
             "input-text--disabled ": disabled,
             "input-text--float": type === BORDER_TYPE.FLOAT_LABEL,
           })}
@@ -263,7 +263,7 @@ const InputText = React.forwardRef(
           )}
           {internalValue && !disabled && !readOnly && (
             <div className={classNames("input-icon__clear", "m-l--2xs")}>
-              <CloseFilled size={16} onClick={handleClearInput} />
+              <Close size={16} onClick={handleClearInput} />
             </div>
           )}
           {suffix && (
@@ -286,7 +286,7 @@ const InputText = React.forwardRef(
 InputText.displayName = "InputText";
 InputText.defaultProps = {
   label: "",
-  isSmall: false,
+  isSmall: true,
   type: BORDER_TYPE.BORDERED,
   isRequired: false,
   prefix: "",
@@ -295,6 +295,7 @@ InputText.defaultProps = {
   className: "",
   maxLength: 0,
   typeInput: "text",
+  bgColor: "white"
 };
 
 export default InputText;
