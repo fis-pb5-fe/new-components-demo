@@ -130,7 +130,6 @@ const Template: Story = (args) => {
           onClick={handleOnClick}
           icon={<Fpt />}
           iconPlace="both"
-          disabled={loading}
         >
           <div>Button</div>
         </Button>

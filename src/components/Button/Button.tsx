@@ -15,6 +15,8 @@ import "./ButtonComponent.scss";
 export type ButtonType =
   | "primary"
   | "secondary"
+  | "tertiary"
+  | "text"
   | "danger"
   | "outline-primary"
   | "outline-danger"
@@ -56,6 +58,8 @@ const Button = (props: PropsWithChildren<ButtonProps>, ref: React.Ref<any>) => {
   if (
     props.type === "primary" ||
     props.type === "secondary" ||
+    props.type === "tertiary" ||
+    props.type === "text" ||
     props.type === "danger"
   ) {
     return <NormalButton {...props} />;

@@ -370,7 +370,9 @@ $colors: (
   --color-primary-active: #0830bc;
   --color-primary-blur: #ABBDFD;
   --color-primary-pressed: #88a2fd;
-  --color-primary-disable: #DFE1e6;
+  --color-bg-button-disable: #DFE1e6;
+
+  --color-text-tertiary: #42526E;
   
   --color-secondary: #b3bac5;
   --color-secondary-hover: #4c4c4c;
@@ -395,7 +397,8 @@ $colors: (
   --color-critical: #da3e33;
   --color-critical-hover: #aa3028;
   --color-critical-active: #aa3028;
-  --color-critical-blur: #f04438;
+  --color-critical-blur: #F8A9A3;
+  --color-critical-pressed: #f04438;
 }
 
 /* class bg and color for color $palletes with syntax .palette-$colorname-$number-$type */
