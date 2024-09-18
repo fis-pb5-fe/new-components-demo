@@ -1,4 +1,3 @@
-import { Add } from "@carbon/icons-react";
 import {
   ArgsTable,
   Description,
@@ -12,11 +11,12 @@ import { Story } from "@storybook/react";
 import React from "react";
 import Button from "./Button";
 import classNames from "classnames";
+import iconFpt from "../../assets/icons/fpt.svg";
 
 export default {
   title: "Button",
   component: Button,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   parameters: {
     controls: { expanded: true },
     docs: {
@@ -24,7 +24,7 @@ export default {
         <>
           <Title />
           <Subtitle />
-          <Description children={"test"} />
+          <Description />
           <PrimaryStory />
           <Stories includePrimary />
           <ArgsTable story={PRIMARY_STORY} />
@@ -33,20 +33,21 @@ export default {
     },
   },
   args: {
-    className: "btn--sm",
+    size: "lg",
   },
 
   argTypes: {
-    className: {
+    className: {},
+    size: {
       control: {
         type: "radio",
         options: [
-          "btn--sx",
-          "btn--sm",
-          "btn--md",
-          "btn--lg",
-          "btn--xl",
-          "btn--2xl",
+          // "btn--sx",
+          "sm",
+          // "btn--md",
+          "lg",
+          // "btn--xl",
+          // "btn--2xl",
         ],
       },
       description: "",
@@ -68,34 +69,73 @@ const Template: Story = (args) => {
     }, 2000);
   }, []);
   return (
-    <div style={{ width: 500 }}>
-      <Button
-        {...args}
-        className={classNames("m-l--2xl", args?.className)}
-        icon={<Add size={16} />}
-        loading={loading}
-        onClick={handleOnClick}
-      >
-        {"Button"}
-      </Button>
-      <Button
-        {...args}
-        className={classNames("m-l--2xl", args?.className)}
-        icon={<Add size={16} />}
-        loading={loading}
-        onClick={handleOnClick}
-      >
-        {"Button"}
-      </Button>
-      <Button
-        {...args}
-        className={classNames("m-l--2xl", args?.className)}
-        icon={<Add size={16} />}
-        loading={loading}
-        onClick={handleOnClick}
-      >
-        {"Button"}
-      </Button>
+    <div>
+      {" "}
+      <div className="m--2xs">Size 24px</div>
+      <div style={{ width: 500 }}>
+        <Button
+          {...args}
+          className={classNames("m-l--2xl", args?.className)}
+          loading={loading}
+          onClick={handleOnClick}
+          size="sm"
+          iconLeft={<img src={iconFpt} alt="icon" />}
+          iconRight={<img src={iconFpt} alt="icon" />}
+        >
+          Button
+        </Button>
+        <Button
+          {...args}
+          className={classNames("m-l--2xl", args?.className)}
+          size="sm"
+          loading={loading}
+          onClick={handleOnClick}
+          iconLeft={<img src={iconFpt} alt="icon" />}
+        >
+          {"Button"}
+        </Button>
+        <Button
+          {...args}
+          className={classNames("m-l--2xl", args?.className)}
+          loading={loading}
+          size="sm"
+          onClick={handleOnClick}
+          iconRight={<img src={iconFpt} alt="icon" />}
+        >
+          {"Button"}
+        </Button>
+      </div>
+      <div className="m--2xs">Size 32px</div>
+      <div style={{ width: 500 }}>
+        <Button
+          {...args}
+          className={classNames("m-l--2xl", args?.className)}
+          loading={loading}
+          onClick={handleOnClick}
+          iconLeft={<img src={iconFpt} alt="icon" />}
+          iconRight={<img src={iconFpt} alt="icon" />}
+        >
+          <div>Button</div>
+        </Button>
+        <Button
+          {...args}
+          className={classNames("m-l--2xl", args?.className)}
+          loading={loading}
+          onClick={handleOnClick}
+          iconLeft={<img src={iconFpt} alt="icon" />}
+        >
+          Button
+        </Button>
+        <Button
+          {...args}
+          className={classNames("m-l--2xl", args?.className)}
+          loading={loading}
+          onClick={handleOnClick}
+          iconRight={<img src={iconFpt} alt="icon" />}
+        >
+          Button
+        </Button>
+      </div>
     </div>
   );
 };

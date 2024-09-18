@@ -1,5 +1,4 @@
 import classNames from "classnames";
-import IconLoading from "@Components/IconLoading";
 import React, { PropsWithChildren } from "react";
 import { ButtonProps } from "../Button";
 import "./NormalButton.scss";
@@ -11,10 +10,12 @@ const NormalButton = (props: PropsWithChildren<NormalButtonProps>) => {
     htmlType,
     onClick,
     className,
-    icon,
     disabled,
     children,
     loading,
+    size,
+    iconLeft,
+    iconRight,
     ...rest
   } = props;
 
@@ -24,17 +25,21 @@ const NormalButton = (props: PropsWithChildren<NormalButtonProps>) => {
       onClick={!loading ? onClick : () => undefined}
       disabled={disabled}
       className={classNames(
-        "btn-component",
-        icon ? "btn-normal-have-icon" : "btn-normal-no-icon",
-        !loading ? `btn--${type}` : `btn--${type}-loading`,
+        "btn-component btn-normal",
+        `btn--${type}`,
+        `btn--${size}`,
         disabled ? "disabled" : "",
         className
       )}
       {...rest}
     >
       <div className="button-content">
-        <div className="children-content">{children}</div>
-        <div className="box-icon">{loading ? <IconLoading /> : icon}</div>
+        {iconLeft}
+        <div className={classNames("children-content",{
+          "m-l--2xs": iconLeft,
+          "m-r--2xs": iconRight,
+        })}>{children}</div>
+        {iconRight}
       </div>
     </button>
   );

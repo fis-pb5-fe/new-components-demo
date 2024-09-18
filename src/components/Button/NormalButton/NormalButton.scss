@@ -76,36 +76,17 @@
     background-color: var(--palette-gray-30) !important;
   }
 }
-.btn-normal-have-icon {
-  .button-content {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 16px;
-    .children-content {
-      margin-right: 32px;
-      letter-spacing: 0.244px;
-    }
-    .icon-button {
-      font-size: 16px;
-    }
-  }
-}
 
-.btn-normal-no-icon {
+
+.btn-normal {
   .button-content {
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: row; 
     justify-content: space-between;
-    height: 16px;
     .children-content {
-      margin-right: 32px;
-      letter-spacing: 0.244px;
-    }
-    .icon-button {
-      font-size: 16px;
+      font-size: 14px;
+      font-weight: 500;
     }
   }
 }

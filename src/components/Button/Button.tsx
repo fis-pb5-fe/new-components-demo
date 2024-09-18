@@ -42,12 +42,16 @@ export interface ButtonProps {
   className?: string;
   /**Function to be called when the button is clicked*/
   onClick?: ButtonHTMLAttributes<any>["onClick"];
-
+  size?:  "lg" | "sm";
   children?: ReactNode;
   /**Disabled state of button*/
   disabled?: boolean;
   /**Set the icon of button*/
   icon?: JSX.Element;
+  /**Set the icon of button*/
+  iconLeft?: JSX.Element;
+  /**Set the icon of button*/
+  iconRight?: JSX.Element;
 }
 
 const Button = (props: PropsWithChildren<ButtonProps>, ref: React.Ref<any>) => {
@@ -100,6 +104,7 @@ Button.defaultProps = {
   type: "primary",
   htmlType: "button",
   disabled: false,
+  size: "lg",
 };
 
 export default Button;
