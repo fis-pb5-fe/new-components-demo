@@ -15,11 +15,10 @@ export type ButtonType =
   | "text"
   | "danger"
   | "link"
-  | "icon-only-primary"
-  | "icon-only-outline-primary"
-  | "icon-only-danger"
-  | "icon-only-outline-danger"
-  | "icon-only-ghost";
+  | "icon-primary"
+  | "icon-secondary"
+  | "icon-ghost"
+  | "icon-primary-circle"
 
 export interface ButtonProps {
   /**Change the design of button*/
@@ -32,7 +31,8 @@ export interface ButtonProps {
   className?: string;
   /**Function to be called when the button is clicked*/
   onClick?: ButtonHTMLAttributes<any>["onClick"];
-  size?:  "lg" | "sm";
+    /** Size md for only button icon */
+  size?:  "lg" | "sm" | "md";
   children?: ReactNode;
   /**Disabled state of button*/
   disabled?: boolean;
@@ -42,6 +42,7 @@ export interface ButtonProps {
   iconPlace?: "left" | "right" | "both";
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Button = (props: PropsWithChildren<ButtonProps>, ref: React.Ref<any>) => {
   if (
     props.type === "primary" ||
@@ -58,11 +59,10 @@ const Button = (props: PropsWithChildren<ButtonProps>, ref: React.Ref<any>) => {
   }
 
   if (
-    props.type === "icon-only-primary" ||
-    props.type === "icon-only-outline-primary" ||
-    props.type === "icon-only-danger" ||
-    props.type === "icon-only-outline-danger" ||
-    props.type === "icon-only-ghost"
+    props.type === "icon-primary" ||
+    props.type === "icon-secondary" ||
+    props.type === "icon-ghost" ||
+    props.type === "icon-primary-circle"
   ) {
     return <IconButton {...props} />;
   }

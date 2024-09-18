@@ -72,7 +72,7 @@ const Template: Story = (args) => {
   return (
     <div>
       {" "}
-      <div className="m--2xs">Size 24px</div>
+      <div className="m--2xs">Size sm (thường là 24px, icon là 32px)</div>
       <div style={{ width: 500, height: 40, display: "flex", alignItems:"center" }}>
         <Button
           {...args}
@@ -121,8 +121,57 @@ const Template: Story = (args) => {
           Button
         </Button>
       </div>
-      <div className="m--2xs">Size 32px</div>
+      <div className="m--2xs">Size md (Lưu ý chỉ dùng cho icon là 40px)</div>
       <div style={{ width: 500, height: 40, display: "flex", alignItems:"center" }}>
+        <Button
+          {...args}
+          className={classNames("m-l--2xs", args?.className)}
+          loading={loading}
+          onClick={handleOnClick}
+          size="md"
+          icon={<Fpt />}
+          iconPlace="both"
+        >
+          Button
+        </Button>
+
+        <Button
+          {...args}
+          className={classNames("m-l--2xs", args?.className)}
+          size="md"
+          loading={loading}
+          onClick={handleOnClick}
+          icon={<Fpt />}
+          iconPlace="left"
+        >
+          {"Button"}
+        </Button>
+        <Button
+          {...args}
+          className={classNames("m-l--2xs", args?.className)}
+          loading={loading}
+          size="md"
+          onClick={handleOnClick}
+          icon={<Fpt />}
+          iconPlace="right"
+        >
+          {"Button"}
+        </Button>
+        <Button
+          {...args}
+          className={classNames("m-l--2xs", args?.className)}
+          loading={loading}
+          onClick={handleOnClick}
+          size="md"
+          icon={<Fpt />}
+          iconPlace="both"
+          disabled
+        >
+          Button
+        </Button>
+      </div>
+      <div className="m--2xs">Size lg (button thường là 32px, icon là 48px)</div>
+      <div style={{ width: 500, height: 50, display: "flex", alignItems:"center" }}>
         <Button
           {...args}
           className={classNames("m-l--2xs", args?.className)}
@@ -165,6 +214,7 @@ const Template: Story = (args) => {
           <div>Button</div>
         </Button>
       </div>
+      
     </div>
   );
 };
