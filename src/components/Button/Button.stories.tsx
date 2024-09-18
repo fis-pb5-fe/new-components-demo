@@ -11,7 +11,7 @@ import { Story } from "@storybook/react";
 import React from "react";
 import Button from "./Button";
 import classNames from "classnames";
-import iconFpt from "../../assets/icons/fpt.svg";
+import Fpt from "../../assets/icons/Fpt";
 
 export default {
   title: "Button",
@@ -60,6 +60,7 @@ export default {
     icon: {},
   },
 };
+
 const Template: Story = (args) => {
   const [loading, setLoading] = React.useState<boolean>(false);
   const handleOnClick = React.useCallback(() => {
@@ -71,115 +72,155 @@ const Template: Story = (args) => {
   return (
     <div>
       {" "}
-      <div className="m--2xs">Size 24px</div>
-      <div style={{ width: 500 }}>
+      <div className="m--2xs">Size sm (thường là 24px, icon là 32px)</div>
+      <div style={{ width: 500, height: 40, display: "flex", alignItems:"center" }}>
         <Button
           {...args}
-          className={classNames("m-l--2xl", args?.className)}
+          className={classNames("m-l--2xs", args?.className)}
           loading={loading}
           onClick={handleOnClick}
           size="sm"
-          iconLeft={<img src={iconFpt} alt="icon" />}
-          iconRight={<img src={iconFpt} alt="icon" />}
+          icon={<Fpt />}
+          iconPlace="both"
         >
           Button
         </Button>
+
         <Button
           {...args}
-          className={classNames("m-l--2xl", args?.className)}
+          className={classNames("m-l--2xs", args?.className)}
           size="sm"
           loading={loading}
           onClick={handleOnClick}
-          iconLeft={<img src={iconFpt} alt="icon" />}
+          icon={<Fpt />}
+          iconPlace="left"
         >
           {"Button"}
         </Button>
         <Button
           {...args}
-          className={classNames("m-l--2xl", args?.className)}
+          className={classNames("m-l--2xs", args?.className)}
           loading={loading}
           size="sm"
           onClick={handleOnClick}
-          iconRight={<img src={iconFpt} alt="icon" />}
+          icon={<Fpt />}
+          iconPlace="right"
         >
           {"Button"}
+        </Button>
+        <Button
+          {...args}
+          className={classNames("m-l--2xs", args?.className)}
+          loading={loading}
+          onClick={handleOnClick}
+          size="sm"
+          icon={<Fpt />}
+          iconPlace="both"
+          disabled
+        >
+          Button
         </Button>
       </div>
-      <div className="m--2xs">Size 32px</div>
-      <div style={{ width: 500 }}>
+      <div className="m--2xs">Size md (Lưu ý chỉ dùng cho icon là 40px)</div>
+      <div style={{ width: 500, height: 40, display: "flex", alignItems:"center" }}>
         <Button
           {...args}
-          className={classNames("m-l--2xl", args?.className)}
+          className={classNames("m-l--2xs", args?.className)}
           loading={loading}
           onClick={handleOnClick}
-          iconLeft={<img src={iconFpt} alt="icon" />}
-          iconRight={<img src={iconFpt} alt="icon" />}
+          size="md"
+          icon={<Fpt />}
+          iconPlace="both"
+        >
+          Button
+        </Button>
+
+        <Button
+          {...args}
+          className={classNames("m-l--2xs", args?.className)}
+          size="md"
+          loading={loading}
+          onClick={handleOnClick}
+          icon={<Fpt />}
+          iconPlace="left"
+        >
+          {"Button"}
+        </Button>
+        <Button
+          {...args}
+          className={classNames("m-l--2xs", args?.className)}
+          loading={loading}
+          size="md"
+          onClick={handleOnClick}
+          icon={<Fpt />}
+          iconPlace="right"
+        >
+          {"Button"}
+        </Button>
+        <Button
+          {...args}
+          className={classNames("m-l--2xs", args?.className)}
+          loading={loading}
+          onClick={handleOnClick}
+          size="md"
+          icon={<Fpt />}
+          iconPlace="both"
+          disabled
+        >
+          Button
+        </Button>
+      </div>
+      <div className="m--2xs">Size lg (button thường là 32px, icon là 48px)</div>
+      <div style={{ width: 500, height: 50, display: "flex", alignItems:"center" }}>
+        <Button
+          {...args}
+          className={classNames("m-l--2xs", args?.className)}
+          loading={loading}
+          onClick={handleOnClick}
+          icon={<Fpt />}
+          iconPlace="both"
         >
           <div>Button</div>
         </Button>
         <Button
           {...args}
-          className={classNames("m-l--2xl", args?.className)}
+          className={classNames("m-l--2xs", args?.className)}
           loading={loading}
           onClick={handleOnClick}
-          iconLeft={<img src={iconFpt} alt="icon" />}
+          icon={<Fpt />}
+          iconPlace="left"
         >
           Button
         </Button>
         <Button
           {...args}
-          className={classNames("m-l--2xl", args?.className)}
+          className={classNames("m-l--2xs", args?.className)}
           loading={loading}
           onClick={handleOnClick}
-          iconRight={<img src={iconFpt} alt="icon" />}
+          icon={<Fpt />}
+          iconPlace="right"
         >
           Button
         </Button>
+        <Button
+          {...args}
+          className={classNames("m-l--2xs", args?.className)}
+          loading={loading}
+          onClick={handleOnClick}
+          icon={<Fpt />}
+          iconPlace="both"
+          disabled
+        >
+          <div>Button</div>
+        </Button>
       </div>
+      
     </div>
   );
 };
 
 export const NormalButton = Template.bind({});
 NormalButton.parameters = {
-  docs: {
-    description: {
-      story: "Some story **markdown**",
-    },
-  },
-};
-
-export const Ghost = Template.bind({});
-Ghost.args = {
-  ...NormalButton.args,
-  type: "ghost",
-};
-Ghost.parameters = {
-  docs: {
-    description: {
-      story: "Some story **markdown**",
-    },
-  },
-};
-export const Bleed = Template.bind({});
-Bleed.args = {
-  ...NormalButton.args,
-  type: "bleed-primary",
-};
-Bleed.parameters = {
-  docs: {
-    description: {
-      story: "Some story **markdown**",
-    },
-  },
-};
-
-export const LinkPlainButton = Template.bind({});
-LinkPlainButton.args = {
-  ...NormalButton.args,
-  type: "link-plain",
-};
-LinkPlainButton.parameters = {
   docs: {
     description: {
       story: "Some story **markdown**",

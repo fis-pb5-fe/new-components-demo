@@ -9,15 +9,16 @@ const IconButton = (
   props: PropsWithChildren<IconButtonProps>,
   ref: React.Ref<any>
 ) => {
-  const { htmlType, type, onClick, className, icon, disabled, ...rest } = props;
+  const { htmlType, type, onClick, className, icon, disabled,size, ...rest } = props;
   return (
     <button
       type={htmlType}
       onClick={onClick}
       disabled={disabled}
       className={classNames(
-        "btn-component btn-only-icon",
+        "btn-component btn--icon",
         `btn--${type}`,
+        `btn--${size}`,
         disabled ? "disabled" : "",
         className
       )}
