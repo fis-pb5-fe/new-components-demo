@@ -12,6 +12,7 @@ import {
   Title,
 } from "@storybook/addon-docs";
 import type { Meta } from "@storybook/react";
+import { WarningAlt } from "@carbon/icons-react";
 
 export default {
   title: "Input/InputText",
@@ -38,7 +39,7 @@ export default {
     label: "First Name",
     placeHolder: "Enter text",
     type: 1,
-    prefix: "Mr.",
+    prefix: "",
     suffix: "Kg",
   },
   argTypes: {
@@ -91,8 +92,8 @@ const Template = (args: any) => {
   return (
     <div style={{ width: "300px", margin: "10px" }}>
       <div style={{ margin: "15px 0" }}>
-        <FormItem>
-          <InputText {...args} value={value} onChange={handleChangeValue} />
+        <FormItem message={ "Hint Text"}>
+          <InputText {...args} value={value} onChange={handleChangeValue}/>
         </FormItem>
       </div>
     </div>

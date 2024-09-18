@@ -12,7 +12,7 @@ export interface FormItemProps {
   /**Show the status validation*/
   validateStatus?: ValidateStatus;
   /**The validated message*/
-  message?: string;
+  message?: ReactNode;
   children: ReactNode;
   /**Place content to the right*/
   placeRight?: boolean;
