@@ -3,7 +3,7 @@ import React, { PropsWithChildren } from "react";
 import { ButtonProps } from "../Button";
 import "./NormalButton.scss";
 
-export type NormalButtonProps = ButtonProps
+export type NormalButtonProps = ButtonProps;
 const NormalButton = (props: PropsWithChildren<NormalButtonProps>) => {
   const {
     type,
@@ -14,8 +14,8 @@ const NormalButton = (props: PropsWithChildren<NormalButtonProps>) => {
     children,
     loading,
     size,
-    iconLeft,
-    iconRight,
+    icon,
+    iconPlace,
     ...rest
   } = props;
 
@@ -34,12 +34,26 @@ const NormalButton = (props: PropsWithChildren<NormalButtonProps>) => {
       {...rest}
     >
       <div className="button-content">
-        {iconLeft}
-        <div className={classNames("children-content",{
-          "m-l--2xs": iconLeft,
-          "m-r--2xs": iconRight,
-        })}>{children}</div>
-        {iconRight}
+        {icon && (iconPlace === "left" || iconPlace === "both") ? icon : ""}
+        <div
+          className={classNames("children-content", {
+            "m-l--2xs": icon && (iconPlace === "left" || iconPlace === "both")  &&
+            size === "lg",
+            "m-r--2xs": icon && (iconPlace === "right" || iconPlace === "both")  &&
+            size === "lg",
+            "m-l--3xs":
+              icon &&
+              (iconPlace === "left" || iconPlace === "both") &&
+              size === "sm",
+            "m-r--3xs":
+              icon &&
+              (iconPlace === "right" || iconPlace === "both") &&
+              size === "sm",
+          })}
+        >
+          {children}
+        </div>
+        {icon && (iconPlace === "right" || iconPlace === "both") ? icon : ""}
       </div>
     </button>
   );

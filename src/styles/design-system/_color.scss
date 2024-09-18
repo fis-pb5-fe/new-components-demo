@@ -362,12 +362,21 @@ $colors: (
     }
   }
 
+  --color-text-disable: #7A869A;
+  --color-icon-disable: #97A0AF;
   /* main colors */
   /* used for the links, the button background color,... */
   --color-primary: #315efb;
   --color-primary-hover: #0830bc;
   --color-primary-active: #0830bc;
-  --color-primary-blur: #d0e2ff;
+  --color-primary-blur: #ABBDFD;
+  --color-primary-pressed: #88a2fd;
+  --color-bg-button-disable: #DFE1e6;
+  --color-primary-icon-blur: #065EB7;
+
+
+  --color-text-tertiary: #42526E;
+  
   --color-secondary: #b3bac5;
   --color-secondary-hover: #4c4c4c;
   --color-secondary-active: #6f6f6f;
@@ -391,7 +400,8 @@ $colors: (
   --color-critical: #da3e33;
   --color-critical-hover: #aa3028;
   --color-critical-active: #aa3028;
-  --color-critical-blur: #f04438;
+  --color-critical-blur: #F8A9A3;
+  --color-critical-pressed: #f04438;
 }
 
 /* class bg and color for color $palletes with syntax .palette-$colorname-$number-$type */
