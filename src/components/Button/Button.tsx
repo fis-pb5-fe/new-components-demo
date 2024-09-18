@@ -49,9 +49,7 @@ export interface ButtonProps {
   /**Set the icon of button*/
   icon?: JSX.Element;
   /**Set the icon of button*/
-  iconLeft?: JSX.Element;
-  /**Set the icon of button*/
-  iconRight?: JSX.Element;
+  iconPlace?: "left" | "right" | "both";
 }
 
 const Button = (props: PropsWithChildren<ButtonProps>, ref: React.Ref<any>) => {
@@ -71,7 +69,7 @@ const Button = (props: PropsWithChildren<ButtonProps>, ref: React.Ref<any>) => {
     props.type === "ghost" ||
     props.type === "ghost-primary" ||
     props.type === "ghost-secondary"
-  ) {
+  ) { 
     return <GhostButton {...props} />;
   }
 

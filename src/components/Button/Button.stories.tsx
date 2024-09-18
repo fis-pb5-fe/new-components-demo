@@ -11,7 +11,7 @@ import { Story } from "@storybook/react";
 import React from "react";
 import Button from "./Button";
 import classNames from "classnames";
-import iconFpt from "../../assets/icons/fpt.svg";
+import Fpt from "../../assets/icons/Fpt";
 
 export default {
   title: "Button",
@@ -60,6 +60,7 @@ export default {
     icon: {},
   },
 };
+
 const Template: Story = (args) => {
   const [loading, setLoading] = React.useState<boolean>(false);
   const handleOnClick = React.useCallback(() => {
@@ -72,68 +73,97 @@ const Template: Story = (args) => {
     <div>
       {" "}
       <div className="m--2xs">Size 24px</div>
-      <div style={{ width: 500 }}>
+      <div style={{ width: 500, height: 40, display: "flex", alignItems:"center" }}>
         <Button
           {...args}
-          className={classNames("m-l--2xl", args?.className)}
+          className={classNames("m-l--2xs", args?.className)}
           loading={loading}
           onClick={handleOnClick}
           size="sm"
-          iconLeft={<img src={iconFpt} alt="icon" />}
-          iconRight={<img src={iconFpt} alt="icon" />}
+          icon={<Fpt />}
+          iconPlace="both"
         >
           Button
         </Button>
+
         <Button
           {...args}
-          className={classNames("m-l--2xl", args?.className)}
+          className={classNames("m-l--2xs", args?.className)}
           size="sm"
           loading={loading}
           onClick={handleOnClick}
-          iconLeft={<img src={iconFpt} alt="icon" />}
+          icon={<Fpt />}
+          iconPlace="left"
         >
           {"Button"}
         </Button>
         <Button
           {...args}
-          className={classNames("m-l--2xl", args?.className)}
+          className={classNames("m-l--2xs", args?.className)}
           loading={loading}
           size="sm"
           onClick={handleOnClick}
-          iconRight={<img src={iconFpt} alt="icon" />}
+          icon={<Fpt />}
+          iconPlace="right"
         >
           {"Button"}
+        </Button>
+        <Button
+          {...args}
+          className={classNames("m-l--2xs", args?.className)}
+          loading={loading}
+          onClick={handleOnClick}
+          size="sm"
+          icon={<Fpt />}
+          iconPlace="both"
+          disabled
+        >
+          Button
         </Button>
       </div>
       <div className="m--2xs">Size 32px</div>
-      <div style={{ width: 500 }}>
+      <div style={{ width: 500, height: 40, display: "flex", alignItems:"center" }}>
         <Button
           {...args}
-          className={classNames("m-l--2xl", args?.className)}
+          className={classNames("m-l--2xs", args?.className)}
           loading={loading}
           onClick={handleOnClick}
-          iconLeft={<img src={iconFpt} alt="icon" />}
-          iconRight={<img src={iconFpt} alt="icon" />}
+          icon={<Fpt />}
+          iconPlace="both"
+          disabled={loading}
         >
           <div>Button</div>
         </Button>
         <Button
           {...args}
-          className={classNames("m-l--2xl", args?.className)}
+          className={classNames("m-l--2xs", args?.className)}
           loading={loading}
           onClick={handleOnClick}
-          iconLeft={<img src={iconFpt} alt="icon" />}
+          icon={<Fpt />}
+          iconPlace="left"
         >
           Button
         </Button>
         <Button
           {...args}
-          className={classNames("m-l--2xl", args?.className)}
+          className={classNames("m-l--2xs", args?.className)}
           loading={loading}
           onClick={handleOnClick}
-          iconRight={<img src={iconFpt} alt="icon" />}
+          icon={<Fpt />}
+          iconPlace="right"
         >
           Button
+        </Button>
+        <Button
+          {...args}
+          className={classNames("m-l--2xs", args?.className)}
+          loading={loading}
+          onClick={handleOnClick}
+          icon={<Fpt />}
+          iconPlace="both"
+          disabled
+        >
+          <div>Button</div>
         </Button>
       </div>
     </div>

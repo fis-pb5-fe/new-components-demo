@@ -362,12 +362,16 @@ $colors: (
     }
   }
 
+  --color-text-disable: #7A869A;
   /* main colors */
   /* used for the links, the button background color,... */
   --color-primary: #315efb;
   --color-primary-hover: #0830bc;
   --color-primary-active: #0830bc;
-  --color-primary-blur: #d0e2ff;
+  --color-primary-blur: #ABBDFD;
+  --color-primary-pressed: #88a2fd;
+  --color-primary-disable: #DFE1e6;
+  
   --color-secondary: #b3bac5;
   --color-secondary-hover: #4c4c4c;
   --color-secondary-active: #6f6f6f;
