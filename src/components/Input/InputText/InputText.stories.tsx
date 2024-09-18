@@ -1,7 +1,3 @@
-import React from "react";
-import FormItem from "../../FormItem/FormItem";
-import { BORDER_TYPE } from "./../../../config/enum";
-import InputText from "./InputText";
 import {
   ArgsTable,
   Description,
@@ -12,7 +8,10 @@ import {
   Title,
 } from "@storybook/addon-docs";
 import type { Meta } from "@storybook/react";
-import { WarningAlt } from "@carbon/icons-react";
+import React from "react";
+import FormItem from "../../FormItem/FormItem";
+import { BORDER_TYPE } from "./../../../config/enum";
+import InputText from "./InputText";
 
 export default {
   title: "Input/InputText",
