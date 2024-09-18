@@ -3,14 +3,10 @@ import React, {
   PropsWithChildren,
   ReactNode,
 } from "react";
-import BleedButton from "./BleedButton";
-import GhostButton from "./GhostButton";
+import "./ButtonComponent.scss";
 import IconButton from "./IconButton";
 import LinkButton from "./LinkButton";
-import LinkPlainButton from "./LinkPlainButton";
 import NormalButton from "./NormalButton/NormalButton";
-import OutlineButton from "./OutlineButton";
-import "./ButtonComponent.scss";
 
 export type ButtonType =
   | "primary"
@@ -18,14 +14,6 @@ export type ButtonType =
   | "tertiary"
   | "text"
   | "danger"
-  | "outline-primary"
-  | "outline-danger"
-  | "ghost"
-  | "ghost-primary"
-  | "ghost-secondary"
-  | "bleed-primary"
-  | "bleed-secondary"
-  | "link-plain"
   | "link"
   | "icon-only-primary"
   | "icon-only-outline-primary"
@@ -63,26 +51,6 @@ const Button = (props: PropsWithChildren<ButtonProps>, ref: React.Ref<any>) => {
     props.type === "danger"
   ) {
     return <NormalButton {...props} />;
-  }
-
-  if (props.type === "outline-primary" || props.type === "outline-danger") {
-    return <OutlineButton {...props} />;
-  }
-
-  if (
-    props.type === "ghost" ||
-    props.type === "ghost-primary" ||
-    props.type === "ghost-secondary"
-  ) { 
-    return <GhostButton {...props} />;
-  }
-
-  if (props.type === "bleed-primary" || props.type === "bleed-secondary") {
-    return <BleedButton {...props} />;
-  }
-
-  if (props.type === "link-plain") {
-    return <LinkPlainButton {...props} />;
   }
 
   if (props.type === "link") {

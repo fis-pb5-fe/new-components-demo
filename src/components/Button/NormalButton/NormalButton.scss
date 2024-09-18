@@ -40,18 +40,23 @@
   background-color: var(--color-white);
   color: var(--color-primary);
   border: 1px solid var(--color-primary);
+
   .button-content {
     color: var(--color-primary);
+
     svg {
       path {
         fill: var(--color-primary);
       }
     }
   }
+
   &:visited {
     color: var(--color-primary-active);
+
     .button-content {
       color: var(--color-primary-active);
+
       svg {
         path {
           fill: var(--color-primary-active);
@@ -62,8 +67,10 @@
 
   &:hover {
     border: 1px solid var(--color-primary-pressed) !important;
+
     .button-content {
       color: var(--color-primary-active);
+
       svg {
         path {
           fill: var(--color-primary-active);
@@ -74,8 +81,10 @@
 
   &:active {
     border: 1px solid var(--color-primary-active) !important;
+
     .button-content {
       color: var(--color-primary-active);
+
       svg {
         path {
           fill: var(--color-primary-active);
@@ -87,8 +96,10 @@
   &:focus {
     box-shadow: 0px 0px 0px 3px var(--color-primary-blur);
     border: 1px solid var(--color-primary-pressed) !important;
+
     .button-content {
       color: var(--color-primary-active);
+
       svg {
         path {
           fill: var(--color-primary-active);
@@ -118,18 +129,23 @@
   background-color: var(--color-white);
   color: var(--color-text-tertiary);
   border: 1px solid var(--color-secondary);
+
   .button-content {
     color: var(--color-text-tertiary);
+
     svg {
       path {
         fill: var(--color-text-tertiary);
       }
     }
   }
+
   &:visited {
     color: var(--color-primary-active);
+
     .button-content {
       color: var(--color-primary-active);
+
       svg {
         path {
           fill: var(--color-primary-active);
@@ -140,8 +156,10 @@
 
   &:hover {
     border: 1px solid var(--color-primary-pressed) !important;
+
     .button-content {
       color: var(--color-primary-active);
+
       svg {
         path {
           fill: var(--color-primary-active);
@@ -152,8 +170,10 @@
 
   &:active {
     border: 1px solid var(--color-primary-active) !important;
+
     .button-content {
       color: var(--color-primary-active);
+
       svg {
         path {
           fill: var(--color-primary-active);
@@ -165,8 +185,10 @@
   &:focus {
     box-shadow: 0px 0px 0px 3px var(--color-primary-blur);
     border: 1px solid var(--color-primary-pressed) !important;
+
     .button-content {
       color: var(--color-primary-active);
+
       svg {
         path {
           fill: var(--color-primary-active);
@@ -191,21 +213,27 @@
     }
   }
 }
+
 .btn--text {
   background-color: var(--color-white);
   color: var(--color-primary);
+
   .button-content {
     color: var(--color-primary);
+
     svg {
       path {
         fill: var(--color-primary);
       }
     }
   }
+
   &:visited {
     color: var(--color-primary-active);
+
     .button-content {
       color: var(--color-primary-active);
+
       svg {
         path {
           fill: var(--color-primary-active);
@@ -219,8 +247,10 @@
 
   &:focus {
     box-shadow: 0px 0px 0px 3px var(--color-primary-blur);
+
     .button-content {
       color: var(--color-primary);
+
       svg {
         path {
           fill: var(--color-primary);
@@ -231,13 +261,14 @@
 
   &.disabled {
     cursor: not-allowed;
+
     .button-content {
       color: var(--color-text-disable) !important;
 
       svg {
         path {
           fill: var(--color-text-disable);
-        } 
+        }
       }
     }
   }
@@ -294,6 +325,39 @@
       font-weight: 500 !important;
     }
   }
+
+  &.btn--sm {
+    height: 24px;
+    padding: 4px;
+
+    .button-content {
+      height: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .children-content {
+        font-size: 12px;
+        font-weight: 500;
+      }
+    }
+  }
+
+  &.btn--lg {
+    height: 32px;
+    padding: 4px 12px 4px 12px;
+    .button-content {
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .children-content {
+          font-size: 14px;
+          font-weight: 500;
+      }
+  }
+  }
+
 }
 
 .btn--primary-loading {

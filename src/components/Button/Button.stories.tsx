@@ -178,44 +178,6 @@ NormalButton.parameters = {
   },
 };
 
-export const Ghost = Template.bind({});
-Ghost.args = {
-  ...NormalButton.args,
-  type: "ghost",
-};
-Ghost.parameters = {
-  docs: {
-    description: {
-      story: "Some story **markdown**",
-    },
-  },
-};
-export const Bleed = Template.bind({});
-Bleed.args = {
-  ...NormalButton.args,
-  type: "bleed-primary",
-};
-Bleed.parameters = {
-  docs: {
-    description: {
-      story: "Some story **markdown**",
-    },
-  },
-};
-
-export const LinkPlainButton = Template.bind({});
-LinkPlainButton.args = {
-  ...NormalButton.args,
-  type: "link-plain",
-};
-LinkPlainButton.parameters = {
-  docs: {
-    description: {
-      story: "Some story **markdown**",
-    },
-  },
-};
-
 export const Link = Template.bind({});
 Link.args = {
   ...NormalButton.args,
