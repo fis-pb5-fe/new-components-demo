@@ -65,7 +65,6 @@ const Template: Story = (args) => {
         placeholder={"Enter text..."}
         onChange={handleChange}
         value={value}
-        bgColor="gray"
       />
     </div>
   );
