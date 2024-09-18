@@ -10,14 +10,13 @@ import {
 import type { Meta } from "@storybook/react";
 import React from "react";
 import FormItem from "../../FormItem/FormItem";
-import { BORDER_TYPE } from "./../../../config/enum";
 import InputText from "./InputText";
 
 export default {
   title: "Input/InputText",
   component: InputText,
   subcomponent: FormItem,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   parameters: {
     controls: { expanded: true },
     docs: {
@@ -48,28 +47,35 @@ export default {
     placeHolder: {
       control: "text",
     },
-    type: {
+    // type: {
+    //   control: {
+    //     type: "radio",
+    //     options: [
+    //       BORDER_TYPE.MATERIAL,
+    //       BORDER_TYPE.BORDERED,
+    //       BORDER_TYPE.FLOAT_LABEL,
+    //     ],
+    //   },
+    // },
+    isSmall: {
       control: {
         type: "radio",
-        options: [
-          BORDER_TYPE.MATERIAL,
-          BORDER_TYPE.BORDERED,
-          BORDER_TYPE.FLOAT_LABEL,
-        ],
       },
+      options: [true, false],
     },
-    isRequired: {},
-    value: {},
-    prefix: {},
-    suffix: {},
-    allowPositive: {},
-    isReverseSymb: {},
-    decimalDigit: {},
+    isRequired: {
+      control: {
+        type: "radio",
+      },
+      options: [true, false],
+    },
+    value: { control: "text" },
+    prefix: { control: "text" },
+    suffix: { control: "text" },
     disabled: {},
-    min: {},
-    max: {},
+
     action: {},
-    isSmall: {},
+
     onChange: {},
     onBlur: {},
     onEnter: {},
@@ -91,8 +97,18 @@ const Template = (args: any) => {
   return (
     <div style={{ width: "300px", margin: "10px" }}>
       <div style={{ margin: "15px 0" }}>
-        <FormItem message={ "Hint Text"}>
-          <InputText {...args} value={value} onChange={handleChangeValue}/>
+        <FormItem message={"Hint Text"}>
+          <InputText
+            {...args}
+            value={value}
+            onChange={handleChangeValue}
+            action={{
+              name: "Button",
+              action: () => {
+                console.log("hehee");
+              },
+            }}
+          />
         </FormItem>
       </div>
     </div>

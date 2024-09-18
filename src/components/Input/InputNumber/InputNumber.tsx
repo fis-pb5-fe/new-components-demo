@@ -1,13 +1,12 @@
-import classNames from "classnames";
-import React, { ReactSVGElement, RefObject } from "react";
-import { CloseFilled } from "@carbon/icons-react";
-import { ReactNode } from "react";
 import { BORDER_TYPE, NUMBER_TYPE } from "@Configs/enum";
+import classNames from "classnames";
+import React, { ReactNode, RefObject } from "react";
 import "./InputNumber.scss";
+import CloseIcon from "/src/assets/icons/close.svg";
 
 interface InputNumberAction {
   name?: string;
-  action?: any;
+  action?: never;
 }
 
 export interface InputNumberProps {
@@ -85,9 +84,8 @@ function InputNumber(props: InputNumberProps) {
 
   const [internalValue, setInternalValue] = React.useState<string>("");
 
-  const inputRef: RefObject<HTMLInputElement> = React.useRef<HTMLInputElement>(
-    null
-  );
+  const inputRef: RefObject<HTMLInputElement> =
+    React.useRef<HTMLInputElement>(null);
 
   const cursorPosition = React.useRef({ selectionStart: 0, selectionEnd: 0 });
 
@@ -251,25 +249,22 @@ function InputNumber(props: InputNumberProps) {
     [formatString, parseNumber, onChange]
   );
 
-  const handleClearInput = React.useCallback(
-    (event: React.MouseEvent<ReactSVGElement, MouseEvent>) => {
-      setInternalValue("");
-      inputRef.current.focus();
-      if (typeof onChange === "function") {
-        onChange(undefined);
-        return;
-      }
-      if (typeof onBlur === "function") {
-        onBlur(undefined);
-        return;
-      }
-      if (typeof onEnter === "function") {
-        onEnter(undefined);
-        return;
-      }
-    },
-    [onBlur, onChange, onEnter]
-  );
+  const handleClearInput = React.useCallback(() => {
+    setInternalValue("");
+    inputRef.current.focus();
+    if (typeof onChange === "function") {
+      onChange(undefined);
+      return;
+    }
+    if (typeof onBlur === "function") {
+      onBlur(undefined);
+      return;
+    }
+    if (typeof onEnter === "function") {
+      onEnter(undefined);
+      return;
+    }
+  }, [onBlur, onChange, onEnter]);
 
   const handleKeyPress = React.useCallback(
     (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -293,7 +288,7 @@ function InputNumber(props: InputNumberProps) {
 
   React.useEffect(() => {
     if (value != null) {
-      var stringValue = "" + value;
+      let stringValue = "" + value;
       if (isReverseSymb) {
         stringValue = stringValue.replace(/\./g, ",");
       }
@@ -307,7 +302,7 @@ function InputNumber(props: InputNumberProps) {
 
   return (
     <div className={classNames("input-number__wrapper", className)}>
-      <div className="input-number__label m-b--3xs">
+      <div className="input-number__label m-b--2xs p-l--3xs">
         {type !== BORDER_TYPE.FLOAT_LABEL && label && (
           <label
             className={classNames("component__title", {
@@ -330,14 +325,14 @@ function InputNumber(props: InputNumberProps) {
       </div>
       <div
         className={classNames(
-          "component__input input-number__container p--xs",
+          "component__input input-number__container",
           {
             "input-number__container--sm": isSmall,
             "input-number__container--white": bgColor === "white",
-            "py--2xs": isSmall,
-            "px--xs": isSmall,
+            "p--2xs": isSmall,
             "p--xs": !isSmall,
             "input-number--material": type === BORDER_TYPE.MATERIAL,
+            "input-number--bordered": type === BORDER_TYPE.BORDERED,
             "input-number--disabled ": disabled,
             "input-number--float": type === BORDER_TYPE.FLOAT_LABEL,
           }
@@ -349,7 +344,7 @@ function InputNumber(props: InputNumberProps) {
         {prefix && (
           <>
             {typeof prefix === "string" ? (
-              <span className="p-r--2xs">{prefix}</span>
+              <span className="p-r--2xs input-text__string">{prefix}</span>
             ) : (
               <div className="m-r--xs input-number__icon">{prefix}</div>
             )}
@@ -385,13 +380,13 @@ function InputNumber(props: InputNumberProps) {
         )}
         {internalValue && !disabled && !readOnly && (
           <div className={classNames("input-icon__clear", "m-l--2xs")}>
-            <CloseFilled size={16} onClick={handleClearInput} />
+            <img src={CloseIcon} alt="" onClick={handleClearInput} />
           </div>
         )}
         {suffix && (
           <>
             {typeof suffix === "string" ? (
-              <span className="body-text--md m-l--2xs">{suffix}</span>
+              <span className="body-text--md m-l--2xs input-text__string">{suffix}</span>
             ) : (
               <div className="m-l--2xs input-text__icon">{suffix}</div>
             )}
@@ -405,7 +400,7 @@ function InputNumber(props: InputNumberProps) {
 InputNumber.defaultProps = {
   label: "",
   type: BORDER_TYPE.BORDERED,
-  isSmall: false,
+  isSmall: true,
   isRequired: false,
   allowNegative: false,
   isReverseSymb: false,
@@ -414,6 +409,7 @@ InputNumber.defaultProps = {
   disabled: false,
   readOnly: false,
   prefix: "",
+  bgColor: "white",
 };
 
 export default InputNumber;

@@ -8,14 +8,14 @@
     display: flex;
     justify-content: space-between;
 
-    .component__title--disabled {
-      color: var(--palette-gray-40);
-    }
+    // .component__title--disabled {
+    //   color: var(--palette-gray-40);
+    // }
 
     label {
       font-size: 0.75em;
       white-space: nowrap;
-      color: var(--palette-gray-70);
+      color: var(--palette-base-neutral-7);
     }
   }
 
@@ -26,10 +26,12 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    outline: 1px solid var(--palette-coolGray-50);
+    outline: 1px solid var(--palette-base-neutral-4);
+    background-color: #f4f4f4;
     height: 40px;
-    background-color: var(--palette-gray-10);
-
+    &.input-number--bordered {
+      border-radius: 2px;
+    }
     &.input-number__container--sm {
       height: 32px !important;
     }
@@ -39,23 +41,24 @@
     }
 
     &:hover {
-      outline-color: var(--color-primary);
+      outline-color: var(--palette-base-neutral-4);
     }
 
     &:focus-within {
-      outline: 2px solid var(--color-primary);
+      outline: 1px solid var(--color-primary);
+      box-shadow: 0px 0px 0px 4px (#ABBDFD);
     }
 
     &.input-number--disabled {
-      outline-color: var(--palette-coolGray-30);
-      background-color: var(--palette-gray-10);
+      outline-color: var(--palette-base-neutral-4);
+      background-color: var(--palette-base-neutral-3);
 
       span {
-        color: var(--palette-gray-40);
+        color: var(--palette-base-neutral-6);
       }
 
       input {
-        color: var(--palette-gray-40) !important;
+        color: var(--palette-base-neutral-6) !important;
       }
 
       &:hover {
@@ -133,12 +136,18 @@
     .input-number__icon {
       display: flex;
       align-items: center;
+      color: var(--palette-base-neutral-6);
+    }
+
+    .input-text__string {
+      white-space: nowrap;
+      color: var(--palette-base-neutral-6);
     }
 
     span {
       font-size: 14px;
       line-height: 1rem;
-      color: var(--palette-gray-60);
+      color: var(--palette-base-neutral-10);
     }
 
     input {
@@ -153,12 +162,12 @@
       background-color: transparent;
 
       &::placeholder {
-        color: var(--palette-gray-60);
+        color: var(--palette-base-neutral-6);
       }
 
       &:disabled {
         &::placeholder {
-          color: var(--palette-gray-40);
+          color: var(--palette-base-neutral-6);
         }
         &:hover {
           cursor: not-allowed;
@@ -189,10 +198,10 @@
       justify-content: center;
       align-items: center;
       svg {
-        color: var(--palette-coolGray-50);
+        color: var(--palette-base-neutral-6);
         &:hover {
           cursor: pointer;
-          color: var(--palette-coolGrayHover-50);
+          color: var(--palette-base-neutral-6);
         }
       }
     }

@@ -22,7 +22,7 @@
       justify-content: flex-end;
       align-items: center;
       span.input-text__count {
-        color: var(--color-primary);
+        color: var(--palette-base-blue-5);
       }
     }
   }
@@ -157,6 +157,10 @@
 
     .input-text__string {
       white-space: nowrap;
+      color: var(--palette-base-neutral-6);
+    }
+    .input-text__icon {
+      color: var(--palette-base-neutral-6);
     }
 
     span {
