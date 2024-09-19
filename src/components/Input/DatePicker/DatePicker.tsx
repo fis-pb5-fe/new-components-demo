@@ -1,19 +1,29 @@
-import {
-  DatePicker as DatePickerAntd,
-  DatePickerProps as AntdDatePickerProps,
-} from "antd";
-import classNames from "classnames";
 import { DEFAULT_DATETIME_VALUE } from "@Configs/consts";
 import { BORDER_TYPE } from "@Configs/enum";
-import React, { ReactSVGElement, RefObject } from "react";
 import { CommonService } from "@Services/common-service";
-import { CloseFilled } from "@carbon/icons-react";
+import {
+  DatePickerProps as AntdDatePickerProps,
+  ConfigProvider,
+  DatePicker as DatePickerAntd
+} from "antd";
+import locale from "antd/es/locale/vi_VN";
+import classNames from "classnames";
+import dayjs from "dayjs";
+import 'dayjs/locale/vi';
+
+import updateLocale from "dayjs/plugin/updateLocale";
+import React, { RefObject } from "react";
 import "./DatePicker.scss";
-import * as dayjs from 'dayjs'
+import CloseIcon from "/src/assets/icons/close.svg";
+
+dayjs.extend(updateLocale);
+dayjs.updateLocale("vi-vn", {
+  weekStart: 0,
+});
 
 interface DatePickerAction {
   name?: string;
-  action?: any;
+  action?: never;
 }
 interface DatePickerProps {
   /**User-selected value*/
@@ -57,19 +67,16 @@ function DatePicker(props: DatePickerProps & AntdDatePickerProps) {
     bgColor,
   } = props;
 
-  const dateRef = React.useRef<any>();
-  const wrapperRef: RefObject<HTMLDivElement> = React.useRef<HTMLDivElement>(
-    null
-  );
-  
+  const dateRef = React.useRef<never>();
+  const wrapperRef: RefObject<HTMLDivElement> =
+    React.useRef<HTMLDivElement>(null);
+
   const internalValue = React.useMemo(() => {
-    return typeof value === "string"
-      ? CommonService.toDayjsDate(value)
-      : value;
+    return typeof value === "string" ? CommonService.toDayjsDate(value) : value;
   }, [value]);
 
   const handleClearDate = React.useCallback(
-    (event: React.MouseEvent<ReactSVGElement, MouseEvent>) => {
+    (event: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
       event.stopPropagation();
       onChange(undefined);
     },
@@ -81,7 +88,7 @@ function DatePicker(props: DatePickerProps & AntdDatePickerProps) {
       className={classNames("date-picker__wrapper", className)}
       ref={wrapperRef}
     >
-      <div className="date-picker__label m-b--3xs">
+      <div className="date-picker__label m-b--2xs p-l--3xs ">
         {type !== BORDER_TYPE.FLOAT_LABEL && label && (
           <label
             className={classNames("component__title", {
@@ -103,24 +110,28 @@ function DatePicker(props: DatePickerProps & AntdDatePickerProps) {
         )}
       </div>
       <div className="date-picker__container">
-        <DatePickerAntd
-          {...props}
-          value={internalValue}
-          style={{ width: "100%" }}
-          ref={dateRef}
-          allowClear={false}
-          format={dateFormat}
-          className={classNames({
-            "p-y--2xs": isSmall,
-            "p-x--xs": isSmall,
-            "p--xs": !isSmall,
-            "date-picker--sm": isSmall,
-            "date-picker--white": bgColor === "white",
-            "date-picker--material": type === BORDER_TYPE.MATERIAL,
-            "date-picker--disabled ": disabled,
-            "date-picker--float": type === BORDER_TYPE.FLOAT_LABEL,
-          })}
-        />
+        <ConfigProvider locale={locale}>
+          <DatePickerAntd
+            {...props}
+            value={internalValue}
+            style={{ width: "100%" }}
+            ref={dateRef}
+            allowClear={false}
+            format={dateFormat}
+            className={classNames({
+              "p--2xs": isSmall,
+              "p--xs": !isSmall,
+              "date-picker--sm": isSmall,
+              "date-picker--white": bgColor === "white",
+              "date-picker--material": type === BORDER_TYPE.MATERIAL,
+              "date-picker--bordered": type === BORDER_TYPE.BORDERED,
+              "date-picker--disabled ": disabled,
+              "date-picker--float": type === BORDER_TYPE.FLOAT_LABEL,
+            })}
+            showNow={false}
+          />
+        </ConfigProvider>
+
         {type === BORDER_TYPE.FLOAT_LABEL && label && (
           <label
             id="component__title-id"
@@ -146,11 +157,9 @@ function DatePicker(props: DatePickerProps & AntdDatePickerProps) {
               { "date-picker__icon-wrapper--sm": isSmall }
             )}
           >
-            <CloseFilled
-              size={16}
-              className={classNames("date-picker__icon-clear", "m-l--2xs")}
-              onClick={handleClearDate}
-            />
+            <div className={classNames("date-picker__icon-clear", "m-l--2xs")}>
+              <img src={CloseIcon} alt="" onClick={handleClearDate} />
+            </div>
           </span>
         )}
       </div>
@@ -160,11 +169,12 @@ function DatePicker(props: DatePickerProps & AntdDatePickerProps) {
 DatePicker.defaultProps = {
   dateFormat: ["DD/MM/YYYY", "YYYY/MM/DD"],
   label: "",
-  isSmall: false,
+  isSmall: true,
   type: BORDER_TYPE.BORDERED,
   isRequired: false,
   disabled: false,
   className: "",
+  bgColor: "white",
 };
 
 export default DatePicker;

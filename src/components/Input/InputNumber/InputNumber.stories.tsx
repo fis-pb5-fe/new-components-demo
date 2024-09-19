@@ -1,7 +1,3 @@
-import React from "react";
-import FormItem from "../../FormItem/FormItem";
-import { BORDER_TYPE, NUMBER_TYPE } from "./../../../config/enum";
-import InputNumber from "./InputNumber";
 import {
   ArgsTable,
   Description,
@@ -12,6 +8,10 @@ import {
   Title,
 } from "@storybook/addon-docs";
 import { ComponentMeta, Story } from "@storybook/react";
+import React from "react";
+import FormItem from "../../FormItem/FormItem";
+import { NUMBER_TYPE } from "./../../../config/enum";
+import InputNumber from "./InputNumber";
 
 export default {
   title: "Input/InputNumber",
@@ -35,7 +35,7 @@ export default {
     },
   },
   args: {
-    label: "First Name",
+    label: "ID Number",
     placeHolder: "Enter number",
     type: 1,
     prefix: "Mr.",
@@ -48,16 +48,16 @@ export default {
     placeHolder: {
       control: "text",
     },
-    type: {
-      control: {
-        type: "radio",
-        options: [
-          BORDER_TYPE.MATERIAL,
-          BORDER_TYPE.BORDERED,
-          BORDER_TYPE.FLOAT_LABEL,
-        ],
-      },
-    },
+    // type: {
+    //   control: {
+    //     type: "radio",
+    //     options: [
+    //       BORDER_TYPE.MATERIAL,
+    //       BORDER_TYPE.BORDERED,
+    //       BORDER_TYPE.FLOAT_LABEL,
+    //     ],
+    //   },
+    // },
     numberType: {
       control: {
         type: "radio",
@@ -65,10 +65,15 @@ export default {
       },
       defaultValue: NUMBER_TYPE.LONG,
     },
-    isRequired: {},
+    isRequired: {
+      control: {
+        type: "radio",
+      },
+      options: [true, false],
+    },
     value: {},
-    prefix: {},
-    suffix: {},
+    prefix: { control: "text" },
+    suffix: { control: "text" },
     allowPositive: {},
     isReverseSymb: {},
     decimalDigit: {},
@@ -76,7 +81,12 @@ export default {
     min: {},
     max: {},
     action: {},
-    isSmall: {},
+    isSmall: {
+      control: {
+        type: "radio",
+      },
+      options: [true, false],
+    },
     onChange: {},
     onBlur: {},
     onEnter: {},

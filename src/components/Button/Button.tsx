@@ -3,33 +3,22 @@ import React, {
   PropsWithChildren,
   ReactNode,
 } from "react";
-import BleedButton from "./BleedButton";
-import GhostButton from "./GhostButton";
+import "./ButtonComponent.scss";
 import IconButton from "./IconButton";
 import LinkButton from "./LinkButton";
-import LinkPlainButton from "./LinkPlainButton";
 import NormalButton from "./NormalButton/NormalButton";
-import OutlineButton from "./OutlineButton";
-import "./ButtonComponent.scss";
 
 export type ButtonType =
   | "primary"
   | "secondary"
+  | "tertiary"
+  | "text"
   | "danger"
-  | "outline-primary"
-  | "outline-danger"
-  | "ghost"
-  | "ghost-primary"
-  | "ghost-secondary"
-  | "bleed-primary"
-  | "bleed-secondary"
-  | "link-plain"
   | "link"
-  | "icon-only-primary"
-  | "icon-only-outline-primary"
-  | "icon-only-danger"
-  | "icon-only-outline-danger"
-  | "icon-only-ghost";
+  | "icon-primary"
+  | "icon-secondary"
+  | "icon-ghost"
+  | "icon-primary-circle"
 
 export interface ButtonProps {
   /**Change the design of button*/
@@ -42,41 +31,27 @@ export interface ButtonProps {
   className?: string;
   /**Function to be called when the button is clicked*/
   onClick?: ButtonHTMLAttributes<any>["onClick"];
-
+    /** Size md for only button icon */
+  size?:  "lg" | "sm" | "md";
   children?: ReactNode;
   /**Disabled state of button*/
   disabled?: boolean;
   /**Set the icon of button*/
   icon?: JSX.Element;
+  /**Set the icon of button*/
+  iconPlace?: "left" | "right" | "both";
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Button = (props: PropsWithChildren<ButtonProps>, ref: React.Ref<any>) => {
   if (
     props.type === "primary" ||
     props.type === "secondary" ||
+    props.type === "tertiary" ||
+    props.type === "text" ||
     props.type === "danger"
   ) {
     return <NormalButton {...props} />;
-  }
-
-  if (props.type === "outline-primary" || props.type === "outline-danger") {
-    return <OutlineButton {...props} />;
-  }
-
-  if (
-    props.type === "ghost" ||
-    props.type === "ghost-primary" ||
-    props.type === "ghost-secondary"
-  ) {
-    return <GhostButton {...props} />;
-  }
-
-  if (props.type === "bleed-primary" || props.type === "bleed-secondary") {
-    return <BleedButton {...props} />;
-  }
-
-  if (props.type === "link-plain") {
-    return <LinkPlainButton {...props} />;
   }
 
   if (props.type === "link") {
@@ -84,11 +59,10 @@ const Button = (props: PropsWithChildren<ButtonProps>, ref: React.Ref<any>) => {
   }
 
   if (
-    props.type === "icon-only-primary" ||
-    props.type === "icon-only-outline-primary" ||
-    props.type === "icon-only-danger" ||
-    props.type === "icon-only-outline-danger" ||
-    props.type === "icon-only-ghost"
+    props.type === "icon-primary" ||
+    props.type === "icon-secondary" ||
+    props.type === "icon-ghost" ||
+    props.type === "icon-primary-circle"
   ) {
     return <IconButton {...props} />;
   }
@@ -100,6 +74,7 @@ Button.defaultProps = {
   type: "primary",
   htmlType: "button",
   disabled: false,
+  size: "lg",
 };
 
 export default Button;

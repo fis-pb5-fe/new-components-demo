@@ -1,4 +1,57 @@
-$palettes: (
+$colors: (
+  base: (
+    neutral-10: #0c2042ff,
+    neutral-9: #253858ff,
+    neutral-8: #42526eff,
+    neutral-7: #5e6c84ff,
+    neutral-6: #7a869aff,
+    neutral-5: #97a0afff,
+    neutral-4: #b3bac5ff,
+    neutral-3: #dfe1e6ff,
+    neutral-2: #f4f5f7ff,
+    blue-4: #3998e1ff,
+    blue-3: #59a9e6ff,
+    blue-2: #b2d7f4ff,
+    blue-1: #e6f2fbff,
+    green-4: #50b46dff,
+    green-3: #6cc084ff,
+    green-2: #9ad4abff,
+    green-1: #e9f6edff,
+    orange-4: #f9a63aff,
+    orange-3: #fab55aff,
+    orange-2: #fdddb3ff,
+    orange-1: #fef4e6ff,
+    red-4: #f36960ff,
+    red-3: #f5827aff,
+    red-2: #f8a9a3ff,
+    red-1: #feecebff,
+    blue-5: #077edaff,
+    green-5: #24a148ff,
+    orange-5: #f79009ff,
+    red-5: #f04438ff,
+    neutral-1: #fafbfcff,
+    opacity-80: #101828cc,
+    opacity-40: #10182866,
+    orange-6: #e18308ff,
+    orange-7: #af6606ff,
+    green-6: #219342ff,
+    green-7: #367e4bff,
+    red-6: #da3e33ff,
+    red-7: #aa3028ff,
+    blue-6: #0673c6ff,
+    blue-7: #05599bff,
+    neutral-black: #070708ff,
+    neutral-white: #ffffffff,
+  ),
+  brand: (
+    5: #88a2fdff,
+    4: #5479fcff,
+    3: #abbdfdff,
+    2: #eaefffff,
+    1: #f7f9ffff,
+    6: #315efbff,
+    7: #2242b0ff,
+  ),
   red: (
     100: #2d0709,
     90: #520408,
@@ -300,23 +353,31 @@ $palettes: (
     100: #e8e8e8,
   ),
 );
-
 :root {
   /* color palettes */
-  @each $colorname, $palette in $palettes {
+  @each $colorname, $palette in $colors {
     @each $key, $value in $palette {
       $keyname: "--palette-" + $colorname + "-" + $key;
       #{$keyname}: #{$value};
     }
   }
 
+  --color-text-disable: #7A869A;
+  --color-icon-disable: #97A0AF;
   /* main colors */
   /* used for the links, the button background color,... */
-  --color-primary: #0f62fe;
-  --color-primary-hover: #0050e6;
-  --color-primary-active: #002d9c;
-  --color-primary-blur: #d0e2ff;
-  --color-secondary: #393939;
+  --color-primary: #315efb;
+  --color-primary-hover: #0830bc;
+  --color-primary-active: #0830bc;
+  --color-primary-blur: #ABBDFD;
+  --color-primary-pressed: #88a2fd;
+  --color-bg-button-disable: #DFE1e6;
+  --color-primary-icon-blur: #065EB7;
+
+
+  --color-text-tertiary: #42526E;
+  
+  --color-secondary: #b3bac5;
   --color-secondary-hover: #4c4c4c;
   --color-secondary-active: #6f6f6f;
   --color-secondary-blur: #e0e0e0;
@@ -328,7 +389,7 @@ $palettes: (
   --color-accent-blur: #ffd9be;
 
   /* support color */
-  --color-link: #0043ce;
+  --color-link: #0830bc;
   --color-harmony-black: #000000;
   --color-text: #161616;
   --color-black-hover: #212121;
@@ -336,31 +397,14 @@ $palettes: (
   --color-white-hover: #e8e8e8;
 
   /* critical color */
-  --color-critical: #da1e28;
-  --color-critical-hover: #b81922;
-  --color-critical-active: #750e13;
-  --color-critical-blur: #fff1f1;
+  --color-critical: #da3e33;
+  --color-critical-hover: #aa3028;
+  --color-critical-active: #aa3028;
+  --color-critical-blur: #F8A9A3;
+  --color-critical-pressed: #f04438;
 }
 
 /* class bg and color for color $palletes with syntax .palette-$colorname-$number-$type */
-
-@each $colorname, $palette in $palettes {
-  @each $key, $value in $palette {
-    $keyname: "--palette-" + $colorname + "-" + $key;
-    .bg-palette-#{"" + $colorname}-#{$key} {
-      background-color: var(#{$keyname});
-    }
-    .color-palette-#{"" + $colorname}-#{$key} {
-      color: var(#{$keyname});
-    }
-    .bg-palette-#{"" + $colorname}-#{$key}-important {
-      background-color: var(#{$keyname}) !important;
-    }
-    .color-palette-#{"" + $colorname}-#{$key}-important {
-      color: var(#{$keyname}) !important;
-    }
-  }
-}
 
 .bg-primary {
   background-color: var(--color-primary);

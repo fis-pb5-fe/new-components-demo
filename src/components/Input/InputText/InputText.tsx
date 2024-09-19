@@ -1,13 +1,13 @@
-import { Close } from "@carbon/icons-react";
 import { BORDER_TYPE } from "@Configs/enum";
 import { Tooltip } from "antd";
 import classNames from "classnames";
 import React, { ReactNode, RefObject } from "react";
 import "./InputText.scss";
+import CloseIcon from "/src/assets/icons/close.svg";
 
 export interface InputAction {
   name?: ReactNode;
-  action?: unknown;
+  action?: never;
 }
 
 export interface InputTextProps {
@@ -56,7 +56,7 @@ export interface InputTextProps {
 }
 
 const InputText = React.forwardRef(
-  (props: InputTextProps, ref: React.Ref<unknown>) => {
+  (props: InputTextProps, ref: React.LegacyRef<HTMLDivElement>) => {
     const {
       action,
       label,
@@ -85,13 +85,11 @@ const InputText = React.forwardRef(
 
     const [isShowToolTip, setIsShowToolTip] = React.useState(false);
 
-    const inputRef: RefObject<HTMLInputElement> = React.useRef<HTMLInputElement>(
-      null
-    );
+    const inputRef: RefObject<HTMLInputElement> =
+      React.useRef<HTMLInputElement>(null);
 
-    const divRef: RefObject<HTMLDivElement> = React.useRef<HTMLDivElement>(
-      null
-    );
+    const divRef: RefObject<HTMLDivElement> =
+      React.useRef<HTMLDivElement>(null);
 
     const handleChange = React.useCallback(
       (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -108,22 +106,19 @@ const InputText = React.forwardRef(
       [onChange, maxLength]
     );
 
-    const handleClearInput = React.useCallback(
-      () => {
-        setInternalValue("");
-        if (inputRef && inputRef.current) {
-          inputRef.current.focus();
-        }
-        if (typeof onChange === "function") {
-          onChange(null);
-          return;
-        }
-      },
-      [onChange]
-    );
+    const handleClearInput = React.useCallback(() => {
+      setInternalValue("");
+      if (inputRef && inputRef.current) {
+        inputRef.current.focus();
+      }
+      if (typeof onChange === "function") {
+        onChange(null);
+        return;
+      }
+    }, [onChange]);
 
     const handleKeyPress = React.useCallback(
-      (event: React.KeyboardEvent<HTMLInputElement>) => {
+      (event: React.KeyboardEvent<HTMLInputElement> | undefined) => {
         if (event.key === "Enter") {
           if (typeof onEnter === "function") {
             onEnter(event.currentTarget.value);
@@ -134,7 +129,7 @@ const InputText = React.forwardRef(
     );
 
     const handleKeyDown = React.useCallback(
-      (event: React.KeyboardEventHandler<HTMLInputElement>) => {
+      (event: React.KeyboardEvent<HTMLInputElement> | undefined) => {
         if (typeof onKeyDown === "function") {
           onKeyDown(event);
         }
@@ -263,7 +258,7 @@ const InputText = React.forwardRef(
           )}
           {internalValue && !disabled && !readOnly && (
             <div className={classNames("input-icon__clear", "m-l--2xs")}>
-              <Close size={16} onClick={handleClearInput} />
+              <img src={CloseIcon} alt="" onClick={handleClearInput} />
             </div>
           )}
           {suffix && (
@@ -295,7 +290,7 @@ InputText.defaultProps = {
   className: "",
   maxLength: 0,
   typeInput: "text",
-  bgColor: "white"
+  bgColor: "white",
 };
 
 export default InputText;

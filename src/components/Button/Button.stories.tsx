@@ -1,4 +1,3 @@
-import { Add } from "@carbon/icons-react";
 import {
   ArgsTable,
   Description,
@@ -12,11 +11,12 @@ import { Story } from "@storybook/react";
 import React from "react";
 import Button from "./Button";
 import classNames from "classnames";
+import Fpt from "../../assets/icons/Fpt";
 
 export default {
   title: "Button",
   component: Button,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   parameters: {
     controls: { expanded: true },
     docs: {
@@ -24,7 +24,7 @@ export default {
         <>
           <Title />
           <Subtitle />
-          <Description children={"test"} />
+          <Description />
           <PrimaryStory />
           <Stories includePrimary />
           <ArgsTable story={PRIMARY_STORY} />
@@ -33,20 +33,21 @@ export default {
     },
   },
   args: {
-    className: "btn--sm",
+    size: "lg",
   },
 
   argTypes: {
-    className: {
+    className: {},
+    size: {
       control: {
         type: "radio",
         options: [
-          "btn--sx",
-          "btn--sm",
-          "btn--md",
-          "btn--lg",
-          "btn--xl",
-          "btn--2xl",
+          // "btn--sx",
+          "sm",
+          // "btn--md",
+          "lg",
+          // "btn--xl",
+          // "btn--2xl",
         ],
       },
       description: "",
@@ -59,6 +60,7 @@ export default {
     icon: {},
   },
 };
+
 const Template: Story = (args) => {
   const [loading, setLoading] = React.useState<boolean>(false);
   const handleOnClick = React.useCallback(() => {
@@ -68,78 +70,157 @@ const Template: Story = (args) => {
     }, 2000);
   }, []);
   return (
-    <div style={{ width: 500 }}>
-      <Button
-        {...args}
-        className={classNames("m-l--2xl", args?.className)}
-        icon={<Add size={16} />}
-        loading={loading}
-        onClick={handleOnClick}
-      >
-        {"Button"}
-      </Button>
-      <Button
-        {...args}
-        className={classNames("m-l--2xl", args?.className)}
-        icon={<Add size={16} />}
-        loading={loading}
-        onClick={handleOnClick}
-      >
-        {"Button"}
-      </Button>
-      <Button
-        {...args}
-        className={classNames("m-l--2xl", args?.className)}
-        icon={<Add size={16} />}
-        loading={loading}
-        onClick={handleOnClick}
-      >
-        {"Button"}
-      </Button>
+    <div>
+      {" "}
+      <div className="m--2xs">Size sm (thường là 24px, icon là 32px)</div>
+      <div style={{ width: 500, height: 40, display: "flex", alignItems:"center" }}>
+        <Button
+          {...args}
+          className={classNames("m-l--2xs", args?.className)}
+          loading={loading}
+          onClick={handleOnClick}
+          size="sm"
+          icon={<Fpt />}
+          iconPlace="both"
+        >
+          Button
+        </Button>
+
+        <Button
+          {...args}
+          className={classNames("m-l--2xs", args?.className)}
+          size="sm"
+          loading={loading}
+          onClick={handleOnClick}
+          icon={<Fpt />}
+          iconPlace="left"
+        >
+          {"Button"}
+        </Button>
+        <Button
+          {...args}
+          className={classNames("m-l--2xs", args?.className)}
+          loading={loading}
+          size="sm"
+          onClick={handleOnClick}
+          icon={<Fpt />}
+          iconPlace="right"
+        >
+          {"Button"}
+        </Button>
+        <Button
+          {...args}
+          className={classNames("m-l--2xs", args?.className)}
+          loading={loading}
+          onClick={handleOnClick}
+          size="sm"
+          icon={<Fpt />}
+          iconPlace="both"
+          disabled
+        >
+          Button
+        </Button>
+      </div>
+      <div className="m--2xs">Size md (Lưu ý chỉ dùng cho icon là 40px)</div>
+      <div style={{ width: 500, height: 40, display: "flex", alignItems:"center" }}>
+        <Button
+          {...args}
+          className={classNames("m-l--2xs", args?.className)}
+          loading={loading}
+          onClick={handleOnClick}
+          size="md"
+          icon={<Fpt />}
+          iconPlace="both"
+        >
+          Button
+        </Button>
+
+        <Button
+          {...args}
+          className={classNames("m-l--2xs", args?.className)}
+          size="md"
+          loading={loading}
+          onClick={handleOnClick}
+          icon={<Fpt />}
+          iconPlace="left"
+        >
+          {"Button"}
+        </Button>
+        <Button
+          {...args}
+          className={classNames("m-l--2xs", args?.className)}
+          loading={loading}
+          size="md"
+          onClick={handleOnClick}
+          icon={<Fpt />}
+          iconPlace="right"
+        >
+          {"Button"}
+        </Button>
+        <Button
+          {...args}
+          className={classNames("m-l--2xs", args?.className)}
+          loading={loading}
+          onClick={handleOnClick}
+          size="md"
+          icon={<Fpt />}
+          iconPlace="both"
+          disabled
+        >
+          Button
+        </Button>
+      </div>
+      <div className="m--2xs">Size lg (button thường là 32px, icon là 48px)</div>
+      <div style={{ width: 500, height: 50, display: "flex", alignItems:"center" }}>
+        <Button
+          {...args}
+          className={classNames("m-l--2xs", args?.className)}
+          loading={loading}
+          onClick={handleOnClick}
+          icon={<Fpt />}
+          iconPlace="both"
+        >
+          <div>Button</div>
+        </Button>
+        <Button
+          {...args}
+          className={classNames("m-l--2xs", args?.className)}
+          loading={loading}
+          onClick={handleOnClick}
+          icon={<Fpt />}
+          iconPlace="left"
+        >
+          Button
+        </Button>
+        <Button
+          {...args}
+          className={classNames("m-l--2xs", args?.className)}
+          loading={loading}
+          onClick={handleOnClick}
+          icon={<Fpt />}
+          iconPlace="right"
+        >
+          Button
+        </Button>
+        <Button
+          {...args}
+          className={classNames("m-l--2xs", args?.className)}
+          loading={loading}
+          onClick={handleOnClick}
+          icon={<Fpt />}
+          iconPlace="both"
+          disabled
+        >
+          <div>Button</div>
+        </Button>
+      </div>
+      
     </div>
   );
 };
 
 export const NormalButton = Template.bind({});
 NormalButton.parameters = {
-  docs: {
-    description: {
-      story: "Some story **markdown**",
-    },
-  },
-};
-
-export const Ghost = Template.bind({});
-Ghost.args = {
-  ...NormalButton.args,
-  type: "ghost",
-};
-Ghost.parameters = {
-  docs: {
-    description: {
-      story: "Some story **markdown**",
-    },
-  },
-};
-export const Bleed = Template.bind({});
-Bleed.args = {
-  ...NormalButton.args,
-  type: "bleed-primary",
-};
-Bleed.parameters = {
-  docs: {
-    description: {
-      story: "Some story **markdown**",
-    },
-  },
-};
-
-export const LinkPlainButton = Template.bind({});
-LinkPlainButton.args = {
-  ...NormalButton.args,
-  type: "link-plain",
-};
-LinkPlainButton.parameters = {
   docs: {
     description: {
       story: "Some story **markdown**",
